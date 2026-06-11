@@ -2,17 +2,18 @@
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+  z-index: 50; /* High enough to be over sections, but behind modals/nav */
   overflow: hidden;
 }
 
 .float-item {
   position: absolute;
-  width: 48px;
-  height: 48px;
-  color: var(--emerald-dim);
-  opacity: 0.6;
+  width: 56px; /* Slightly larger */
+  height: 56px;
+  color: var(--emerald-lt); /* Brighter green so it is visible */
+  opacity: 0.4; /* Better visibility */
   animation: float-random 12s ease-in-out infinite alternate;
+  filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.3)); /* Give it a little glow */
 }
 
 .float-item svg {
@@ -25,15 +26,15 @@
     transform: translate(0, 0) rotate(0deg) scale(var(--scale, 1));
   }
   25% {
-    transform: translate(15px, -20px) rotate(10deg) scale(var(--scale, 1));
+    transform: translate(25px, -30px) rotate(15deg) scale(var(--scale, 1));
   }
   50% {
-    transform: translate(-10px, -35px) rotate(-5deg) scale(var(--scale, 1));
+    transform: translate(-15px, -50px) rotate(-10deg) scale(var(--scale, 1));
   }
   75% {
-    transform: translate(-20px, -15px) rotate(-15deg) scale(var(--scale, 1));
+    transform: translate(-30px, -20px) rotate(-20deg) scale(var(--scale, 1));
   }
   100% {
-    transform: translate(10px, 10px) rotate(5deg) scale(var(--scale, 1));
+    transform: translate(20px, 20px) rotate(10deg) scale(var(--scale, 1));
   }
 }

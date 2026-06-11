@@ -49,7 +49,28 @@
     overflow-x: hidden;
     line-height: 1.6;
     font-size: 17px;
+    position: relative;
   }
+  
+  /* Global Alive Background Image */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url('/images/hero-img2.jpg') center/cover no-repeat;
+    opacity: 0.05;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  /* Make sections transparent so the background shows through */
+  .section {
+    padding: 100px 24px;
+    position: relative;
+    overflow: hidden;
+    background: transparent !important;
+  }
+
   img { display: block; max-width: 100%; }
   a { text-decoration: none; color: inherit; }
   button { font-family: inherit; }
@@ -85,6 +106,18 @@
       opacity: 0;
     }
   }
+
+  @keyframes pulse-glow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 15px rgba(16, 185, 129, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+  }
   
   .float-1 { animation: float-gentle 6s var(--ease-apple) infinite; }
   .float-2 { animation: float-gentle-alt 7s var(--ease-apple) infinite; }
@@ -96,10 +129,13 @@
     padding: 100px 24px;
     position: relative;
     overflow: hidden;
+    background: transparent !important;
   }
   .container {
     max-width: 1080px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
   }
   
   /* ============================================================
@@ -162,11 +198,13 @@
     color: var(--white);
     font-weight: 600;
     box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    animation: pulse-glow 2s infinite;
   }
   .btn-primary:hover {
     background: var(--emerald-dark);
     transform: scale(1.02);
     box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    animation: none;
   }
   
   .btn-secondary {
