@@ -1,0 +1,39 @@
+.floating-bg-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.float-item {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  color: var(--emerald-dim);
+  opacity: 0.6;
+  animation: float-random 12s ease-in-out infinite alternate;
+}
+
+.float-item svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes float-random {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(var(--scale, 1));
+  }
+  25% {
+    transform: translate(15px, -20px) rotate(10deg) scale(var(--scale, 1));
+  }
+  50% {
+    transform: translate(-10px, -35px) rotate(-5deg) scale(var(--scale, 1));
+  }
+  75% {
+    transform: translate(-20px, -15px) rotate(-15deg) scale(var(--scale, 1));
+  }
+  100% {
+    transform: translate(10px, 10px) rotate(5deg) scale(var(--scale, 1));
+  }
+}

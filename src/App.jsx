@@ -8,10 +8,12 @@ import Speakers from './components/Speakers';
 import Agenda from './components/Agenda';
 import Pricing from './components/Pricing';
 import Footer from './components/Footer';
+import FloatingBackground from './components/FloatingBackground';
 
 function App() {
   return (
     <>
+      <FloatingBackground />
       <Navbar />
       <Hero />
       <About />

@@ -50,6 +50,12 @@ export default function Hero() {
             View Agenda
           </Button>
         </div>
+
+        <div className="hero-heroes mt-40 float-2">
+          <img src="/images/hero-img1.jpg" alt="Medical Hero 1" className="hero-img-item" />
+          <img src="/images/hero-img2.jpg" alt="Medical Hero 2" className="hero-img-item" />
+          <img src="/images/hero-img3.jpg" alt="Medical Hero 3" className="hero-img-item" />
+        </div>
       </div>
     </section>
   );
