@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 50; /* High enough to be over sections, but behind modals/nav */
+  z-index: 0; /* Behind content but above body background */
   overflow: hidden;
 }
 

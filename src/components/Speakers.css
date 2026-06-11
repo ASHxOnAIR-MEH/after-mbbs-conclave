@@ -1,5 +1,5 @@
 .speakers-section {
-  background: var(--gray-bg);
+  background: transparent !important;
 }
 .speakers-intro {
   text-align: center;
@@ -54,7 +54,7 @@
   aspect-ratio: 4/3;
   overflow: hidden;
   position: relative;
-  background: var(--gray-bg);
+  background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
 }
 .spk-photo img {
   width: 100%; height: 100%;
@@ -66,7 +66,7 @@
   position: absolute; inset: 0;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
-  background: var(--gray-bg);
+  background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
 }
 .spk-category-pill {
   position: absolute;

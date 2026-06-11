@@ -1,5 +1,5 @@
 .pricing-section {
-  background: var(--white);
+  background: transparent !important;
 }
 
 .pricing-grid {
@@ -11,7 +11,7 @@
 }
 
 .price-card {
-  background: var(--white);
+  background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
   padding: 48px 40px;
   display: flex;
   flex-direction: column;
@@ -48,7 +48,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--emerald-dark);
-  background: var(--white);
+  background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
   border: 1px solid var(--emerald-lt);
   padding: 5px 12px;
   border-radius: 980px;
@@ -172,7 +172,7 @@
   align-items: center;
   gap: 8px;
   padding: 10px 18px;
-  background: var(--white);
+  background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
   border: 1px solid var(--gray-light);
   border-radius: 980px;
   font-size: 0.85rem;

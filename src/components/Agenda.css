@@ -1,5 +1,5 @@
 .agenda-section {
-  background: var(--white);
+  background: transparent;
 }
 .agenda-intro {
   text-align: center;
@@ -32,7 +32,7 @@
   transition: all 0.3s var(--ease-apple);
 }
 .ag-tab.active {
-  background: var(--white);
+  background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
   color: var(--black-1);
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
@@ -121,7 +121,7 @@
   margin-bottom: 16px;
   border-radius: var(--r-lg);
   border: 1px solid var(--gray-light);
-  background: var(--white);
+  background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
   padding: 16px 20px;
   display: flex;
   align-items: flex-start;
