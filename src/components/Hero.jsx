@@ -19,8 +19,16 @@ export default function Hero() {
       </div>
 
       <div className="hero-content container">
-        <div style={{ display: 'inline-block', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '9999px', padding: '8px 16px', color: '#166534', fontWeight: '500', marginBottom: '24px', fontSize: '0.9rem' }}>
-          ✨ IMA Parippally Presents: Online Conclave 2026 ✨
+        <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+          <div style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#4b5563', fontWeight: '600' }}>
+            INDIAN MEDICAL ASSOCIATION PARIPPALLY BRANCH
+          </div>
+          <div style={{ fontStyle: 'italic', color: '#16a34a', margin: '8px 0', fontSize: '0.95rem' }}>
+            — presents —
+          </div>
+          <div style={{ fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--black-1)', fontSize: '1.1rem' }}>
+            ONLINE CONCLAVE 2026
+          </div>
         </div>
 
         <h1 className="hero-title">
