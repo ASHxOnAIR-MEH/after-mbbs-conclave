@@ -21,14 +21,15 @@ export default function Hero() {
       <div className="hero-content container">
         <p className="hero-presents">
           <span>Indian Medical Association</span><br />
-          <span>Parippally Branch of Kerala State</span><br />
-          <span>presents Online Conclave 2026</span>
+          <span>Parippally branch of Kerala State</span><br />
+          <span>presents</span><br />
+          <span>Online Conclave 2026</span>
         </p>
 
         <h1 className="hero-title">
           After MBBS?<br />
-          <em className="text-emerald" style={{fontStyle: 'normal'}}>Exploring Hidden</em><br />
-          <span style={{ color: '#10b981' }}>Treasures</span>
+          <span>Exploring hidden</span><br />
+          <span className="text-emerald">treasures</span>
         </h1>
 
         <p className="hero-subtitle">

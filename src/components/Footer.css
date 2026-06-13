@@ -1,5 +1,5 @@
 .footer {
-  background: transparent;
+  background: var(--white);
   border-top: 1px solid var(--gray-light);
   position: relative;
 }
@@ -21,8 +21,8 @@
 }
 .footer-org-sub {
   font-size: 0.8rem;
-  color: var(--emerald-dark);
-  margin-bottom: 16px;
+  color: var(--gray-dark);
+  margin-bottom: 4px;
   font-weight: 600;
 }
 .footer-tagline {
@@ -55,7 +55,7 @@
   display: inline-block;
   font-weight: 500;
 }
-.footer-link:hover { color: var(--emerald-dark); transform: translateX(4px); }
+.footer-link:hover { transform: translateX(4px); }
 
 .footer-contacts {
   display: flex;
@@ -131,6 +131,6 @@
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 @media (max-width: 640px) {
-  .footer-inner { grid-template-columns: 1fr; gap: 36px; padding: 60px 0 36px; }
-  .footer-bottom-inner { justify-content: center; text-align: center; }
+  .footer-inner { grid-template-columns: 1fr; gap: 36px; padding: 60px 24px 36px 24px; }
+  .footer-bottom-inner { justify-content: center; text-align: left; }
 }

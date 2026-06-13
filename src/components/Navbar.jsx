@@ -34,8 +34,9 @@ export default function Navbar() {
           <a href="#hero" className="nav-logo" onClick={close}>
             <img src="/images/ima-logo.jpg" alt="IMA Logo" className="nav-logo-img" onError={(e) => e.target.style.display='none'} />
             <div className="nav-logo-text">
-              <div className="nav-logo-name">IMA Parippally</div>
-              <div className="nav-logo-sub">Kerala State Branch</div>
+              <div className="nav-logo-name">Indian Medical Association</div>
+              <div className="nav-logo-sub">Parippally Branch</div>
+              <div className="nav-logo-sub">of Kerala State</div>
             </div>
           </a>
 
