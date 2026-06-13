@@ -19,7 +19,9 @@ export default function StrangeDoctor() {
         </div>
         
         <div className="extra-images-grid mt-40">
-           <img src="/images/surgery.jpg" alt="Surgery" className="extra-img" />
+           <div className="extra-img hero-img-placeholder">
+              <span>A single doctor talking to a patient in a clinic</span>
+           </div>
            <img src="/images/doctor.jpg" alt="Doctor" className="extra-img" />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Pillars.css';
 
 const careers = [
@@ -15,6 +15,8 @@ const careers = [
 ];
 
 export default function Pillars() {
+  const [activePath, setActivePath] = useState(null);
+
   return (
     <section id="pillars" className="pillars-section">
 
@@ -62,11 +64,25 @@ export default function Pillars() {
           </p>
           <div className="career-grid">
             {careers.map((c, i) => (
-              <div key={c.label} className="career-chip float-1" style={{ animationDelay: `${i * 0.2}s` }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" strokeWidth="2.5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>{c.label}</span>
+              <div key={c.label} className="career-item float-1" style={{ animationDelay: `${i * 0.2}s` }}>
+                <button 
+                  className={`career-chip ${activePath === i ? 'active' : ''}`}
+                  onClick={() => setActivePath(activePath === i ? null : i)}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>{c.label}</span>
+                  <svg className={`chevron ${activePath === i ? 'rotated' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </button>
+                <div className={`career-drawer ${activePath === i ? 'open' : ''}`}>
+                  <div className="career-drawer-inner">
+                    <p><strong>What's happening here:</strong> [Small description of the field]</p>
+                    <p><strong>Who is taking the session:</strong> [Speaker Details]</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

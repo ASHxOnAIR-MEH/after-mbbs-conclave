@@ -161,6 +161,20 @@
   flex-shrink: 0;
   align-self: flex-start;
 }
+.tl-drawer {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+.tl-drawer.open {
+  max-height: 300px;
+  opacity: 1;
+}
+.chevron.rotated {
+  transform: rotate(180deg);
+}
 
 .ag-info-bar {
   margin-top: 40px;

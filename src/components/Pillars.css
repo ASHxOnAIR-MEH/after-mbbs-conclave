@@ -105,31 +105,83 @@
 }
 
 .career-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
-  max-width: 900px;
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+.career-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
 }
 .career-chip {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
   gap: 12px;
   background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
   border: 1px solid var(--gray-light);
   border-radius: var(--r-md);
   padding: 16px;
-  font-size: 0.9rem;
+  font-weight: 500;
   color: var(--black-2);
-  font-weight: 600;
   transition: all 0.3s var(--ease-apple);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-  cursor: default;
+  cursor: pointer;
+  text-align: left;
 }
-.career-chip:hover {
-  transform: translateY(-4px);
+.career-chip svg:first-child {
+  color: var(--emerald);
+  flex-shrink: 0;
+}
+.career-chip span {
+  flex: 1;
+}
+.career-chip .chevron {
+  color: var(--gray-mid);
+  transition: transform 0.3s ease;
+}
+.career-chip .chevron.rotated {
+  transform: rotate(180deg);
+}
+.career-chip:hover, .career-chip.active {
+  background: var(--white);
   border-color: var(--emerald);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 16px rgba(16,185,129,0.1);
+  transform: translateY(-2px);
+}
+
+.career-drawer {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
+  opacity: 0;
+  margin-top: 0;
+}
+.career-drawer.open {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 8px;
+}
+.career-drawer-inner {
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: var(--r-md);
+  padding: 16px;
+  font-size: 0.9rem;
+  color: var(--gray-dark);
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.career-drawer-inner p {
+  margin-bottom: 8px;
+}
+.career-drawer-inner p:last-child {
+  margin-bottom: 0;
 }
 
 .qa-grid {
@@ -157,6 +209,14 @@
   .pillar-block { min-height: auto; }
   .pillar-content { padding: 60px 24px; max-width: 100%; }
   .pillar-content.right { margin-left: 0; }
-  .career-grid { grid-template-columns: repeat(2,1fr); }
   .qa-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .pillar-h { font-size: 2.2rem; }
+  .qa-grid { grid-template-columns: 1fr; }
+  .career-grid { 
+    flex-direction: column; 
+    align-items: center;
+  }
 }

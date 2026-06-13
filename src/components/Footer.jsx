@@ -15,8 +15,9 @@ export default function Footer() {
       <div className="container">
         <div className="footer-inner">
           <div className="footer-brand">
-            <div className="footer-org">IMA Parippally Branch</div>
-            <div className="footer-org-sub">Kerala State &bull; Indian Medical Association</div>
+            <div className="footer-org">Indian Medical Association</div>
+            <div className="footer-org-sub">Parippally Branch</div>
+            <div className="footer-org-sub">of Kerala State</div>
             <p className="footer-tagline">
               Empowering Doctors. Transforming Careers. Building the Future of Medicine.
             </p>

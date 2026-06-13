@@ -7,6 +7,7 @@ import Pillars from './components/Pillars';
 import Speakers from './components/Speakers';
 import Agenda from './components/Agenda';
 import Pricing from './components/Pricing';
+import Sponsors from './components/Sponsors';
 import Footer from './components/Footer';
 import FloatingBackground from './components/FloatingBackground';
 
@@ -22,6 +23,7 @@ function App() {
       <Speakers />
       <Agenda />
       <Pricing />
+      <Sponsors />
       <Footer />
     </>
   );
