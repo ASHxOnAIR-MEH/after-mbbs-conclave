@@ -33,10 +33,9 @@ export default function Navbar() {
         <div className="nav-inner">
           <a href="#hero" className="nav-logo" onClick={close}>
             <img src="/images/ima-logo.jpg" alt="IMA Logo" className="nav-logo-img" onError={(e) => e.target.style.display='none'} />
-            <div className="nav-logo-text">
-              <div className="nav-logo-name">Indian Medical Association</div>
-              <div className="nav-logo-sub">Parippally Branch</div>
-              <div className="nav-logo-sub">of Kerala State</div>
+            <div className="nav-logo-text" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div className="nav-logo-name" style={{ fontWeight: 'bold', fontSize: '1.125rem', lineHeight: '1.2', color: 'var(--black-1)' }}>Indian Medical Association</div>
+              <div className="nav-logo-sub" style={{ color: '#4b5563', fontSize: '0.875rem', fontWeight: 'normal' }}>Parippally Branch Kerala State</div>
             </div>
           </a>
 

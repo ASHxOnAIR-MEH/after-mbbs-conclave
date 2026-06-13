@@ -19,12 +19,9 @@ export default function Hero() {
       </div>
 
       <div className="hero-content container">
-        <p className="hero-presents">
-          <span>Indian Medical Association</span><br />
-          <span>Parippally branch of Kerala State</span><br />
-          <span>presents</span><br />
-          <span>Online Conclave 2026</span>
-        </p>
+        <div style={{ display: 'inline-block', backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '9999px', padding: '8px 16px', color: '#166534', fontWeight: '500', marginBottom: '24px', fontSize: '0.9rem' }}>
+          ✨ IMA Parippally Presents: Online Conclave 2026 ✨
+        </div>
 
         <h1 className="hero-title">
           After MBBS?<br />
