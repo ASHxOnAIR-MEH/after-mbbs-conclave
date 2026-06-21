@@ -1,6 +1,6 @@
 .footer {
   background: var(--white);
-  border-top: 1px solid var(--gray-light);
+  border-top: 3px solid #10b981;
   position: relative;
 }
 

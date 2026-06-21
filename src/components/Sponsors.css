@@ -1,86 +1,142 @@
 .sponsors-section {
   background: transparent !important;
-  text-align: center;
-  padding: 80px 24px;
+  padding-bottom: 100px;
 }
-
 .sponsors-intro {
-  margin-bottom: 60px;
+  text-align: center;
+  margin-bottom: 64px;
 }
 
 .sponsors-hierarchy {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 56px;
 }
 
-.tier-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--gray-mid);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 24px;
-}
-
-.sponsor-card {
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--gray-light);
-  border-radius: var(--r-lg);
+/* ── Tier wrapper ── */
+.sponsor-tier {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ── Labels ── */
+.tier-pill-title {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #eaf3de;
+  color: #173404;
+  padding: 5px 16px;
+  border-radius: 980px;
+  margin-bottom: 4px;
+}
+.tier-label-assoc {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5f5e5a;
+}
+.tier-label-co {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+/* ── Base sponsor card ── */
+.sponsor-card {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
-  transition: transform 0.3s var(--ease-apple);
+  gap: 12px;
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(8px);
 }
-
 .sponsor-card:hover {
   transform: translateY(-4px);
-  border-color: var(--emerald-lt);
 }
 
-.placeholder-text {
-  color: var(--gray-mid);
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.large-placeholder {
+/* ── Title card — large, prominent ── */
+.title-card {
   width: 100%;
-  max-width: 600px;
-  height: 250px;
+  max-width: 560px;
+  height: 220px;
+  border: 1.5px dashed #10b981;
+  background: rgba(225,245,238,0.18);
+  box-shadow: 0 4px 24px rgba(16,185,129,0.08);
+}
+.title-card:hover {
+  box-shadow: 0 8px 32px rgba(16,185,129,0.15);
+  border-color: #0ea572;
 }
 
-.medium-placeholder {
-  height: 150px;
-}
-
-.small-placeholder {
-  height: 100px;
-  font-size: 0.85rem;
-}
-
-.sponsors-grid {
+/* ── Associate grid ── */
+.assoc-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 24px;
-  max-width: 900px;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 720px;
+}
+.assoc-card {
+  height: 130px;
+  border: 1.5px dashed rgba(16,185,129,0.5);
+  background: rgba(240,253,248,0.3);
+}
+.assoc-card:hover {
+  border-color: rgba(16,185,129,0.8);
 }
 
-.sponsors-grid.small-grid {
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px;
-  max-width: 800px;
+/* ── Co-powered grid ── */
+.co-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  width: 100%;
+  max-width: 680px;
+}
+.co-card {
+  height: 80px;
+  border: 1px dashed #d1d5db;
+  background: rgba(255,255,255,0.4);
+}
+.co-card:hover {
+  border-color: #9ca3af;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
 
-@media (max-width: 600px) {
-  .large-placeholder {
-    height: 180px;
-  }
-  .sponsors-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* ── Captions ── */
+.sponsor-caption {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #6b7280;
+  margin: 0;
+  text-align: center;
+}
+.sponsor-caption-sm {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #9ca3af;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .assoc-grid { grid-template-columns: 1fr 1fr; max-width: 480px; }
+  .co-grid { grid-template-columns: repeat(2, 1fr); max-width: 340px; }
+  .title-card { height: 170px; }
+}
+@media (max-width: 480px) {
+  .assoc-grid { grid-template-columns: 1fr; max-width: 280px; }
+  .co-grid { grid-template-columns: repeat(2, 1fr); max-width: 280px; }
 }

@@ -35,7 +35,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="footer-col-title">Event Details</div>
+            <div className="footer-col-title">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" style={{marginRight:'6px',verticalAlign:'middle'}}><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Event Details
+            </div>
             <div className="footer-details">
               {[
                 { icon:<><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></>,
@@ -56,7 +59,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="footer-col-title">Contact Us</div>
+            <div className="footer-col-title">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" style={{marginRight:'6px',verticalAlign:'middle'}}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.89 11.4 19.79 19.79 0 0 1 1.84 2.83 2 2 0 0 1 3.81 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.96-1.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Contact Us
+            </div>
             <div className="footer-contacts">
               <a href="mailto:imaparippally@gmail.com" className="footer-contact">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
