@@ -101,7 +101,7 @@ export default function Hero() {
             { icon: <TrendingUp size={22} />, val: '11+', label: 'Career Paths' },
             { icon: <Users size={22} />, val: '15+', label: 'Expert Speakers' },
             { icon: <Calendar size={22} />, val: '3', label: 'Live Days' },
-            { icon: <PlayCircle size={22} />, val: 'Available', label: 'Recorded Sessions' },
+            { icon: <PlayCircle size={22} />, val: 'Recorded Sessions', label: 'Available' },
           ].map(s => (
             <div key={s.label} className="hero-stat-item">
               <span className="hero-stat-emoji">{s.icon}</span>
