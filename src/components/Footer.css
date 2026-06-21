@@ -109,6 +109,27 @@
   font-weight: 500;
 }
 
+.footer-legal {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-legal-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.85rem;
+  color: var(--gray-mid);
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+.footer-legal-link:hover {
+  color: var(--emerald);
+}
+
 @media (max-width: 800px) {
   .footer-inner {
     flex-direction: column;

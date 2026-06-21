@@ -9,7 +9,7 @@ const navLinks = [
   { label:'Pricing & Passes',   href:'#pricing'  },
 ];
 
-export default function Footer() {
+export default function Footer({ setCurrentPage }) {
   return (
     <footer className="footer">
       <div className="container">
@@ -86,6 +86,11 @@ export default function Footer() {
             <p className="footer-copy">
               &copy; 2026 IMA Parippally Branch, Kerala State. All rights reserved.
             </p>
+            <div className="footer-legal">
+              <button onClick={() => setCurrentPage('privacy')} className="footer-legal-link">Privacy Policy</button>
+              <button onClick={() => setCurrentPage('terms')} className="footer-legal-link">Terms & Conditions</button>
+              <button onClick={() => setCurrentPage('refund')} className="footer-legal-link">Refund & Cancellation</button>
+            </div>
           </div>
         </div>
       </div>

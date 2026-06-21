@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'Passes',   href: '#pricing'  },
 ];
 
-export default function Navbar() {
+export default function Navbar({ setCurrentPage }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen]         = useState(false);
 
@@ -25,7 +25,10 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
-  const close = () => setOpen(false);
+  const close = () => {
+    if (setCurrentPage) setCurrentPage('home');
+    setOpen(false);
+  };
 
   return (
     <>
@@ -42,13 +45,13 @@ export default function Navbar() {
           <ul className="nav-links">
             {navLinks.map(l => (
               <li key={l.label}>
-                <a href={l.href} className="nav-link">{l.label}</a>
+                <a href={l.href} className="nav-link" onClick={close}>{l.label}</a>
               </li>
             ))}
           </ul>
 
           <div className="nav-cta">
-            <Button href="#pricing" variant="primary">
+            <Button href="#pricing" variant="primary" onClick={close}>
               Register Now
             </Button>
           </div>

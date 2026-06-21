@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,21 +10,31 @@ import Pricing from './components/Pricing';
 import Sponsors from './components/Sponsors';
 import Footer from './components/Footer';
 import FloatingBackground from './components/FloatingBackground';
+import LegalPage from './components/LegalPage';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home');
   return (
     <>
       <FloatingBackground />
-      <Navbar />
-      <Hero />
-      <About />
-      <StrangeDoctor />
-      <Pillars />
-      <Speakers />
-      <Agenda />
-      <Pricing />
-      <Sponsors />
-      <Footer />
+      <Navbar setCurrentPage={setCurrentPage} />
+      
+      {currentPage === 'home' ? (
+        <>
+          <Hero />
+          <About />
+          <StrangeDoctor />
+          <Pillars />
+          <Speakers />
+          <Agenda />
+          <Pricing />
+          <Sponsors />
+        </>
+      ) : (
+        <LegalPage page={currentPage} />
+      )}
+
+      <Footer setCurrentPage={setCurrentPage} />
     </>
   );
 }
