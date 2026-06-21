@@ -280,8 +280,9 @@
 /* ────── RESPONSIVE — Mobile ────── */
 @media (max-width: 600px) {
   .hero-main { padding-top: 78px; gap: 20px; }
+  .hero-left { align-items: center; text-align: center; }
 
-  .hero-presents { padding: 8px 12px; }
+  .hero-presents { padding: 8px 12px; align-items: center; text-align: center; }
   .hero-presents-org { font-size: 0.58rem; }
   .hero-presents-event { font-size: 0.58rem; }
 
@@ -292,7 +293,7 @@
   .hero-cta-row { flex-direction: column; width: 100%; }
   .hero-cta-row .btn { width: 100%; justify-content: center; }
 
-  .hero-features { gap: 6px; }
+  .hero-features { gap: 6px; justify-content: center; }
   .hero-feat { padding: 10px 10px 8px; min-width: 72px; }
   .hero-feat-icon { width: 32px; height: 32px; font-size: 1rem; }
   .hero-feat-label { font-size: 0.58rem; }

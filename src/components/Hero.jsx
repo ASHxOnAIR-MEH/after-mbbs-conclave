@@ -4,7 +4,7 @@ import Countdown from './Countdown';
 import Button from './Button';
 import {
   Users, MonitorPlay, MessageCircle, Globe, TrendingUp,
-  Calendar, ArrowRight, Video, Award
+  Calendar, ArrowRight, Video, Award, PlayCircle
 } from 'lucide-react';
 
 const features = [
@@ -101,7 +101,7 @@ export default function Hero() {
             { icon: <TrendingUp size={22} />, val: '11+', label: 'Career Paths' },
             { icon: <Users size={22} />, val: '15+', label: 'Expert Speakers' },
             { icon: <Calendar size={22} />, val: '3', label: 'Live Days' },
-            { icon: <Globe size={22} />, val: '1000+', label: 'Expected Participants' },
+            { icon: <PlayCircle size={22} />, val: 'Available', label: 'Recorded Sessions' },
           ].map(s => (
             <div key={s.label} className="hero-stat-item">
               <span className="hero-stat-emoji">{s.icon}</span>
