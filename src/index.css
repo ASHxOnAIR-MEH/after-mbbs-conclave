@@ -24,8 +24,8 @@
     --emerald-dim: rgba(16,185,129,0.08);
   
     /* Typography */
-    --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-    --font-text:    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-text:    'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     --font-mono:    "SF Mono", "Fira Code", ui-monospace, monospace;
   
     /* Spacing */
@@ -43,13 +43,15 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
   body {
-    font-family: var(--font-text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     background: var(--white);
     color: var(--black-2);
     overflow-x: hidden;
     line-height: 1.6;
-    font-size: 17px;
+    font-size: 16px;
     position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   /* Global Alive Background Image */
@@ -142,21 +144,21 @@
      TYPOGRAPHY
      ============================================================ */
   .display-xl {
-    font-family: var(--font-display);
-    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.8rem, 6.5vw, 5rem);
     font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.04em;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
     color: var(--black-1);
   }
   .text-emerald { color: var(--emerald-dark); }
   .text-muted   { color: var(--gray-mid); }
   
   .eyebrow {
-    font-family: var(--font-display);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--emerald-dark);
     margin-bottom: 12px;
