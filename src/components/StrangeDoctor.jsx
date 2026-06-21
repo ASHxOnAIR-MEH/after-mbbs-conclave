@@ -14,12 +14,8 @@ export default function StrangeDoctor() {
             </p>
           </div>
           <div className="strange-images">
-            <img src="/images/dr-strange-new.jpg" alt="Strange Doctor" className="strange-img float-1" />
+            <img src="/images/beyond-mbbs.png" alt="Beyond MBBS Career Banner" className="strange-img float-1" style={{ width: '100%', height: 'auto', borderRadius: '16px', boxShadow: '0 12px 36px rgba(0,0,0,0.08)' }} />
           </div>
-        </div>
-        
-        <div className="extra-images-grid mt-40">
-           <img src="/images/doctor.jpg" alt="Doctor" className="extra-img" />
         </div>
       </div>
     </section>
