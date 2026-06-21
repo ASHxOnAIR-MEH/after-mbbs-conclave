@@ -14,14 +14,11 @@ export default function StrangeDoctor() {
             </p>
           </div>
           <div className="strange-images">
-            <img src="/images/dr-strange.jpg" alt="Strange Doctor" className="strange-img float-1" />
+            <img src="/images/dr-strange-new.jpg" alt="Strange Doctor" className="strange-img float-1" />
           </div>
         </div>
         
         <div className="extra-images-grid mt-40">
-           <div className="extra-img hero-img-placeholder">
-              <span>A single doctor talking to a patient in a clinic</span>
-           </div>
            <img src="/images/doctor.jpg" alt="Doctor" className="extra-img" />
         </div>
       </div>
