@@ -23,8 +23,17 @@
 }
 
 .why-icon {
-  font-size: 2rem;
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: rgba(16,185,129,0.08);
+  display: flex; align-items: center; justify-content: center;
+  color: #10b981;
   margin-bottom: 16px;
+  transition: background 0.25s, transform 0.25s;
+}
+.why-card:hover .why-icon {
+  background: rgba(16,185,129,0.15);
+  transform: scale(1.05);
 }
 .why-title {
   font-family: 'Playfair Display', Georgia, serif;

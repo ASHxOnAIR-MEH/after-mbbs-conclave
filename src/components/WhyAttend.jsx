@@ -1,34 +1,37 @@
 import React from 'react';
 import './WhyAttend.css';
+import {
+  Search, Mic, MessageSquare, Handshake, Compass, ScrollText
+} from 'lucide-react';
 
 const reasons = [
   {
-    icon: '🔍',
+    Icon: Search,
     title: 'Explore Hidden Opportunities',
     desc: 'Discover 11+ career pathways most doctors never hear about during MBBS.',
   },
   {
-    icon: '🎤',
+    Icon: Mic,
     title: 'Learn From Real Experts',
     desc: 'Two experienced doctors share their real journeys — no theory, just practice.',
   },
   {
-    icon: '💬',
+    Icon: MessageSquare,
     title: 'Ask Questions Directly',
     desc: 'Interactive pass holders get to ask live questions and get real answers.',
   },
   {
-    icon: '🤝',
+    Icon: Handshake,
     title: 'Build Your Network',
     desc: 'Connect with peers, mentors, and professionals shaping healthcare\'s future.',
   },
   {
-    icon: '🧭',
+    Icon: Compass,
     title: 'Gain Career Clarity',
     desc: 'Walk away with a clear roadmap — not just inspiration, but actionable steps.',
   },
   {
-    icon: '📜',
+    Icon: ScrollText,
     title: 'Receive Your Certificate',
     desc: 'All participants receive an official certificate of participation from IMA.',
   },
@@ -43,11 +46,11 @@ export default function WhyAttend() {
         <p className="sub">Six reasons this conclave is different from anything you've attended.</p>
 
         <div className="why-grid">
-          {reasons.map(r => (
-            <div key={r.title} className="why-card">
-              <div className="why-icon">{r.icon}</div>
-              <h3 className="why-title">{r.title}</h3>
-              <p className="why-desc">{r.desc}</p>
+          {reasons.map(({ Icon, title, desc }) => (
+            <div key={title} className="why-card">
+              <div className="why-icon"><Icon size={28} strokeWidth={2} /></div>
+              <h3 className="why-title">{title}</h3>
+              <p className="why-desc">{desc}</p>
             </div>
           ))}
         </div>

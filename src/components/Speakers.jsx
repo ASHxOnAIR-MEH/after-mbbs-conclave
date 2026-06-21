@@ -1,12 +1,6 @@
 import React from 'react';
 import './Speakers.css';
-
-const IconUser = ({ size = 48 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="1.5">
-    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-    <circle cx="12" cy="7" r="4"/>
-  </svg>
-);
+import { User, Info } from 'lucide-react';
 
 const speakers = [
   {
@@ -40,7 +34,7 @@ export default function Speakers() {
             <div key={s.id} className="spk-featured-card">
               <div className="spk-featured-photo">
                 <div className="spk-featured-avatar">
-                  <IconUser size={56} />
+                  <User size={56} color="#10b981" strokeWidth={1.5} />
                 </div>
                 <div className="spk-featured-badge">{s.experience}</div>
               </div>
@@ -55,7 +49,7 @@ export default function Speakers() {
         </div>
 
         <p className="speakers-note">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <Info size={14} color="#10b981" strokeWidth={2} />
           Speaker names and photos will be announced soon. Stay tuned!
         </p>
       </div>

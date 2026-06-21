@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import './Pillars.css';
+import {
+  Stethoscope, GraduationCap, Globe, Building2, Brain,
+  Rocket, Microscope, Heart, ChevronDown, Check,
+  MessageCircle, Users, Lightbulb
+} from 'lucide-react';
 
 const careers = [
-  { label: 'Clinical Practice' },
-  { label: 'MD / MS' },
-  { label: 'DNB' },
-  { label: 'GCC Careers' },
-  { label: 'Europe' },
-  { label: 'USA' },
-  { label: 'Hospital Admin' },
-  { label: 'Healthcare Entrepreneurship' },
-  { label: 'Medical Research' },
-  { label: 'Finding Your Passion' },
+  { label: 'Clinical Practice', Icon: Stethoscope },
+  { label: 'MD / MS', Icon: GraduationCap },
+  { label: 'DNB', Icon: GraduationCap },
+  { label: 'GCC Careers', Icon: Globe },
+  { label: 'Europe', Icon: Globe },
+  { label: 'USA', Icon: Globe },
+  { label: 'Hospital Admin', Icon: Building2 },
+  { label: 'Healthcare Entrepreneurship', Icon: Rocket },
+  { label: 'Medical Research', Icon: Microscope },
+  { label: 'Finding Your Passion', Icon: Heart },
 ];
 
 export default function Pillars() {
@@ -39,7 +44,7 @@ export default function Pillars() {
           </p>
           <div className="flag-chips">
             {['India', 'GCC', 'UK', 'Germany', 'USA', '& more'].map(f => (
-              <span key={f} className="flag-chip" dangerouslySetInnerHTML={{ __html: f }} />
+              <span key={f} className="flag-chip">{f}</span>
             ))}
           </div>
         </div>
@@ -69,13 +74,9 @@ export default function Pillars() {
                   className={`career-chip ${activePath === i ? 'active' : ''}`}
                   onClick={() => setActivePath(activePath === i ? null : i)}
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
+                  <c.Icon size={16} strokeWidth={2} />
                   <span>{c.label}</span>
-                  <svg className={`chevron ${activePath === i ? 'rotated' : ''}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <polyline points="6 9 12 15 18 9"/>
-                  </svg>
+                  <ChevronDown size={16} className={`chevron ${activePath === i ? 'rotated' : ''}`} />
                 </button>
                 <div className={`career-drawer ${activePath === i ? 'open' : ''}`}>
                   <div className="career-drawer-inner">
@@ -108,17 +109,13 @@ export default function Pillars() {
           </p>
           <div className="qa-grid">
             {[
-              { text: 'Real-time questions' },
-              { text: 'Direct expert access' },
-              { text: 'Networking' },
+              { text: 'Real-time questions', Icon: MessageCircle },
+              { text: 'Direct expert access', Icon: Users },
+              { text: 'Networking', Icon: Lightbulb },
             ].map(f => (
               <div key={f.text} className="qa-item">
                 <div className="qa-item-icon">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--emerald)" strokeWidth="1.5">
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="12" y1="8" x2="12" y2="12" />
-                    <line x1="12" y1="16" x2="12.01" y2="16" />
-                  </svg>
+                  <f.Icon size={28} strokeWidth={1.5} color="var(--emerald)" />
                 </div>
                 <div className="qa-item-text">{f.text}</div>
               </div>
