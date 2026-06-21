@@ -64,7 +64,7 @@ export default function Pricing() {
               ))}
             </ul>
             <div className="plan-cta">
-              <Button href="https://forms.zohopublic.in/torqueashikgm1/form/ViewerPassRegistrationAfterMBBSConclave/formperma/wpUD04VVQvqIp3pHd-3Ct-lbMEXvzg2O5wJE6tDqwNg" target="_blank" variant="secondary" className="btn-lg">
+              <Button href="https://forms.gle/jpjtxNWPcVEErFBg8" target="_blank" variant="secondary" className="btn-lg">
                 Register Now
               </Button>
             </div>
@@ -89,7 +89,7 @@ export default function Pricing() {
               ))}
             </ul>
             <div className="plan-cta">
-              <Button href="https://forms.zohopublic.in/torqueashikgm1/form/InteractivePassRegistrationAfterMBBSConclave/formperma/pBOuFpJ-8RvdzBmXdxascd4XwE-JemEmPc-lmGTvuIw" target="_blank" variant="primary" className="btn-lg">
+              <Button href="https://forms.gle/jpjtxNWPcVEErFBg8" target="_blank" variant="primary" className="btn-lg">
                 Register Now
               </Button>
             </div>
