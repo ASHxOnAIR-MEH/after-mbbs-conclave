@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import StrangeDoctor from './components/StrangeDoctor';
+import WhyAttend from './components/WhyAttend';
 import Pillars from './components/Pillars';
 import Speakers from './components/Speakers';
 import Agenda from './components/Agenda';
 import Pricing from './components/Pricing';
-import Sponsors from './components/Sponsors';
+import FAQ from './components/FAQ';
+import RegistrationCTA from './components/RegistrationCTA';
 import Footer from './components/Footer';
 import FloatingBackground from './components/FloatingBackground';
 import LegalPage from './components/LegalPage';
@@ -22,13 +22,13 @@ function App() {
       {currentPage === 'home' ? (
         <>
           <Hero />
-          <About />
-          <StrangeDoctor />
+          <WhyAttend />
           <Pillars />
           <Speakers />
           <Agenda />
           <Pricing />
-          <Sponsors />
+          <FAQ />
+          <RegistrationCTA />
         </>
       ) : (
         <LegalPage page={currentPage} />

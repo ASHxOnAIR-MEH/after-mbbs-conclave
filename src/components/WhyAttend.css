@@ -1,0 +1,48 @@
+.why-section { background: transparent !important; }
+.why-section .sub { text-align: center; margin-bottom: 56px; }
+.why-section .eyebrow, .why-section .display-xl { text-align: center; }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.why-card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--gray-light);
+  border-radius: 20px;
+  padding: 32px 28px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(16,185,129,0.1);
+  border-color: rgba(16,185,129,0.3);
+}
+
+.why-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+.why-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--black-1);
+  margin-bottom: 8px;
+}
+.why-desc {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--gray-dark);
+}
+
+@media (max-width: 768px) {
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .why-card { padding: 24px 20px; }
+}
