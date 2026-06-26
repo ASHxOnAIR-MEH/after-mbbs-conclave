@@ -90,12 +90,12 @@ export default function Hero() {
             <div className="hl-label">Career Tracks</div>
           </div>
           <div className="hl-item">
-            <div className="hl-val">2</div>
-            <div className="hl-label">Expert Speakers</div>
+            <div className="hl-val">20+</div>
+            <div className="hl-label">Speakers</div>
           </div>
           <div className="hl-item">
-            <div className="hl-val">1</div>
-            <div className="hl-label">Interactive Session</div>
+            <div className="hl-val">1 to 1</div>
+            <div className="hl-label">Interactive Sessions</div>
           </div>
           <div className="hl-item">
             <div className="hl-val">Live</div>

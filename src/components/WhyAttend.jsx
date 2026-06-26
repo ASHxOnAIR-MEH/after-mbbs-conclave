@@ -13,7 +13,7 @@ const reasons = [
   {
     Icon: Mic,
     title: 'Learn From Real Experts',
-    desc: 'Two experienced doctors share their real journeys — no theory, just practice.',
+    desc: '20+ experienced doctors share their real journeys — no theory, just practice.',
   },
   {
     Icon: MessageSquare,
