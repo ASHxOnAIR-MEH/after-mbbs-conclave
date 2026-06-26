@@ -109,9 +109,9 @@ Participants may request cancellation by contacting the organizing team.
 ## Refund Eligibility
 
 Refund requests will be handled according to the following:
-- More than 14 days before the event: Eligible for full refund (excluding payment gateway charges, if applicable).
-- 7–14 days before the event: Eligible for 50% refund.
-- Less than 7 days before the event: No refund.
+- Within 24 hours after payment: Eligible for 100% refund (excluding payment gateway charges, if applicable).
+- After 1 day from payment: Eligible for 50% refund.
+- After 7 days from payment: No refund.
 
 ## Event Cancellation
 
