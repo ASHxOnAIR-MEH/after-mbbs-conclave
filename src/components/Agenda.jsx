@@ -25,36 +25,6 @@ const DAYS = [
         subtopics: ['Audience Questions', 'Expert Panel Discussion'] },
     ],
   },
-  {
-    label: 'Day 2', date: 'Sept 12',
-    theme: 'Technology & Global Visions',
-    color: '#059669',
-    sessions: [
-      { time:'6:00 PM', title:'AI in Healthcare: Is Your Job Safe?',
-        speaker:'AI & Healthcare Expert', type:'talk' },
-      { time:'6:50 PM', title:'MBBS Enough to Excel: Debunking the PG Myth',
-        speaker:'MBBS Success Panel', type:'panel' },
-      { time:'7:45 PM', title:'Sun Sets in Europe? Opportunities Across the EU',
-        speaker:'European Medicine Expert', type:'talk' },
-      { time:'8:40 PM', title:'Live Q&A — Day 2',
-        speaker:'All Day 2 Panellists', type:'qa' },
-    ],
-  },
-  {
-    label: 'Day 3', date: 'Sept 13',
-    theme: 'Innovation, Passion & Purpose',
-    color: '#34d399',
-    sessions: [
-      { time:'6:00 PM', title:'Doctors for Innovation & Entrepreneurship',
-        speaker:'Startup Physician Expert', type:'talk' },
-      { time:'6:55 PM', title:'Practice in Arab Countries: The GCC Deep-Dive',
-        speaker:'GCC Experienced Doctor', type:'talk' },
-      { time:'7:55 PM', title:'Finding Your Love: Discovering Your True Career',
-        speaker:'Career Guidance Expert', type:'keynote' },
-      { time:'8:50 PM', title:'Grand Closing Q&A & Networking',
-        speaker:'All Experts', type:'qa' },
-    ],
-  },
 ];
 
 const typeStyle = {
@@ -74,23 +44,13 @@ export default function Agenda() {
     <section id="agenda" className="section agenda-section">
       <div className="container">
         <div className="agenda-intro">
-          <p className="eyebrow">3-Day Programme</p>
+          <p className="eyebrow">Interactive Session</p>
           <h2 className="display-xl">Event <span className="text-emerald">Agenda</span></h2>
           <p className="sub">
-            Three power-packed evenings of learning, inspiration, and real connection.
+            A power-packed evening of learning, inspiration, and real connection.
           </p>
         </div>
 
-        <div className="agenda-tabs">
-          {DAYS.map((d, i) => (
-            <button key={d.label}
-              className={`ag-tab ${active === i ? 'active' : ''}`}
-              onClick={() => setActive(i)}>
-              <span className="ag-tab-day">{d.label}</span>
-              <span className="ag-tab-date">{d.date}</span>
-            </button>
-          ))}
-        </div>
 
         <div className="ag-day-header">
           <div className="ag-accent-bar" style={{ background: day.color }} />

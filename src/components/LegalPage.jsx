@@ -22,7 +22,6 @@ Your information may be used to:
 - Process event registrations
 - Verify attendee eligibility
 - Send event updates and reminders
-- Provide certificates and participation records
 - Improve event planning and participant experience
 - Communicate important event-related information
 

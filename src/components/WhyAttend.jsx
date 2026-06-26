@@ -1,7 +1,7 @@
 import React from 'react';
 import './WhyAttend.css';
 import {
-  Search, Mic, MessageSquare, Handshake, Compass, ScrollText
+  Search, Mic, MessageSquare, Handshake, Compass, Gift
 } from 'lucide-react';
 
 const reasons = [
@@ -31,9 +31,9 @@ const reasons = [
     desc: 'Walk away with a clear roadmap — not just inspiration, but actionable steps.',
   },
   {
-    Icon: ScrollText,
-    title: 'Receive Your Certificate',
-    desc: 'All participants receive an official certificate of participation from IMA.',
+    Icon: Gift,
+    title: 'Surprise Goodies & Gifts',
+    desc: 'All participants will receive surprise goodies and gifts as a token of appreciation.',
   },
 ];
 

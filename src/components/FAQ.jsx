@@ -8,8 +8,8 @@ const faqs = [
     a: 'MBBS students, medical interns, house surgeons, young doctors, and PG aspirants are all welcome. Whether you\'re in your first year or preparing for PG entrance, you\'ll find valuable insights.',
   },
   {
-    q: 'Is a certificate provided?',
-    a: 'Yes. All registered participants receive an official Certificate of Participation from IMA Parippally Branch, Kerala State.',
+    q: 'Are there any special benefits?',
+    a: 'Yes! All registered participants will receive Surprise Goodies & Gifts.',
   },
   {
     q: 'How do I access the Zoom sessions?',

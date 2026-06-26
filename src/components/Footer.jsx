@@ -42,7 +42,7 @@ export default function Footer({ setCurrentPage }) {
             </div>
             <div className="footer-details">
               {[
-                { Icon: Calendar, text: 'September 11, 12 & 13, 2026' },
+                { Icon: Calendar, text: 'September 11, 2026' },
                 { Icon: Clock, text: '6:00 PM – 9:00 PM IST' },
                 { Icon: Video, text: 'Live on Zoom' },
                 { Icon: CreditCard, text: 'Viewer ₹249 &bull; Interactive ₹449' },

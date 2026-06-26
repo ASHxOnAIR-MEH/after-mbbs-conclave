@@ -4,15 +4,15 @@ import Countdown from './Countdown';
 import Button from './Button';
 import {
   Users, MonitorPlay, MessageCircle, Globe, TrendingUp,
-  Calendar, ArrowRight, Video, Award, PlayCircle
+  Calendar, ArrowRight, Award
 } from 'lucide-react';
 
 const features = [
-  { Icon: Users, label: 'Expert\nSpeakers' },
-  { Icon: MonitorPlay, label: 'Interactive\nSessions' },
-  { Icon: MessageCircle, label: 'Live\nQ&A' },
-  { Icon: Globe, label: 'Networking\nOpportunities' },
-  { Icon: TrendingUp, label: 'Career\nGrowth' },
+  { Icon: Users, label: 'Expert Speakers' },
+  { Icon: MonitorPlay, label: 'Interactive Sessions' },
+  { Icon: MessageCircle, label: 'Live Q&A' },
+  { Icon: Globe, label: 'Networking' },
+  { Icon: TrendingUp, label: 'Career Growth' },
 ];
 
 export default function Hero() {
@@ -55,11 +55,11 @@ export default function Hero() {
             </Button>
           </div>
 
-          <div className="hero-features">
+          <div className="hero-features-card">
             {features.map(({ Icon, label }) => (
-              <div key={label} className="hero-feat">
-                <div className="hero-feat-icon"><Icon size={20} strokeWidth={2} /></div>
-                <span className="hero-feat-label">{label}</span>
+              <div key={label} className="hero-feat-item">
+                <Icon size={18} strokeWidth={2} className="feat-icon" />
+                <span className="feat-label">{label}</span>
               </div>
             ))}
           </div>
@@ -77,38 +77,30 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ─── PROGRAMME BAR ─── */}
-      <div className="hero-prog-bar">
-        <div className="hero-prog-inner container">
-          <div className="hero-prog-left">
-            <div className="hero-prog-label">3-DAY PROGRAMME</div>
-            <div className="hero-prog-meta">
-              <div className="hero-prog-chip"><Calendar size={14} /> <span>11–13 SEPT 2026</span></div>
-              <div className="hero-prog-chip"><Users size={14} /> <span>Doctors, PGs & Medical Professionals</span></div>
-              <div className="hero-prog-chip"><Video size={14} /> <span>Live on Zoom</span></div>
-            </div>
-          </div>
-          <div className="hero-prog-countdown">
-            <Countdown />
-          </div>
+      {/* ─── PREMIUM INFO CARDS ─── */}
+      <div className="hero-bottom-cards container">
+        <div className="info-card countdown-card">
+          <div className="info-card-title">Event Starts In</div>
+          <Countdown />
         </div>
-      </div>
-
-      {/* ─── STATS STRIP ─── */}
-      <div className="hero-stats">
-        <div className="hero-stats-inner container">
-          {[
-            { icon: <TrendingUp size={22} />, val: '11+', label: 'Career Paths' },
-            { icon: <Users size={22} />, val: '15+', label: 'Expert Speakers' },
-            { icon: <Calendar size={22} />, val: '3', label: 'Live Days' },
-            { icon: <PlayCircle size={22} />, val: 'Recorded Sessions', label: 'Available' },
-          ].map(s => (
-            <div key={s.label} className="hero-stat-item">
-              <span className="hero-stat-emoji">{s.icon}</span>
-              <span className="hero-stat-val">{s.val}</span>
-              <span className="hero-stat-label">{s.label}</span>
-            </div>
-          ))}
+        
+        <div className="info-card highlights-card">
+          <div className="hl-item">
+            <div className="hl-val">11+</div>
+            <div className="hl-label">Career Tracks</div>
+          </div>
+          <div className="hl-item">
+            <div className="hl-val">2</div>
+            <div className="hl-label">Expert Speakers</div>
+          </div>
+          <div className="hl-item">
+            <div className="hl-val">1</div>
+            <div className="hl-label">Interactive Session</div>
+          </div>
+          <div className="hl-item">
+            <div className="hl-val">Live</div>
+            <div className="hl-label">Q&A</div>
+          </div>
         </div>
       </div>
     </section>

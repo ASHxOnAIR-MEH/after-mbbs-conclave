@@ -8,19 +8,19 @@ const CheckIcon = () => (
 );
 
 const VIEWER_FEATS = [
-  'Full Webinar Access (3 Days)',
-  'Career Insights & Presentations',
-  'Recorded Session Replay',
-  'Certificate of Participation',
+  'Full Webinar Access',
+  'Career Guidance',
+  'Event Resources',
+  '🎁 Surprise Goodies & Gifts',
 ];
 
 const INTER_FEATS = [
   'Everything in Viewer Pass',
   'Ask Questions Live',
-  'Direct Interaction With Speakers',
-  'Networking Opportunity',
-  'Priority Q&A Access',
-  'Certificate of Participation',
+  'Direct Interaction with Speakers',
+  'Networking Opportunities',
+  'Priority Q&A',
+  '🎁 Surprise Goodies & Gifts',
 ];
 
 export default function Pricing() {
