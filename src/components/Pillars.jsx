@@ -30,22 +30,27 @@ export default function Pillars() {
         <div className="pillar-bg">
           <div className="pillar-bg-pattern grid-pattern" />
         </div>
-        <div className="pillar-content container">
-          <div className="pillar-tag">
-            <span className="pillar-num">A</span>
-            Global Perspectives
+        <div className="pillar-content-wrapper container">
+          <div className="pillar-content">
+            <div className="pillar-tag">
+              <span className="pillar-num">A</span>
+              Global Perspectives
+            </div>
+            <h2 className="pillar-h">
+              Hear from doctors<br />across the globe.
+            </h2>
+            <p className="pillar-p">
+              Expert physicians from every continent share first-hand experience of
+              building extraordinary careers &mdash; the real costs, real rewards, and real paths.
+            </p>
+            <div className="flag-chips">
+              {['India', 'GCC', 'UK', 'Germany', 'USA', '& more'].map(f => (
+                <span key={f} className="flag-chip">{f}</span>
+              ))}
+            </div>
           </div>
-          <h2 className="pillar-h">
-            Hear from doctors<br />across the globe.
-          </h2>
-          <p className="pillar-p">
-            Expert physicians from every continent share first-hand experience of
-            building extraordinary careers &mdash; the real costs, real rewards, and real paths.
-          </p>
-          <div className="flag-chips">
-            {['India', 'GCC', 'UK', 'Germany', 'USA', '& more'].map(f => (
-              <span key={f} className="flag-chip">{f}</span>
-            ))}
+          <div className="pillar-image-container">
+            <img src="/images/global-poster.png" alt="Global Connectivity" className="pillar-poster-landscape float-1" />
           </div>
         </div>
       </div>
@@ -55,37 +60,42 @@ export default function Pillars() {
         <div className="pillar-bg">
           <div className="pillar-bg-pattern dot-pattern" />
         </div>
-        <div className="pillar-content center container">
-          <div className="pillar-tag" style={{ margin: '0 auto 20px' }}>
-            <span className="pillar-num">B</span>
-            Diverse Career Paths
+        <div className="pillar-content-wrapper container reverse">
+          <div className="pillar-image-container">
+            <img src="/images/career-poster.png" alt="Career Path Thinking" className="pillar-poster-portrait float-2" />
           </div>
-          <h2 className="pillar-h">
-            Every path,<br />mapped out clearly.
-          </h2>
-          <p className="pillar-p">
-            From clinical practice to entrepreneurship &mdash; every option explored so you can
-            make the informed choice that fits <em>your</em> life.
-          </p>
-          <div className="career-grid">
-            {careers.map((c, i) => (
-              <div key={c.label} className="career-item float-1" style={{ animationDelay: `${i * 0.2}s` }}>
-                <button 
-                  className={`career-chip ${activePath === i ? 'active' : ''}`}
-                  onClick={() => setActivePath(activePath === i ? null : i)}
-                >
-                  <c.Icon size={16} strokeWidth={2} />
-                  <span>{c.label}</span>
-                  <ChevronDown size={16} className={`chevron ${activePath === i ? 'rotated' : ''}`} />
-                </button>
-                <div className={`career-drawer ${activePath === i ? 'open' : ''}`}>
-                  <div className="career-drawer-inner">
-                    <p><strong>What's happening here:</strong> [Small description of the field]</p>
-                    <p><strong>Who is taking the session:</strong> [Speaker Details]</p>
+          <div className="pillar-content">
+            <div className="pillar-tag" style={{ margin: '0 0 20px 0' }}>
+              <span className="pillar-num">B</span>
+              Diverse Career Paths
+            </div>
+            <h2 className="pillar-h">
+              Every path,<br />mapped out clearly.
+            </h2>
+            <p className="pillar-p">
+              From clinical practice to entrepreneurship &mdash; every option explored so you can
+              make the informed choice that fits <em>your</em> life.
+            </p>
+            <div className="career-grid">
+              {careers.map((c, i) => (
+                <div key={c.label} className="career-item float-1" style={{ animationDelay: `${i * 0.2}s` }}>
+                  <button 
+                    className={`career-chip ${activePath === i ? 'active' : ''}`}
+                    onClick={() => setActivePath(activePath === i ? null : i)}
+                  >
+                    <c.Icon size={16} strokeWidth={2} />
+                    <span>{c.label}</span>
+                    <ChevronDown size={16} className={`chevron ${activePath === i ? 'rotated' : ''}`} />
+                  </button>
+                  <div className={`career-drawer ${activePath === i ? 'open' : ''}`}>
+                    <div className="career-drawer-inner">
+                      <p><strong>What's happening here:</strong> [Small description of the field]</p>
+                      <p><strong>Who is taking the session:</strong> [Speaker Details]</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -95,7 +105,7 @@ export default function Pillars() {
         <div className="pillar-bg">
           <div className="pillar-bg-pattern grid-pattern" />
         </div>
-        <div className="pillar-content right container">
+        <div className="pillar-content standalone right container">
           <div className="pillar-tag">
             <span className="pillar-num">C</span>
             Live Q&amp;A
