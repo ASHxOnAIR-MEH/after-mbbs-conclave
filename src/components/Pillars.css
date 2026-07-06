@@ -288,6 +288,20 @@
   .qa-grid { grid-template-columns: 1fr; }
   .career-grid { 
     flex-direction: column; 
-    align-items: flex-start;
+    align-items: center;
+  }
+}
+
+@media (max-width: 960px) {
+  .center-mobile {
+    text-align: center;
+  }
+  .center-mobile .pillar-tag {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .center-mobile .pillar-p {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
