@@ -242,7 +242,27 @@
 .qa-item-icon { margin-bottom: 16px; display: flex; justify-content: center; }
 .qa-item-text { font-size: 0.9rem; font-weight: 600; color: var(--black-2); }
 
+.mobile-poster {
+  display: none;
+}
+
 @media (max-width: 960px) {
+  .desktop-poster {
+    display: none !important;
+  }
+  .mobile-poster {
+    display: block;
+    margin: 32px auto;
+    text-align: center;
+  }
+  .mobile-poster img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+    border: 1px solid var(--gray-light);
+  }
+  
   .pillar-content-wrapper {
     grid-template-columns: 1fr;
     gap: 40px;

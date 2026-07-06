@@ -61,7 +61,7 @@ export default function Pillars() {
           <div className="pillar-bg-pattern dot-pattern" />
         </div>
         <div className="pillar-content-wrapper container reverse">
-          <div className="pillar-image-container">
+          <div className="pillar-image-container desktop-poster">
             <img src="/images/career-poster.png" alt="Career Path Thinking" className="pillar-poster-portrait float-2" />
           </div>
           <div className="pillar-content">
@@ -76,6 +76,11 @@ export default function Pillars() {
               From clinical practice to entrepreneurship &mdash; every option explored so you can
               make the informed choice that fits <em>your</em> life.
             </p>
+
+            <div className="mobile-poster">
+              <img src="/images/career-poster.png" alt="Career Path Thinking" className="pillar-poster-portrait" />
+            </div>
+
             <div className="career-grid">
               {careers.map((c, i) => (
                 <div key={c.label} className="career-item float-1" style={{ animationDelay: `${i * 0.2}s` }}>
