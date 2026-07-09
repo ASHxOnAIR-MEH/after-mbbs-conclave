@@ -5,24 +5,34 @@ import { ChevronDown, User, Video } from 'lucide-react';
 const DAYS = [
   {
     label: 'Day 1', date: 'Sept 11',
-    theme: 'Foundations & New Horizons',
+    theme: 'Foundations & Clinical Paths',
     color: '#10b981',
     sessions: [
-      { time:'6:00 PM', title:'Grand Inauguration Ceremony',
-        speaker:'Dr. M.N. Menon, President IMA Kerala', type:'ceremony',
-        subtopics: ['Welcome Note', 'Lighting the Lamp', 'Keynote Address'] },
-      { time:'6:30 PM', title:'Hospital Administration: A Doctor\'s Role in Management',
-        speaker:'Hospital Admin Expert talk', type:'talk',
-        subtopics: ['The Business of Healthcare', 'Quality Control & NABH', 'Leadership Skills'] },
-      { time:'7:30 PM', title:'Life After PG: What\'s Next?',
-        speaker:'MD / MS Specialist talk', type:'talk',
-        subtopics: ['Fellowships & Super Specialty', 'Private Practice Setup', 'Corporate Hospitals'] },
-      { time:'8:15 PM', title:'Pharma & Medical Affairs: The Unseen Career',
-        speaker:'Pharma Industry Expert talk', type:'talk',
-        subtopics: ['Medical Advisor Roles', 'Clinical Trials', 'Pharmacovigilance'] },
-      { time:'8:50 PM', title:'Live Q&A',
-        speaker:'All Day 1 Panellists', type:'qa',
-        subtopics: ['Audience Questions', 'Expert Panel Discussion'] },
+      { time:'6:00 PM', title:'Inauguration Ceremony', type:'ceremony' },
+      { time:'6:10 PM', title:'Clinical Practise : Is MBBS enough to excell?', type:'talk' },
+      { time:'7:00 PM', title:'MD/MS : Exploring hidden careers', type:'talk' },
+      { time:'8:00 PM', title:'DNB & 6 year M.Ch courses', type:'talk' },
+    ],
+  },
+  {
+    label: 'Day 2', date: 'Sept 12',
+    theme: 'Global Opportunities',
+    color: '#059669',
+    sessions: [
+      { time:'6:00 PM', title:'GCC Careers : Practical approach', type:'talk' },
+      { time:'7:00 PM', title:'Europe : Saturation v/s opportunities', type:'talk' },
+      { time:'8:00 PM', title:'USA : How to pursue USA dreams?', type:'talk' },
+    ],
+  },
+  {
+    label: 'Day 3', date: 'Sept 13',
+    theme: 'Beyond Clinical Practice',
+    color: '#34d399',
+    sessions: [
+      { time:'6:00 PM', title:'Hospital Administration: Role of a doctor?', type:'talk' },
+      { time:'7:00 PM', title:'Healthcare Entrepreneurship: Beyond Money', type:'talk' },
+      { time:'8:00 PM', title:'Medical Research: Creating future', type:'talk' },
+      { time:'8:30 PM', title:'Finding Your Passion : Chase your unique pathway', type:'keynote' },
     ],
   },
 ];
@@ -44,13 +54,23 @@ export default function Agenda() {
     <section id="agenda" className="section agenda-section">
       <div className="container">
         <div className="agenda-intro">
-          <p className="eyebrow">Interactive Session</p>
+          <p className="eyebrow">3-Day Programme</p>
           <h2 className="display-xl">Event <span className="text-emerald">Agenda</span></h2>
           <p className="sub">
-            A power-packed evening of learning, inspiration, and real connection.
+            Three power-packed evenings of learning, inspiration, and real connection.
           </p>
         </div>
 
+        <div className="agenda-tabs">
+          {DAYS.map((d, i) => (
+            <button key={d.label}
+              className={`ag-tab ${active === i ? 'active' : ''}`}
+              onClick={() => setActive(i)}>
+              <span className="ag-tab-day">{d.label}</span>
+              <span className="ag-tab-date">{d.date}</span>
+            </button>
+          ))}
+        </div>
 
         <div className="ag-day-header">
           <div className="ag-accent-bar" style={{ background: day.color }} />
@@ -100,23 +120,9 @@ export default function Agenda() {
                       
                       <div className={`tl-drawer ${isExpanded ? 'open' : ''}`}>
                         <div className="tl-drawer-content" style={{marginTop: '16px', paddingTop: '16px', borderTop: '1px solid var(--gray-light)'}}>
-                          {active === 0 ? (
-                            <>
-                              <div className="tl-speaker" style={{color: 'var(--emerald-dark)', fontWeight: 600, marginBottom: '8px'}}>
-                                <User size={14} strokeWidth={2} style={{marginRight: '6px', verticalAlign: 'middle'}} />
-                                {s.speaker}
-                              </div>
-                              <ul className="tl-subtopics" style={{listStyleType: 'disc', paddingLeft: '20px', color: 'var(--gray-dark)', fontSize: '0.9rem'}}>
-                                {s.subtopics && s.subtopics.map((sub, idx) => (
-                                  <li key={idx} style={{marginBottom: '4px'}}>{sub}</li>
-                                ))}
-                              </ul>
-                            </>
-                          ) : (
-                            <p style={{color: 'var(--gray-dark)', fontSize: '0.9rem', fontStyle: 'italic'}}>
-                              Session details and speaker info will be updated here soon.
-                            </p>
-                          )}
+                          <p style={{color: 'var(--gray-dark)', fontSize: '0.9rem', fontStyle: 'italic'}}>
+                            Speaker details will be updated here soon.
+                          </p>
                         </div>
                       </div>
                     </div>

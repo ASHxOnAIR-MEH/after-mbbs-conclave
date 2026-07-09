@@ -7,16 +7,86 @@ import {
 } from 'lucide-react';
 
 const careers = [
-  { label: 'Clinical Practice', Icon: Stethoscope },
-  { label: 'MD / MS', Icon: GraduationCap },
-  { label: 'DNB', Icon: GraduationCap },
-  { label: 'GCC Careers', Icon: Globe },
-  { label: 'Europe', Icon: Globe },
-  { label: 'USA', Icon: Globe },
-  { label: 'Hospital Admin', Icon: Building2 },
-  { label: 'Healthcare Entrepreneurship', Icon: Rocket },
-  { label: 'Medical Research', Icon: Microscope },
-  { label: 'Finding Your Passion', Icon: Heart },
+  { 
+    label: 'Clinical Practice', Icon: Stethoscope,
+    points: [
+      'What a practice after MBBS worthy', 
+      'How to create your own career after MBBS', 
+      'Social Media optimization'
+    ]
+  },
+  { 
+    label: 'MD / MS', Icon: GraduationCap,
+    points: [
+      'How to choose your dream career', 
+      'Hidden possibilities after specialization', 
+      'Plan for settle early in life'
+    ]
+  },
+  { 
+    label: 'DNB', Icon: GraduationCap,
+    points: [
+      'How to choose a DNB courses', 
+      'Approach to 6 year M.Ch courses', 
+      'Career after DNB'
+    ]
+  },
+  { 
+    label: 'GCC Careers', Icon: Globe,
+    points: [
+      'Pathway to GCC countries', 
+      'Possibilities in GCC countries', 
+      'Challenges in GCC countries'
+    ]
+  },
+  { 
+    label: 'Europe', Icon: Globe,
+    points: [
+      'Plan Europe in MBBS itself', 
+      'Pathway to Europe', 
+      'Which european country to choose'
+    ]
+  },
+  { 
+    label: 'USA', Icon: Globe,
+    points: [
+      'How to approach USMLE', 
+      'Challenges in USA migration', 
+      'Career after USA migration'
+    ]
+  },
+  { 
+    label: 'Hospital Admin', Icon: Building2,
+    points: [
+      'How to choose your career in administration', 
+      'Is your degree enough to excell', 
+      'Top unexplored opportunities'
+    ]
+  },
+  { 
+    label: 'Healthcare Entrepreneurship', Icon: Rocket,
+    points: [
+      'When to start your entrepreneurship', 
+      'How to find your niche', 
+      'Basic skills for excellence'
+    ]
+  },
+  { 
+    label: 'Medical Research', Icon: Microscope,
+    points: [
+      'How to start your research career', 
+      'Best countries for research career', 
+      'Converting research into financial goals'
+    ]
+  },
+  { 
+    label: 'Finding Your Passion', Icon: Heart,
+    points: [
+      'How to shape your career', 
+      'How to avoid the regret later', 
+      'Best resources for career support'
+    ]
+  },
 ];
 
 export default function Pillars() {
@@ -94,8 +164,13 @@ export default function Pillars() {
                   </button>
                   <div className={`career-drawer ${activePath === i ? 'open' : ''}`}>
                     <div className="career-drawer-inner">
-                      <p><strong>What's happening here:</strong> [Small description of the field]</p>
-                      <p><strong>Who is taking the session:</strong> [Speaker Details]</p>
+                      <ul style={{ listStyleType: 'none', paddingLeft: '4px', margin: 0 }}>
+                        {c.points.map((p, idx) => (
+                          <li key={idx} style={{ marginBottom: '8px', lineHeight: 1.4, position: 'relative', paddingLeft: '16px' }}>
+                            <span style={{ position: 'absolute', left: 0, color: 'var(--emerald)' }}>•</span> {p}
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
