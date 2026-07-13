@@ -125,13 +125,15 @@
 }
 .mobile-nav-link {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: clamp(1.8rem, 8vw, 2.2rem);
   font-weight: 600;
   color: var(--black-1);
   text-decoration: none;
-  padding: 12px 0;
+  padding: 16px 0;
   letter-spacing: -0.02em;
   transition: color 0.2s;
+  width: 100%;
+  text-align: center;
 }
 .mobile-nav-link:hover { color: var(--emerald); }
 .mobile-close {
@@ -139,13 +141,13 @@
   top: 16px; right: 24px;
   background: none; border: none;
   color: var(--black-1);
-  font-size: 1.8rem;
+  font-size: 2rem;
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .nav-links { display: none; }
   .nav-cta   { display: none; }
-  .hamburger { display: flex; }
+  .hamburger { display: flex; padding: 12px; margin-right: -12px; }
 }

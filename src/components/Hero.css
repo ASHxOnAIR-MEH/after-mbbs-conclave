@@ -91,9 +91,10 @@
 
 /* Desc */
 .hero-desc {
-  font-size: 0.95rem; line-height: 1.7;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  line-height: 1.7;
   color: var(--gray-dark);
-  max-width: 500px;
+  max-width: 100%; /* Removing fixed max-width 500px on mobile */
   margin-bottom: 24px;
 }
 .hero-desc u { text-decoration-color: #10b981; text-underline-offset: 3px; }
@@ -251,30 +252,33 @@
 }
 
 /* ────── RESPONSIVE — Mobile ────── */
-@media (max-width: 600px) {
-  .hero-main { padding-top: 78px; gap: 28px; }
+@media (max-width: 768px) {
+  .hero-main { padding-top: 96px; gap: 40px; }
   .hero-left { align-items: center; text-align: center; }
 
-  .hero-presents { padding: 10px 14px; align-items: center; text-align: center; margin-bottom: 24px; }
-  .hero-presents-org { font-size: 0.58rem; }
-  .hero-presents-event { font-size: 0.58rem; }
+  .hero-presents { padding: 14px 20px; align-items: center; text-align: center; margin-bottom: 28px; width: 100%; max-width: 100%; }
+  .hero-presents-org { font-size: clamp(0.65rem, 2vw, 0.75rem); }
+  .hero-presents-event { font-size: clamp(0.65rem, 2vw, 0.75rem); }
 
-  .hero-title { font-size: 2.2rem; }
-  .hero-subtitle { font-size: 1.2rem; }
-  .hero-desc { font-size: 0.9rem; margin-bottom: 32px; }
+  .hero-title { font-size: clamp(2.4rem, 8vw, 3.2rem); }
+  .hero-subtitle { font-size: clamp(1.4rem, 5vw, 1.8rem); margin-top: 8px; }
+  .hero-desc { font-size: clamp(1rem, 3.5vw, 1.15rem); margin-bottom: 40px; max-width: 100%; padding: 0 12px; }
 
-  .hero-cta-row { flex-direction: column; width: 100%; margin-bottom: 36px; gap: 16px; }
-  .hero-cta-row .btn { width: 100%; justify-content: center; }
+  .hero-cta-row { flex-direction: column; width: 100%; margin-bottom: 48px; gap: 16px; padding: 0 12px; }
+  .hero-cta-row .btn { width: 100%; justify-content: center; min-height: 54px; font-size: 1.1rem; }
 
-  .hero-features-card { justify-content: center; padding: 16px; gap: 16px; margin-bottom: 12px; }
-  .hero-feat-item { flex-direction: column; gap: 4px; }
-  .hero-feat-item .feat-label { font-size: 0.7rem; }
+  .hero-features-card { justify-content: center; padding: 20px; gap: 16px; margin-bottom: 20px; width: 100%; }
+  .hero-feat-item { flex-direction: row; gap: 8px; padding: 8px; }
+  .hero-feat-item .feat-label { font-size: clamp(0.75rem, 3vw, 0.9rem); }
 
-  .hero-bottom-cards { gap: 20px; padding-bottom: 32px; }
-  .info-card { padding: 20px 24px; }
+  .hero-bottom-cards { gap: 24px; padding-bottom: 40px; }
+  .info-card { padding: 24px; flex-direction: column; text-align: center; gap: 20px; }
   
-  .highlights-card { flex-wrap: wrap; gap: 20px; justify-content: center; }
-  .hl-item { width: 40%; }
-  .hl-val { font-size: 1.8rem; }
-  .hl-label { font-size: 0.65rem; }
+  .countdown-card .countdown-wrap { flex-wrap: wrap; justify-content: center; gap: 16px; }
+  .countdown-card .cd-item { width: 50px; }
+  
+  .highlights-card { flex-wrap: wrap; gap: 24px; justify-content: center; }
+  .hl-item { width: 42%; }
+  .hl-val { font-size: clamp(2rem, 7vw, 2.5rem); }
+  .hl-label { font-size: clamp(0.7rem, 2.5vw, 0.8rem); }
 }
