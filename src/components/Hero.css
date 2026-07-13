@@ -231,7 +231,7 @@
 }
 
 /* ────── RESPONSIVE — Tablet ────── */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .hero-main {
     grid-template-columns: 1fr;
     padding-top: 88px; gap: 32px;
