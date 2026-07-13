@@ -292,16 +292,17 @@
   }
 }
 
-@media (max-width: 960px) {
-  .center-mobile {
-    text-align: center;
-  }
-  .center-mobile .pillar-tag {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .center-mobile .pillar-p {
-    margin-left: auto;
-    margin-right: auto;
-  }
+.center-content {
+  text-align: center;
+}
+.center-content .pillar-tag {
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-content .pillar-p {
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-content .career-grid {
+  justify-content: center;
 }

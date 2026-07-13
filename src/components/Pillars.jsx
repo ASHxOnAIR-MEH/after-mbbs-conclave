@@ -134,7 +134,7 @@ export default function Pillars() {
           <div className="pillar-image-container desktop-poster">
             <img src="/images/career-poster.png" alt="Career Path Thinking" className="pillar-poster-portrait float-2" />
           </div>
-          <div className="pillar-content center-mobile">
+          <div className="pillar-content center-content">
             <div className="pillar-tag">
               <span className="pillar-num">B</span>
               Diverse Career Paths
