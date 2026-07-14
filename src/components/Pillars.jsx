@@ -126,35 +126,42 @@ export default function Pillars() {
       </div>
 
       {/* ── B: Career Paths ── */}
-      <div className="pillar-block" style={{ background: 'var(--gray-bg)' }}>
+      <div className="pillar-block pillar-block-b">
         <div className="pillar-bg">
-          <div className="pillar-bg-pattern dot-pattern" />
+          <div className="pillar-bg-pattern career-bg-pattern" />
         </div>
-        <div className="pillar-content-wrapper container reverse">
-          <div className="pillar-image-container desktop-poster">
-            <img src="/images/career-poster.png" alt="Career Path Thinking" className="pillar-poster-portrait float-2" />
-          </div>
-          <div className="pillar-content center-content">
-            <div className="pillar-tag">
-              <span className="pillar-num">B</span>
-              Diverse Career Paths
-            </div>
-            <h2 className="pillar-h">
-              Every path,<br />mapped out clearly.
-            </h2>
-            <p className="pillar-p">
-              From clinical practice to entrepreneurship &mdash; every option explored so you can
-              make the informed choice that fits <em>your</em> life.
-            </p>
+        <div className="container">
+          <div className="pillar-b-inner">
 
-            <div className="mobile-poster">
-              <img src="/images/career-poster.png" alt="Career Path Thinking" className="pillar-poster-portrait" />
+            {/* Header — fully centred */}
+            <div className="pillar-b-header">
+              <div className="pillar-tag">
+                <span className="pillar-num">B</span>
+                Diverse Career Paths
+              </div>
+              <h2 className="pillar-h">
+                Every path,<br />mapped out clearly.
+              </h2>
+              <p className="pillar-p pillar-p-center">
+                From clinical practice to entrepreneurship &mdash; every option explored so you can
+                make the informed choice that fits <em>your</em> life.
+              </p>
             </div>
 
-            <div className="career-grid">
+            {/* Career poster image — centred */}
+            <div className="pillar-b-image">
+              <img
+                src="/images/career-poster.png"
+                alt="Career Path Thinking"
+                className="pillar-poster-portrait float-2"
+              />
+            </div>
+
+            {/* Career chips grid — centred */}
+            <div className="career-grid career-grid-center">
               {careers.map((c, i) => (
-                <div key={c.label} className="career-item float-1" style={{ animationDelay: `${i * 0.2}s` }}>
-                  <button 
+                <div key={c.label} className="career-item" style={{ animationDelay: `${i * 0.2}s` }}>
+                  <button
                     className={`career-chip ${activePath === i ? 'active' : ''}`}
                     onClick={() => setActivePath(activePath === i ? null : i)}
                   >
@@ -176,6 +183,7 @@ export default function Pillars() {
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </div>
