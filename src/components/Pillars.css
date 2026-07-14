@@ -267,6 +267,20 @@
     grid-template-columns: 1fr;
     gap: 40px;
     padding: 60px 24px;
+    text-align: center;
+  }
+  .pillar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .pillar-p, .pillar-tag {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .flag-chips {
+    justify-content: center;
   }
   .pillar-content-wrapper.reverse .pillar-image-container {
     order: 2;
