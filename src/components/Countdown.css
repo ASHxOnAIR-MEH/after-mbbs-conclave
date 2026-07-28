@@ -49,7 +49,7 @@
 @media (max-width: 480px) {
   .countdown-wrap {
     gap: 8px;
-    padding: 16px;
+    padding: 12px;
     max-width: 320px;
   }
   .cd-value { font-size: 1.8rem; }

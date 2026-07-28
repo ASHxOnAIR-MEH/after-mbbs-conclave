@@ -279,9 +279,10 @@
   }
   
   @media (max-width: 768px) {
-    .section { padding: 80px 20px; }
+    .section { padding: 80px 16px; }
   }
   @media (max-width: 480px) {
-    .section { padding: 60px 16px; }
-    .display-xl { font-size: 2.8rem; }
+    .section { padding: 56px 14px; }
+    .display-xl { font-size: clamp(2.2rem, 10vw, 2.8rem); }
+    .btn-lg { padding: 14px 20px; font-size: 0.95rem; }
   }

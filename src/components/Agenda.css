@@ -193,7 +193,48 @@
 
 @media (max-width: 600px) {
   .agenda-tabs { max-width: 100%; }
-  .tl-item { grid-template-columns: 70px 16px 1fr; }
-  .tl-time { font-size: 0.75rem; }
+  .agenda-intro { margin-bottom: 40px; }
+  .agenda-tabs { margin-bottom: 36px; }
+  
+  .ag-day-header {
+    align-items: flex-start;
+    gap: 12px;
+    padding-bottom: 22px;
+    margin-bottom: 24px;
+  }
+  .ag-day-title { font-size: 1.25rem; line-height: 1.2; }
+  .ag-day-meta { font-size: 0.78rem; line-height: 1.45; }
+  
+  .tl-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 16px;
+  }
+  .tl-time {
+    text-align: left;
+    padding-top: 0;
+    font-size: 0.8rem;
+    color: var(--emerald-dark);
+    margin-bottom: 4px;
+  }
+  .tl-track {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 12px;
+    bottom: 0;
+    height: auto;
+  }
+  .tl-dot { width: 10px; height: 10px; margin-top: 0; box-shadow: 0 0 0 2px var(--white); }
+  .tl-line { min-height: 100%; width: 2px; }
+  
+  .tl-card {
+    margin-bottom: 0;
+    width: 100%;
+  }
+  .tl-card:hover { transform: none; }
+  
   .ag-info-bar { flex-direction: column; text-align: center; padding: 20px; }
 }

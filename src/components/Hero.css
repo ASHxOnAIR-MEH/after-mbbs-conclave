@@ -253,32 +253,64 @@
 
 /* ────── RESPONSIVE — Mobile ────── */
 @media (max-width: 768px) {
-  .hero-main { padding-top: 96px; gap: 40px; }
+  .hero-main { padding: 72px 16px 16px; gap: 24px; }
   .hero-left { align-items: center; text-align: center; }
 
-  .hero-presents { padding: 14px 20px; align-items: center; text-align: center; margin-bottom: 28px; width: 100%; max-width: 100%; }
-  .hero-presents-org { font-size: clamp(0.65rem, 2vw, 0.75rem); }
-  .hero-presents-event { font-size: clamp(0.65rem, 2vw, 0.75rem); }
+  .hero-presents { padding: 10px 14px; align-items: center; text-align: center; margin-bottom: 20px; width: 100%; max-width: 100%; }
+  .hero-presents-org { font-size: 0.6rem; letter-spacing: 0.05em; }
+  .hero-presents-event { font-size: 0.6rem; letter-spacing: 0.05em; }
+  .hero-presents-mid { font-size: 0.7rem; }
 
-  .hero-title { font-size: clamp(2.4rem, 8vw, 3.2rem); }
-  .hero-subtitle { font-size: clamp(1.4rem, 5vw, 1.8rem); margin-top: 8px; }
-  .hero-desc { font-size: clamp(1rem, 3.5vw, 1.15rem); margin-bottom: 40px; max-width: 100%; padding: 0 12px; }
+  .hero-title { font-size: clamp(2.2rem, 9vw, 3rem); line-height: 1.05; }
+  .hero-subtitle { font-size: clamp(1.2rem, 5vw, 1.6rem); margin-top: 8px; }
+  .hero-desc { font-size: clamp(0.95rem, 4vw, 1rem); margin-bottom: 28px; max-width: 100%; padding: 0; line-height: 1.6; }
 
-  .hero-cta-row { flex-direction: column; width: 100%; margin-bottom: 48px; gap: 16px; padding: 0 12px; }
-  .hero-cta-row .btn { width: 100%; justify-content: center; min-height: 54px; font-size: 1.1rem; }
+  .hero-cta-row { flex-direction: column; width: 100%; max-width: 360px; margin: 0 auto 32px auto; gap: 12px; padding: 0; }
+  .hero-cta-row .btn { width: 100%; justify-content: center; min-height: 50px; font-size: 1rem; padding-left: 16px; padding-right: 16px; white-space: normal; }
 
-  .hero-features-card { justify-content: center; padding: 20px; gap: 16px; margin-bottom: 20px; width: 100%; }
-  .hero-feat-item { flex-direction: row; gap: 8px; padding: 8px; }
-  .hero-feat-item .feat-label { font-size: clamp(0.75rem, 3vw, 0.9rem); }
+  .hero-features-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+    padding: 14px;
+    gap: 10px;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  .hero-feat-item { flex-direction: row; gap: 6px; padding: 6px; min-width: 0; justify-content: flex-start; }
+  .hero-feat-item .feat-label { font-size: 0.75rem; white-space: normal; line-height: 1.2; text-align: left; }
 
-  .hero-bottom-cards { gap: 24px; padding-bottom: 40px; }
-  .info-card { padding: 24px; flex-direction: column; text-align: center; gap: 20px; }
+  .hero-right { display: none; }
   
-  .countdown-card .countdown-wrap { flex-wrap: wrap; justify-content: center; gap: 16px; }
-  .countdown-card .cd-item { width: 50px; }
+  .hero-bottom-cards { gap: 16px; padding: 0 16px 32px; }
+  .info-card { padding: 16px; flex-direction: column; text-align: center; gap: 14px; border-radius: 14px; min-width: 0; }
   
-  .highlights-card { flex-wrap: wrap; gap: 24px; justify-content: center; }
-  .hl-item { width: 42%; }
-  .hl-val { font-size: clamp(2rem, 7vw, 2.5rem); }
-  .hl-label { font-size: clamp(0.7rem, 2.5vw, 0.8rem); }
+  .countdown-card .countdown-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+    gap: 8px;
+    justify-content: stretch;
+  }
+  .countdown-card .cd-sep { display: none; }
+  .countdown-card .cd-item { width: auto; min-width: 0; }
+  .countdown-card .cd-value { font-size: clamp(1.2rem, 6vw, 1.6rem); }
+  
+  .highlights-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 12px;
+    justify-content: stretch;
+  }
+  .hl-item { width: auto; min-width: 0; }
+  .hl-val { font-size: clamp(1.6rem, 6vw, 2rem); }
+  .hl-label { font-size: 0.65rem; line-height: 1.2; }
+}
+
+@media (max-width: 380px) {
+  .hero-main { padding-left: 12px; padding-right: 12px; }
+  .hero-features-card { grid-template-columns: 1fr; }
+  .hero-feat-item { justify-content: center; text-align: center; }
+  .hero-feat-item .feat-label { text-align: center; }
+  .hero-title { font-size: 1.9rem; }
 }

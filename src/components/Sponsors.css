@@ -1,142 +1,92 @@
 .sponsors-section {
   background: transparent !important;
-  padding-bottom: 100px;
+  padding-bottom: 80px;
+  overflow: hidden; /* Crucial for marquee */
 }
+
 .sponsors-intro {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 56px;
 }
 
-.sponsors-hierarchy {
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
+/* ── Marquee Container ── */
+.marquee-container {
+  width: 100vw;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  /* Add subtle fade effect on edges */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-/* ── Tier wrapper ── */
-.sponsor-tier {
+/* ── Marquee Track ── */
+.marquee-track {
   display: flex;
-  flex-direction: column;
+  width: fit-content;
+  gap: 48px;
+  padding-left: 24px;
+  /* Animate from 0 to -50% because the track is exactly double the list */
+  animation: marquee-scroll 25s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Marquee Items ── */
+.marquee-item {
+  display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--gray-light);
+  border-radius: var(--r-xl);
+  padding: 16px 28px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.02);
 }
 
-/* ── Labels ── */
-.tier-pill-title {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: #eaf3de;
-  color: #173404;
-  padding: 5px 16px;
-  border-radius: 980px;
-  margin-bottom: 4px;
-}
-.tier-label-assoc {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #5f5e5a;
-}
-.tier-label-co {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #9ca3af;
+.marquee-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--emerald);
+  box-shadow: 0 8px 24px rgba(16,185,129,0.1);
 }
 
-/* ── Base sponsor card ── */
-.sponsor-card {
+.sponsor-icon-wrap {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  border-radius: 16px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(8px);
-}
-.sponsor-card:hover {
-  transform: translateY(-4px);
+  color: var(--emerald-dark);
 }
 
-/* ── Title card — large, prominent ── */
-.title-card {
-  width: 100%;
-  max-width: 560px;
-  height: 220px;
-  border: 1.5px dashed #10b981;
-  background: rgba(225,245,238,0.18);
-  box-shadow: 0 4px 24px rgba(16,185,129,0.08);
-}
-.title-card:hover {
-  box-shadow: 0 8px 32px rgba(16,185,129,0.15);
-  border-color: #0ea572;
+.sponsor-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--black-2);
+  white-space: nowrap;
 }
 
-/* ── Associate grid ── */
-.assoc-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  width: 100%;
-  max-width: 720px;
-}
-.assoc-card {
-  height: 130px;
-  border: 1.5px dashed rgba(16,185,129,0.5);
-  background: rgba(240,253,248,0.3);
-}
-.assoc-card:hover {
-  border-color: rgba(16,185,129,0.8);
-}
-
-/* ── Co-powered grid ── */
-.co-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-  width: 100%;
-  max-width: 680px;
-}
-.co-card {
-  height: 80px;
-  border: 1px dashed #d1d5db;
-  background: rgba(255,255,255,0.4);
-}
-.co-card:hover {
-  border-color: #9ca3af;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-}
-
-/* ── Captions ── */
-.sponsor-caption {
-  font-size: 0.85rem;
-  font-style: italic;
-  color: #6b7280;
-  margin: 0;
-  text-align: center;
-}
-.sponsor-caption-sm {
-  font-size: 0.75rem;
-  font-style: italic;
-  color: #9ca3af;
-  margin: 0;
-  text-align: center;
+/* ── Keyframes ── */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  .assoc-grid { grid-template-columns: 1fr 1fr; max-width: 480px; }
-  .co-grid { grid-template-columns: repeat(2, 1fr); max-width: 340px; }
-  .title-card { height: 170px; }
-}
-@media (max-width: 480px) {
-  .assoc-grid { grid-template-columns: 1fr; max-width: 280px; }
-  .co-grid { grid-template-columns: repeat(2, 1fr); max-width: 280px; }
+  .marquee-item {
+    padding: 12px 20px;
+    gap: 12px;
+  }
+  .sponsor-name {
+    font-size: 1rem;
+  }
+  .marquee-track {
+    gap: 24px;
+  }
 }

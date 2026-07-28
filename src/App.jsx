@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhyAttend from './components/WhyAttend';
 import Pillars from './components/Pillars';
+import Sponsors from './components/Sponsors';
 import Speakers from './components/Speakers';
 import Agenda from './components/Agenda';
 import Pricing from './components/Pricing';
@@ -23,6 +24,7 @@ function App() {
         <>
           <Hero />
           <WhyAttend />
+          <Sponsors />
           <Pillars />
           <Speakers />
           <Agenda />

@@ -1,76 +1,63 @@
 import React from 'react';
 import './Sponsors.css';
 
-/* Inline SVG icons */
-const IconUpload = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="1.7">
-    <polyline points="16 16 12 12 8 16"/>
-    <line x1="12" y1="12" x2="12" y2="21"/>
-    <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
+/* Mock Icons for Sponsors */
+const IconMedical = () => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
   </svg>
 );
-const IconPhoto = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6ec4a0" strokeWidth="1.7">
-    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-    <circle cx="8.5" cy="8.5" r="1.5"/>
-    <polyline points="21 15 16 10 5 21"/>
+const IconShield = () => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
   </svg>
 );
 const IconBuilding = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b9bdc4" strokeWidth="1.7">
-    <rect x="2" y="3" width="20" height="18"/>
-    <path d="M8 21V8M16 21V8M2 12h20"/>
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
+    <path d="M9 22v-4h6v4"/>
+    <path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M16 10h.01M8 10h.01M8 14h.01M12 14h.01M16 14h.01"/>
   </svg>
 );
+const IconGlobe = () => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    <path d="M2 12h20"/>
+  </svg>
+);
+
+const sponsorList = [
+  { id: 1, name: 'MedTech Solutions', Icon: IconMedical },
+  { id: 2, name: 'Global Health Inc.', Icon: IconGlobe },
+  { id: 3, name: 'CareShield Providers', Icon: IconShield },
+  { id: 4, name: 'City Hospital Group', Icon: IconBuilding },
+  { id: 5, name: 'BioLife Research', Icon: IconMedical },
+  { id: 6, name: 'Apex Medical', Icon: IconShield },
+];
 
 export default function Sponsors() {
   return (
     <section id="sponsors" className="section sponsors-section">
-      <div className="container">
-        <div className="sponsors-intro">
-          <p className="eyebrow">Our Partners</p>
-          <h2 className="display-xl">Event <span className="text-emerald">Sponsors</span></h2>
-          <p className="sub">
-            Proudly supported by the leaders in healthcare and education.
-          </p>
-        </div>
+      <div className="sponsors-intro container">
+        <p className="eyebrow">Supported By</p>
+        <h2 className="display-xl">Our <span className="text-emerald">Partners</span></h2>
+        <p className="sub">
+          Proudly backed by the world's leading healthcare organizations and institutions.
+        </p>
+      </div>
 
-        <div className="sponsors-hierarchy">
-
-          {/* ── Title Sponsor ── */}
-          <div className="sponsor-tier">
-            <div className="tier-pill tier-pill-title">Title Sponsor</div>
-            <div className="sponsor-card title-card">
-              <IconUpload />
-              <p className="sponsor-caption">Logo coming soon</p>
+      <div className="marquee-container">
+        {/* We duplicate the list to ensure a seamless infinite scroll loop */}
+        <div className="marquee-track">
+          {[...sponsorList, ...sponsorList].map((sponsor, index) => (
+            <div key={`${sponsor.id}-${index}`} className="marquee-item">
+              <div className="sponsor-icon-wrap">
+                <sponsor.Icon />
+              </div>
+              <span className="sponsor-name">{sponsor.name}</span>
             </div>
-          </div>
-
-          {/* ── Associate Sponsors ── */}
-          <div className="sponsor-tier">
-            <div className="tier-label-assoc">Associate Sponsors</div>
-            <div className="sponsors-grid assoc-grid">
-              {[1,2,3].map(n => (
-                <div key={n} className="sponsor-card assoc-card">
-                  <IconPhoto />
-                  <p className="sponsor-caption-sm">Logo soon</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Co-Powered By ── */}
-          <div className="sponsor-tier">
-            <div className="tier-label-co">Co-Powered By</div>
-            <div className="sponsors-grid co-grid">
-              {[1,2,3,4].map(n => (
-                <div key={n} className="sponsor-card co-card">
-                  <IconBuilding />
-                </div>
-              ))}
-            </div>
-          </div>
-
+          ))}
         </div>
       </div>
     </section>

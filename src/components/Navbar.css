@@ -147,7 +147,41 @@
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+    padding: 0 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: saturate(180%) blur(16px);
+    -webkit-backdrop-filter: saturate(180%) blur(16px);
+  }
+  .nav-inner { gap: 12px; }
+  .nav-logo { min-width: 0; gap: 8px; flex: 1; }
+  .nav-logo-img { height: 32px; flex-shrink: 0; }
+  .nav-logo-text { min-width: 0; flex: 1; }
+  .nav-logo-name {
+    font-size: 0.9rem !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .nav-logo-sub { display: none; }
+  
   .nav-links { display: none; }
-  .nav-cta   { display: none; }
-  .hamburger { display: flex; padding: 12px; margin-right: -12px; }
+  .nav-cta { display: none; }
+  
+  .hamburger { 
+    display: flex; 
+    padding: 10px; 
+    margin-left: auto;
+  }
+  
+  .mobile-menu {
+    padding: 80px 24px 40px;
+    justify-content: flex-start;
+    overflow-y: auto;
+  }
+  .mobile-nav-link {
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+    padding: 14px 0;
+  }
 }
