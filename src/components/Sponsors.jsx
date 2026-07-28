@@ -65,6 +65,40 @@ export default function Sponsors() {
           </div>
         </div>
         
+        {/* ── Platinum Sponsors ── */}
+        <div className="sponsor-tier">
+          <div className="tier-pill-platinum">Platinum Sponsors</div>
+          <div className="sponsor-grid platinum-grid">
+            <div className="sponsor-card platinum-card">
+              <div className="platinum-icon-wrap"><IconMedical /></div>
+              <h3 className="platinum-sponsor-name">Apollo Diagnostics</h3>
+            </div>
+            <div className="sponsor-card platinum-card">
+              <div className="platinum-icon-wrap"><IconShield /></div>
+              <h3 className="platinum-sponsor-name">Medanta Health</h3>
+            </div>
+          </div>
+        </div>
+
+        {/* ── Gold Sponsors ── */}
+        <div className="sponsor-tier">
+          <div className="tier-pill-gold">Gold Sponsors</div>
+          <div className="sponsor-grid gold-grid">
+            <div className="sponsor-card gold-card">
+              <div className="gold-icon-wrap"><IconGlobe /></div>
+              <h3 className="gold-sponsor-name">Global Pharma</h3>
+            </div>
+            <div className="sponsor-card gold-card">
+              <div className="gold-icon-wrap"><IconBuilding /></div>
+              <h3 className="gold-sponsor-name">City Clinics</h3>
+            </div>
+            <div className="sponsor-card gold-card">
+              <div className="gold-icon-wrap"><IconMedical /></div>
+              <h3 className="gold-sponsor-name">Care Plus</h3>
+            </div>
+          </div>
+        </div>
+
         {/* ── Marquee for Associate / Co-powered Sponsors ── */}
         <div className="sponsor-tier">
           <div className="tier-label-assoc">Associate & Co-Powered Sponsors</div>
