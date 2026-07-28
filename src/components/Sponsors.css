@@ -1,12 +1,94 @@
 .sponsors-section {
   background: transparent !important;
-  padding-bottom: 80px;
-  overflow: hidden; /* Crucial for marquee */
+  padding-bottom: 100px;
+  overflow: hidden;
 }
 
 .sponsors-intro {
   text-align: center;
   margin-bottom: 56px;
+}
+
+/* ── Hierarchy Layout ── */
+.sponsors-hierarchy {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+.sponsor-tier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ── Labels ── */
+.tier-pill-title {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--emerald-bg);
+  color: var(--emerald-dark);
+  padding: 6px 16px;
+  border: 1px solid var(--emerald-lt);
+  border-radius: 980px;
+}
+.tier-label-assoc {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+}
+
+/* ── Title Card ── */
+.sponsor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.title-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 40px 24px;
+  border: 1.5px dashed var(--emerald);
+  box-shadow: 0 8px 32px rgba(16,185,129,0.06);
+  cursor: pointer;
+}
+.title-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--emerald-dark);
+  box-shadow: 0 16px 40px rgba(16,185,129,0.12);
+}
+
+.title-icon-wrap {
+  color: var(--emerald);
+  margin-bottom: 20px;
+}
+.title-sponsor-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--black-1);
+  margin-bottom: 8px;
+  text-align: center;
+}
+.sponsor-caption {
+  font-size: 0.95rem;
+  color: var(--gray-dark);
+  text-align: center;
+  font-style: italic;
 }
 
 /* ── Marquee Container ── */
@@ -24,8 +106,8 @@
 .marquee-track {
   display: flex;
   width: fit-content;
-  gap: 48px;
-  padding-left: 24px;
+  gap: 32px;
+  padding-left: 16px;
   /* Animate from 0 to -50% because the track is exactly double the list */
   animation: marquee-scroll 25s linear infinite;
 }
@@ -79,6 +161,15 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .title-card {
+    padding: 32px 20px;
+  }
+  .title-sponsor-name {
+    font-size: 1.4rem;
+  }
+  .sponsor-caption {
+    font-size: 0.85rem;
+  }
   .marquee-item {
     padding: 12px 20px;
     gap: 12px;
@@ -87,6 +178,6 @@
     font-size: 1rem;
   }
   .marquee-track {
-    gap: 24px;
+    gap: 20px;
   }
 }

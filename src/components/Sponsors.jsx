@@ -26,6 +26,11 @@ const IconGlobe = () => (
     <path d="M2 12h20"/>
   </svg>
 );
+const IconStar = () => (
+  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+  </svg>
+);
 
 const sponsorList = [
   { id: 1, name: 'MedTech Solutions', Icon: IconMedical },
@@ -45,6 +50,25 @@ export default function Sponsors() {
         <p className="sub">
           Proudly backed by the world's leading healthcare organizations and institutions.
         </p>
+      </div>
+
+      <div className="container sponsors-hierarchy">
+        {/* ── Static Title Sponsor ── */}
+        <div className="sponsor-tier">
+          <div className="tier-pill-title">Title Sponsor</div>
+          <div className="sponsor-card title-card">
+            <div className="title-icon-wrap">
+              <IconStar />
+            </div>
+            <h3 className="title-sponsor-name">Premier Healthcare Group</h3>
+            <p className="sponsor-caption">Leading the future of medical excellence</p>
+          </div>
+        </div>
+        
+        {/* ── Marquee for Associate / Co-powered Sponsors ── */}
+        <div className="sponsor-tier">
+          <div className="tier-label-assoc">Associate & Co-Powered Sponsors</div>
+        </div>
       </div>
 
       <div className="marquee-container">
