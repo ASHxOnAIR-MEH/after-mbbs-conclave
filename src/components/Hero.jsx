@@ -69,10 +69,6 @@ export default function Hero() {
         <div className="hero-right">
           <div className="hero-img-wrap">
             <img src="/images/new-hero-doctors.png" alt="Doctors" className="hero-img" />
-            <div className="hero-float hero-float-1"><Globe size={20} color="#10b981" /></div>
-            <div className="hero-float hero-float-2"><Award size={20} color="#10b981" /></div>
-            <div className="hero-float hero-float-3"><TrendingUp size={20} color="#10b981" /></div>
-            <div className="hero-float hero-float-4"><MessageCircle size={20} color="#10b981" /></div>
           </div>
         </div>
       </div>
