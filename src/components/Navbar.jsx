@@ -3,7 +3,7 @@ import './Navbar.css';
 import Button from './Button';
 
 const navLinks = [
-  { label: 'About',    href: '#about'    },
+  { label: 'Home',     href: '#hero'     },
   { label: 'Pillars',  href: '#pillars'  },
   { label: 'Speakers', href: '#speakers' },
   { label: 'Agenda',   href: '#agenda'   },
