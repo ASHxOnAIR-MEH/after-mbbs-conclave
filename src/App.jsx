@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhyAttend from './components/WhyAttend';
+import Community from './components/Community';
 import Pillars from './components/Pillars';
 import Sponsors from './components/Sponsors';
 import Speakers from './components/Speakers';
@@ -24,6 +25,7 @@ function App() {
         <>
           <Hero />
           <WhyAttend />
+          <Community />
           <Sponsors />
           <Pillars />
           <Speakers />
