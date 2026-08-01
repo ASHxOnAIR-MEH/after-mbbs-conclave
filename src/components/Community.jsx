@@ -48,7 +48,7 @@ const whatsappBenefits = [
 ];
 
 const repBenefits = [
-  'Official IMA Recognition',
+  'Official Representative Recognition',
   'Leadership Development',
   'National Medical Student Network',
   'Organize Campus Activities',
@@ -142,7 +142,8 @@ export default function Community() {
 
               <h3 className="comm-card-title">Become an Institutional Representative</h3>
               <p className="comm-card-desc">
-                Represent your medical college as an official IMA Student Network Institutional Representative. Lead campus engagement and build a national network.
+                Represent your medical college as an Institutional Representative and help build one of India's fastest-growing medical student leadership networks.
+                Lead campus engagement, connect with senior doctors, and inspire future healthcare professionals.
               </p>
 
               <ul className="comm-benefits" aria-label="Institutional representative benefits">
