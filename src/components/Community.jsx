@@ -99,9 +99,9 @@ export default function Community() {
 
               <div className="comm-pill comm-pill-wa">Official Community</div>
 
-              <h3 className="comm-card-title">Join Official WhatsApp Community</h3>
+              <h3 className="comm-card-title">Join for FREE Orientation &amp; Live Updates</h3>
               <p className="comm-card-desc">
-                Stay connected with Career After MBBS. Get instant updates and resources delivered directly to your phone.
+                Join our official WhatsApp community for <strong>FREE orientation sessions</strong> and real-time live updates on Career After MBBS.
               </p>
 
               <ul className="comm-benefits" aria-label="WhatsApp community benefits">
