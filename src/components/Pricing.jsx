@@ -1,7 +1,7 @@
 import React from 'react';
 import './Pricing.css';
 import Button from './Button';
-import { Check, Gift, Tag, Sparkles } from 'lucide-react';
+import { Check, Sparkles } from 'lucide-react';
 
 const CheckIcon = () => (
   <Check size={13} strokeWidth={3} />
@@ -143,32 +143,6 @@ export default function Pricing() {
             </div>
           </div>
 
-        </div>
-
-        {/* ── Coupon Banner ── */}
-        <div className="coupon-banner" role="complementary" aria-label="Discount coupon information">
-          <div className="coupon-left">
-            <div className="coupon-gift-icon">
-              <Gift size={28} color="#10b981" />
-            </div>
-            <div className="coupon-left-text">
-              <h3 className="coupon-title">Extra Savings Available</h3>
-              <p className="coupon-desc">
-                Get an Additional <strong>10% Discount</strong> by Applying a Valid Coupon Code During Checkout.
-              </p>
-            </div>
-          </div>
-          <div className="coupon-right">
-            <div className="coupon-tag-icon">
-              <Tag size={22} color="#C79A2B" />
-            </div>
-            <div className="coupon-right-text">
-              <p className="coupon-use-text">USE COUPON CODE</p>
-              <div className="coupon-code-box">
-                <span className="coupon-code-placeholder">Coming Soon</span>
-              </div>
-            </div>
-          </div>
         </div>
 
       </div>
