@@ -49,7 +49,7 @@ export default function Pricing() {
 
           {/* ── Card 1: Student Pass ── */}
           <div className="price-card">
-            <div className="plan-name">Student Pass</div>
+            <div className="plan-name">Viewer Pass</div>
 
             {/* Strikethrough original */}
             <div className="plan-original-wrap">
@@ -99,7 +99,7 @@ export default function Pricing() {
               <Sparkles size={11} />
               Most Popular
             </div>
-            <div className="plan-name">Premium Pass</div>
+            <div className="plan-name">Interactive Pass</div>
 
             {/* Strikethrough original */}
             <div className="plan-original-wrap">
