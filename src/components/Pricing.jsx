@@ -19,7 +19,7 @@ const STUDENT_FEATS = [
 ];
 
 const PREMIUM_FEATS = [
-  'Everything in Student Pass',
+  'Everything in Viewer Pass',
   'Premium Networking',
   'Priority Support',
   'Exclusive Resources',
