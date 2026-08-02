@@ -4,15 +4,16 @@ import Countdown from './Countdown';
 import Button from './Button';
 import {
   Users, MonitorPlay, MessageCircle, Globe, TrendingUp,
-  Calendar, ArrowRight, Award
+  Calendar, ArrowRight, Compass
 } from 'lucide-react';
 
 const features = [
-  { Icon: Users, label: 'Expert Speakers' },
-  { Icon: MonitorPlay, label: 'Interactive Sessions' },
-  { Icon: MessageCircle, label: 'Live Q&A' },
-  { Icon: Globe, label: 'Networking' },
-  { Icon: TrendingUp, label: 'Career Growth' },
+  { Icon: Users,        label: 'Expert Speakers' },
+  { Icon: MonitorPlay,  label: 'Interactive Sessions' },
+  { Icon: MessageCircle,label: 'Live Q&A' },
+  { Icon: Globe,        label: 'Networking' },
+  { Icon: TrendingUp,   label: 'Career Growth' },
+  { Icon: Compass,      label: 'One-to-One Guidance' },
 ];
 
 export default function Hero() {
@@ -35,6 +36,7 @@ export default function Hero() {
           <h1 className="hero-title">
             CAREER AFTER <span className="hero-accent">MBBS</span>
           </h1>
+          <p className="hero-tagline">Exploring Hidden Treasures</p>
           <h2 className="hero-subtitle">
             Build The Medical Career<br />
             <em>You Actually Want.</em>

@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: 'Are there any special benefits?',
-    a: 'Yes! All registered participants will receive Surprise Goodies & Gifts.',
+    a: 'Yes! One-to-One long-term career guidance support will be available for your selected career paths, along with additional opportunities customised specifically for you.',
   },
   {
     q: 'How do I access the Zoom sessions?',

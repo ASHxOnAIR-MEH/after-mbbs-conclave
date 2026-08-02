@@ -14,6 +14,8 @@ const STUDENT_FEATS = [
   'Networking Opportunities',
   'Digital Resources',
   'Event Updates',
+  'One-Time Access to Recorded Sessions',
+  'One-to-One Career Guidance Options',
 ];
 
 const PREMIUM_FEATS = [

@@ -2,13 +2,20 @@ import React from 'react';
 import './Community.css';
 
 /* ── SVG Icons ── */
-const WhatsAppIcon = () => (
-  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="comm-icon-svg">
-    <circle cx="16" cy="16" r="16" fill="#25D366"/>
-    <path
-      d="M23.5 8.5A10.44 10.44 0 0 0 16.01 5.5C10.75 5.5 6.5 9.75 6.5 15a9.44 9.44 0 0 0 1.41 4.97L6.5 26.5l6.69-1.75A9.42 9.42 0 0 0 16.01 25.5c5.25 0 9.49-4.25 9.49-9.5a9.44 9.44 0 0 0-2-5.5ZM16.01 23.75a7.77 7.77 0 0 1-4.04-1.13l-.29-.17-3.97 1.04 1.06-3.86-.19-.3a7.73 7.73 0 0 1-1.25-4.33c0-4.32 3.52-7.82 7.85-7.82a7.79 7.79 0 0 1 7.85 7.81c-.01 4.33-3.53 7.76-7.82 7.76Zm4.29-5.84c-.23-.12-1.38-.68-1.59-.76-.21-.08-.37-.12-.53.12-.16.23-.62.76-.76.91-.14.16-.28.17-.51.06a6.5 6.5 0 0 1-1.89-1.17 7.07 7.07 0 0 1-1.31-1.63c-.14-.23-.01-.36.1-.47.1-.1.23-.26.35-.39.12-.13.16-.23.23-.38.08-.16.04-.29-.02-.41-.06-.12-.53-1.28-.73-1.75-.19-.46-.39-.4-.53-.4h-.46c-.16 0-.41.06-.63.29-.21.23-.82.8-.82 1.95s.84 2.26.96 2.42c.12.16 1.66 2.53 4.02 3.55.56.24 1 .39 1.34.5.56.18 1.07.15 1.48.09.45-.07 1.38-.56 1.58-1.11.2-.55.2-1.01.14-1.11-.07-.1-.22-.16-.45-.27Z"
-      fill="white"
-    />
+
+/* Community / People icon — replaces WhatsApp */
+const CommunityIcon = () => (
+  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="comm-icon-svg">
+    <circle cx="32" cy="32" r="32" fill="rgba(16,185,129,0.08)"/>
+    {/* Centre person */}
+    <circle cx="32" cy="24" r="6" stroke="#10b981" strokeWidth="2"/>
+    <path d="M20 46c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="#10b981" strokeWidth="2" strokeLinecap="round"/>
+    {/* Left person */}
+    <circle cx="16" cy="27" r="4.5" stroke="#34d399" strokeWidth="1.8" opacity="0.7"/>
+    <path d="M7 46c0-4.97 4.03-9 9-9" stroke="#34d399" strokeWidth="1.8" strokeLinecap="round" opacity="0.7"/>
+    {/* Right person */}
+    <circle cx="48" cy="27" r="4.5" stroke="#34d399" strokeWidth="1.8" opacity="0.7"/>
+    <path d="M57 46c0-4.97-4.03-9-9-9" stroke="#34d399" strokeWidth="1.8" strokeLinecap="round" opacity="0.7"/>
   </svg>
 );
 
@@ -38,7 +45,13 @@ const StarIcon = () => (
   </svg>
 );
 
-const whatsappBenefits = [
+const ArrowRight = () => (
+  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const communityBenefits = [
   'FREE Webinar Access',
   'Live Event Updates',
   'Speaker Announcements',
@@ -50,7 +63,7 @@ const whatsappBenefits = [
 const repBenefits = [
   'Official Representative Recognition',
   'Leadership Development',
-  'National Medical Student Network',
+  'Personal Career Support',
   'Organize Campus Activities',
   'Mentorship from Senior Doctors',
   'Networking Opportunities',
@@ -81,7 +94,10 @@ export default function Community() {
         {/* Section header */}
         <div className="comm-header">
           <p className="eyebrow">Get Involved</p>
-          <h2 className="display-xl">Join the Career After <span className="text-emerald">MBBS Community</span></h2>
+          <h2 className="display-xl comm-heading">
+            Join the Career After MBBS<br />
+            <span className="comm-heading-free">Community <em>for Free</em></span>
+          </h2>
           <p className="sub">
             Stay connected with India's Premier Medical Career Conclave and become a leader in your medical institution.
           </p>
@@ -90,22 +106,22 @@ export default function Community() {
         {/* Two-card grid */}
         <div className="comm-grid">
 
-          {/* ── Card 1: WhatsApp ── */}
+          {/* ── Card 1: Community ── */}
           <div className="comm-card comm-card-wa" role="article">
             <div className="comm-card-inner">
               <div className="comm-icon-wrap comm-icon-wa">
-                <WhatsAppIcon />
+                <CommunityIcon />
               </div>
 
               <div className="comm-pill comm-pill-wa">Official Community</div>
 
-              <h3 className="comm-card-title">Join for FREE Orientation &amp; Live Updates</h3>
+              <h3 className="comm-card-title">Join the Career After MBBS Community</h3>
               <p className="comm-card-desc">
-                Join our official WhatsApp community for <strong>FREE orientation sessions</strong> and real-time live updates on Career After MBBS.
+                Join our growing medical career community for <strong>FREE orientation sessions</strong>, live event updates, expert insights, career resources and opportunities.
               </p>
 
-              <ul className="comm-benefits" aria-label="WhatsApp community benefits">
-                {whatsappBenefits.map(b => (
+              <ul className="comm-benefits" aria-label="Community benefits">
+                {communityBenefits.map(b => (
                   <li key={b} className="comm-benefit-item">
                     <CheckIcon />
                     <span>{b}</span>
@@ -118,15 +134,16 @@ export default function Community() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="comm-btn comm-btn-wa"
-                aria-label="Join the official WhatsApp community (opens in new tab)"
+                aria-label="Join the Career After MBBS Community (opens in new tab)"
               >
-                <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-                  <path d="M23.5 8.5A10.44 10.44 0 0 0 16.01 5.5C10.75 5.5 6.5 9.75 6.5 15a9.44 9.44 0 0 0 1.41 4.97L6.5 26.5l6.69-1.75A9.42 9.42 0 0 0 16.01 25.5c5.25 0 9.49-4.25 9.49-9.5a9.44 9.44 0 0 0-2-5.5ZM16.01 23.75a7.77 7.77 0 0 1-4.04-1.13l-.29-.17-3.97 1.04 1.06-3.86-.19-.3a7.73 7.73 0 0 1-1.25-4.33c0-4.32 3.52-7.82 7.85-7.82a7.79 7.79 0 0 1 7.85 7.81c-.01 4.33-3.53 7.76-7.82 7.76Zm4.29-5.84c-.23-.12-1.38-.68-1.59-.76-.21-.08-.37-.12-.53.12-.16.23-.62.76-.76.91-.14.16-.28.17-.51.06a6.5 6.5 0 0 1-1.89-1.17 7.07 7.07 0 0 1-1.31-1.63c-.14-.23-.01-.36.1-.47.1-.1.23-.26.35-.39.12-.13.16-.23.23-.38.08-.16.04-.29-.02-.41-.06-.12-.53-1.28-.73-1.75-.19-.46-.39-.4-.53-.4h-.46c-.16 0-.41.06-.63.29-.21.23-.82.8-.82 1.95s.84 2.26.96 2.42c.12.16 1.66 2.53 4.02 3.55.56.24 1 .39 1.34.5.56.18 1.07.15 1.48.09.45-.07 1.38-.56 1.58-1.11.2-.55.2-1.01.14-1.11-.07-.1-.22-.16-.45-.27Z" fill="white"/>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
-                Join WhatsApp Community
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                JOIN THE COMMUNITY
+                <ArrowRight />
               </a>
             </div>
           </div>
@@ -166,9 +183,7 @@ export default function Community() {
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
                 </svg>
                 Apply as Institutional Representative
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <ArrowRight />
               </a>
             </div>
           </div>

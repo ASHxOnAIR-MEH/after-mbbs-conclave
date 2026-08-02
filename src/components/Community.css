@@ -47,6 +47,18 @@
 }
 
 /* ── Cards Grid ── */
+/* ── Section Heading FREE emphasis ── */
+.comm-heading { line-height: 1.2; }
+.comm-heading-free {
+  display: block;
+  color: var(--black-1);
+}
+.comm-heading-free em {
+  font-style: italic;
+  color: var(--emerald);
+  -webkit-text-fill-color: var(--emerald);
+}
+
 .comm-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
