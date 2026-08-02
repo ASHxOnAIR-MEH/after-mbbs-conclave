@@ -275,7 +275,22 @@
   .hero-feat-item { flex-direction: row; gap: 6px; padding: 6px; min-width: 0; justify-content: flex-start; }
   .hero-feat-item .feat-label { font-size: 0.75rem; white-space: normal; line-height: 1.2; text-align: left; }
 
-  .hero-right { display: none; }
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 8px;
+  }
+  .hero-img-wrap {
+    max-width: 320px;
+    width: 100%;
+  }
+  .hero-img {
+    max-height: 260px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
   
   .hero-bottom-cards { gap: 16px; padding: 0 16px 32px; }
   .info-card { padding: 16px; flex-direction: column; text-align: center; gap: 14px; border-radius: 14px; min-width: 0; }
