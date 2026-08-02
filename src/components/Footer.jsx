@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { Calendar, Clock, Video, CreditCard, Contact, Mail, Phone } from 'lucide-react';
+import { Contact, Mail, Phone } from 'lucide-react';
 
 const navLinks = [
   { label:'About the Conclave', href:'#about'    },
@@ -33,26 +33,6 @@ export default function Footer({ setCurrentPage }) {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
-            <div className="footer-col-title">
-              <Calendar size={13} color="#10b981" strokeWidth={2.5} style={{marginRight:'6px',verticalAlign:'middle'}} />
-              Event Details
-            </div>
-            <div className="footer-details">
-              {[
-                { Icon: Calendar, text: 'September 21, 2026' },
-                { Icon: Clock, text: '6:00 PM – 9:00 PM IST' },
-                { Icon: Video, text: 'Live on Zoom' },
-                { Icon: CreditCard, text: 'Viewer ₹249 &bull; Interactive ₹449' },
-              ].map((d, i) => (
-                <div key={i} className="footer-detail">
-                  <d.Icon size={14} strokeWidth={2} />
-                  <span dangerouslySetInnerHTML={{ __html: d.text }} />
-                </div>
-              ))}
-            </div>
           </div>
 
           <div>
