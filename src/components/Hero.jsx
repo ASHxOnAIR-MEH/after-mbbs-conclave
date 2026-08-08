@@ -28,8 +28,6 @@ export default function Hero() {
         {/* ─── LEFT ─── */}
         <div className="hero-left">
           <div className="hero-presents">
-            <span className="hero-presents-org">INDIAN MEDICAL ASSOCIATION PARIPPALLY BRANCH</span>
-            <span className="hero-presents-mid">— presents —</span>
             <span className="hero-presents-event">● ONLINE CONCLAVE 2026 ●</span>
           </div>
 

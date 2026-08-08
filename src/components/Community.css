@@ -238,16 +238,20 @@
 
 /* ── Responsive — Tablet ── */
 @media (max-width: 960px) {
-  .comm-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
   .comm-card-inner {
     padding: 28px 24px;
     gap: 16px;
   }
   .comm-benefits {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ── Responsive — Tablet stacked ── */
+@media (max-width: 768px) {
+  .comm-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 
