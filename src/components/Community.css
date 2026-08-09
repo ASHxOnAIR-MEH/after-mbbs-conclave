@@ -1,5 +1,5 @@
 /* ============================================================
-   COMMUNITY SECTION — WhatsApp + Institutional Rep
+   COMMUNITY SECTION — Equal-Height Cards
    ============================================================ */
 
 .community-section {
@@ -41,12 +41,11 @@
 /* ── Section Header ── */
 .comm-header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 56px;
   position: relative;
   z-index: 1;
 }
 
-/* ── Cards Grid ── */
 /* ── Section Heading FREE emphasis ── */
 .comm-heading { line-height: 1.2; }
 .comm-heading-free {
@@ -59,52 +58,58 @@
   -webkit-text-fill-color: var(--emerald);
 }
 
+/* ══════════════════════════════════════
+   GRID — equal height via align-items: stretch
+══════════════════════════════════════ */
 .comm-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
+  align-items: stretch;          /* KEY: both cells share same row height */
   position: relative;
   z-index: 1;
-  align-items: start;
 }
 
-/* ── Base Card ── */
+/* ══════════════════════════════════════
+   BASE CARD — full height flex column
+══════════════════════════════════════ */
 .comm-card {
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(210, 210, 215, 0.6);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(210, 210, 215, 0.55);
   box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.04),
-    0 1px 4px rgba(0, 0, 0, 0.03);
-  transition: transform 0.35s var(--ease-apple), box-shadow 0.35s var(--ease-apple);
+    0 2px 8px rgba(0, 0, 0, 0.03),
+    0 6px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.35s var(--ease-apple),
+              box-shadow 0.35s var(--ease-apple);
   overflow: hidden;
+  height: 100%;                  /* stretch to fill grid cell */
 }
 .comm-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow:
-    0 20px 48px rgba(0, 0, 0, 0.08),
-    0 6px 16px rgba(0, 0, 0, 0.04);
+    0 12px 40px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
+/* ── Card accent top borders ── */
+.comm-card-wa  { border-top: 3px solid #25D366; }
+.comm-card-rep { border-top: 3px solid var(--emerald); }
+
+/* ══════════════════════════════════════
+   CARD INNER — strict flex column layout
+══════════════════════════════════════ */
 .comm-card-inner {
-  padding: 40px 40px 40px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  height: 100%;
+  height: 100%;                  /* fill the card */
+  box-sizing: border-box;
 }
 
-/* ── WhatsApp Card accent top border ── */
-.comm-card-wa {
-  border-top: 3px solid #25D366;
-}
-.comm-card-rep {
-  border-top: 3px solid var(--emerald);
-}
-
-/* ── Icon Wraps ── */
+/* ── Icon Wrap ── */
 .comm-icon-wrap {
   width: 72px;
   height: 72px;
@@ -113,35 +118,31 @@
   justify-content: center;
   border-radius: 20px;
   flex-shrink: 0;
+  margin-bottom: 20px;
 }
-.comm-icon-wa {
-  background: rgba(37, 211, 102, 0.08);
-}
-.comm-icon-rep {
-  background: var(--emerald-dim);
-}
-.comm-icon-svg {
-  width: 48px;
-  height: 48px;
-}
+.comm-icon-wa  { background: rgba(16, 185, 129, 0.08); }
+.comm-icon-rep { background: var(--emerald-dim); }
+.comm-icon-svg { width: 48px; height: 48px; }
 
-/* ── Tier Pill ── */
+/* ── Badge pill ── */
 .comm-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 5px 14px;
   border-radius: 980px;
   width: fit-content;
+  margin-bottom: 20px;
+  flex-shrink: 0;
 }
 .comm-pill-wa {
-  background: rgba(37, 211, 102, 0.1);
+  background: rgba(16, 185, 129, 0.1);
   color: #15803d;
-  border: 1px solid rgba(37, 211, 102, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.22);
 }
 .comm-pill-rep {
   background: #fef9c3;
@@ -149,142 +150,145 @@
   border: 1px solid #fde047;
 }
 
-/* ── Card Titles & Desc ── */
+/* ── Heading ── */
 .comm-card-title {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2vw, 1.55rem);
+  font-size: clamp(1.3rem, 2vw, 1.65rem);
   font-weight: 800;
   color: var(--black-1);
-  line-height: 1.25;
-}
-.comm-card-desc {
-  font-size: 0.95rem;
-  color: var(--gray-dark);
-  line-height: 1.65;
+  line-height: 1.18;
+  margin-bottom: 16px;
+  flex-shrink: 0;
 }
 
-/* ── Benefits List ── */
+/* ── Description ── */
+.comm-card-desc {
+  font-size: 0.97rem;
+  color: var(--gray-dark);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+
+/* ── Benefits List — takes all available space ── */
 .comm-benefits {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px 16px;
   margin: 0;
+  /* flex-grow pushes button to bottom regardless of list length */
   flex: 1;
+  align-content: start;
 }
 .comm-benefit-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--gray-dark);
 }
-.comm-benefit-item span {
-  line-height: 1.3;
-}
+.comm-benefit-item svg { flex-shrink: 0; margin-top: 1px; }
+.comm-benefit-item span { line-height: 1.35; }
 
-/* ── CTA Buttons ── */
+/* ── CTA — always at the bottom ── */
 .comm-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 15px 28px;
+  padding: 16px 28px;
   border-radius: 12px;
   font-family: var(--font-text);
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.01em;
   text-decoration: none;
+  width: 100%;
+  margin-top: 32px;              /* consistent gap above button */
+  flex-shrink: 0;
+  cursor: pointer;
   transition:
     transform 0.25s var(--ease-apple),
     box-shadow 0.25s var(--ease-apple),
-    background 0.2s ease,
-    filter 0.2s ease;
-  cursor: pointer;
-  width: 100%;
-  margin-top: auto;
+    background 0.2s ease;
 }
-.comm-btn:hover {
-  transform: scale(1.025) translateY(-2px);
-}
+.comm-btn:hover { transform: scale(1.02) translateY(-2px); }
 .comm-btn:focus-visible {
   outline: 3px solid var(--emerald);
   outline-offset: 3px;
 }
 
-/* WhatsApp button */
+/* Community (green) button */
 .comm-btn-wa {
-  background: #25D366;
+  background: var(--emerald);
   color: #fff;
-  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.25);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.28);
 }
 .comm-btn-wa:hover {
-  background: #1fba58;
-  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.35);
+  background: var(--emerald-dark);
+  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.38);
 }
 
-/* Rep button */
+/* Rep (emerald gradient) button */
 .comm-btn-rep {
   background: linear-gradient(135deg, var(--emerald), var(--emerald-dark));
   color: #fff;
-  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.25);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
 }
 .comm-btn-rep:hover {
   background: linear-gradient(135deg, var(--emerald-dark), var(--emerald-deep));
-  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.35);
+  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.38);
 }
 
-/* ── Responsive — Tablet ── */
-@media (max-width: 960px) {
-  .comm-card-inner {
-    padding: 28px 24px;
-    gap: 16px;
-  }
-  .comm-benefits {
-    grid-template-columns: 1fr;
-  }
+/* ══════════════════════════════════════
+   RESPONSIVE — Tablet (≤ 1024px)
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .comm-card-inner { padding: 32px 28px; }
 }
 
-/* ── Responsive — Tablet stacked ── */
+/* ══════════════════════════════════════
+   RESPONSIVE — Tablet narrow (≤ 900px)
+   still 2-col but tighter, benefits go 1-col
+══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .comm-grid { gap: 20px; }
+  .comm-card-inner { padding: 28px 24px; }
+  .comm-benefits { grid-template-columns: 1fr; gap: 8px; }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — Mobile (≤ 768px)
+   Stack cards, auto height — NO forced equal height
+══════════════════════════════════════ */
 @media (max-width: 768px) {
-  .comm-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
+  .comm-header { margin-bottom: 40px; }
 
-/* ── Responsive — Mobile ── */
-@media (max-width: 640px) {
-  .comm-header {
-    margin-bottom: 40px;
-  }
   .comm-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+    align-items: start;          /* auto height on mobile, no stretching */
   }
+
+  /* Cards go back to auto height when stacked */
+  .comm-card { height: auto; }
   .comm-card-inner {
     padding: 28px 22px;
+    height: auto;
   }
-  .comm-icon-wrap {
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
-  }
-  .comm-icon-svg {
-    width: 40px;
-    height: 40px;
-  }
-  .comm-card-title {
-    font-size: 1.2rem;
-  }
-  .comm-benefits {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px 12px;
-  }
-  .comm-btn {
-    padding: 14px 20px;
-    font-size: 0.9rem;
-  }
+
+  .comm-benefits { grid-template-columns: 1fr 1fr; gap: 8px 12px; }
+  .comm-btn { padding: 14px 20px; font-size: 0.9rem; margin-top: 24px; }
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE — Small mobile (≤ 480px)
+══════════════════════════════════════ */
+@media (max-width: 480px) {
+  .comm-icon-wrap { width: 60px; height: 60px; border-radius: 16px; }
+  .comm-icon-svg  { width: 40px; height: 40px; }
+  .comm-card-title { font-size: 1.2rem; }
+  .comm-benefits { grid-template-columns: 1fr; }
 }
