@@ -1,0 +1,343 @@
+/* ============================================================
+   HOSPEX HEALTHCARE EXPO — Association Section
+   ============================================================ */
+
+.hospex-section {
+  background: transparent !important;
+  overflow: visible;
+}
+
+/* ── Section Header ── */
+.hospex-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.hospex-assoc-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.hospex-assoc-tag {
+  display: inline-block;
+  font-family: var(--font-text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  padding: 6px 18px;
+  border-radius: 980px;
+}
+
+.hospex-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hospex-main-logo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+}
+
+/* ── Two-column grid ── */
+.hospex-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* ── Cards ── */
+.hospex-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(210, 210, 215, 0.55);
+  border-top: 3px solid var(--emerald);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03), 0 6px 24px rgba(0,0,0,0.05);
+  transition: transform 0.35s var(--ease-apple), box-shadow 0.35s var(--ease-apple);
+}
+
+.hospex-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.hospex-card-accent {
+  border-top-color: #C79A2B;
+  background: rgba(255, 253, 245, 0.92);
+}
+
+/* ── Card tag ── */
+.hospex-card-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #15803d;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  padding: 5px 14px;
+  border-radius: 980px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.hospex-card-tag-gold {
+  color: #92400e;
+  background: #fef3c7;
+  border-color: #fcd34d;
+}
+
+/* ── Card title ── */
+.hospex-card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 800;
+  color: var(--black-1);
+  line-height: 1.22;
+  margin-bottom: 18px;
+}
+
+/* ── Card body ── */
+.hospex-card-body {
+  font-size: 0.95rem;
+  color: var(--gray-dark);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.hospex-card-body:last-of-type { margin-bottom: 0; }
+
+/* ── Pillars grid ── */
+.hospex-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+  margin-top: 24px;
+}
+
+.hospex-pillar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.hospex-pillar-icon { font-size: 1.1rem; flex-shrink: 0; }
+.hospex-pillar-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--black-1);
+  line-height: 1.3;
+}
+
+/* ── Connection badge ── */
+.hospex-connection-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(16,185,129,0.06), rgba(199,154,43,0.06));
+  border: 1px solid rgba(16,185,129,0.15);
+  border-radius: 14px;
+}
+
+.hospex-conn-left,
+.hospex-conn-right {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--black-1);
+  text-align: center;
+}
+
+.hospex-conn-divider {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--emerald);
+  flex-shrink: 0;
+}
+
+/* ── Hero event meta strip ── */
+.hero-event-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(16,185,129,0.15);
+  border-radius: 12px;
+  padding: 10px 16px;
+  width: fit-content;
+}
+
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--black-1);
+}
+.hero-meta-item svg { color: var(--emerald); flex-shrink: 0; }
+
+.hero-meta-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+
+/* ── Hero HOSPEX association badge ── */
+.hero-hospex-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(199,154,43,0.25);
+  border-radius: 12px;
+  padding: 8px 16px;
+  width: fit-content;
+}
+
+.hospex-assoc-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #92400e;
+  white-space: nowrap;
+}
+
+.hospex-badge-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ── Footer HOSPEX block ── */
+.footer-hospex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(199,154,43,0.2);
+  border-radius: 10px;
+  width: fit-content;
+}
+
+.footer-hospex-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #92400e;
+  white-space: nowrap;
+}
+
+.footer-hospex-logo {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ── Footer event details ── */
+.footer-event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.footer-event-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: var(--gray-dark);
+  line-height: 1.5;
+}
+
+.footer-ev-icon {
+  color: var(--emerald);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footer-hybrid-badge {
+  align-items: center;
+}
+
+.footer-hybrid-pill {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(16,185,129,0.1);
+  color: #15803d;
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: 980px;
+  padding: 2px 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.footer-address {
+  font-size: 0.78rem;
+  color: var(--gray-mid, #9ca3af);
+  line-height: 1.5;
+  margin-top: 2px;
+  display: block;
+}
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 900px) {
+  .hospex-grid { grid-template-columns: 1fr; }
+  .hospex-card { padding: 28px 24px; }
+}
+
+@media (max-width: 768px) {
+  .hospex-header { margin-bottom: 36px; }
+  .hospex-main-logo { height: 44px; }
+  .hospex-pillars { grid-template-columns: 1fr 1fr; gap: 8px; }
+
+  .hero-event-meta {
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+  .hero-meta-divider { display: none; }
+
+  .hero-hospex-badge { padding: 6px 12px; }
+  .hospex-badge-logo { height: 22px; }
+}
+
+@media (max-width: 480px) {
+  .hospex-pillars { grid-template-columns: 1fr; }
+  .hospex-card { padding: 24px 18px; }
+  .hero-event-meta { flex-direction: column; align-items: flex-start; gap: 6px; }
+}

@@ -3,8 +3,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhyAttend from './components/WhyAttend';
 import Community from './components/Community';
-import Pillars from './components/Pillars';
+import Hospex from './components/Hospex';
 import Sponsors from './components/Sponsors';
+import Pillars from './components/Pillars';
 import Speakers from './components/Speakers';
 import Agenda from './components/Agenda';
 import Pricing from './components/Pricing';
@@ -20,12 +21,13 @@ function App() {
     <>
       <FloatingBackground />
       <Navbar setCurrentPage={setCurrentPage} />
-      
+
       {currentPage === 'home' ? (
         <>
           <Hero />
           <WhyAttend />
           <Community />
+          <Hospex />
           <Sponsors />
           <Pillars />
           <Speakers />

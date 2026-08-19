@@ -4,7 +4,7 @@ import { ChevronDown, User, Video } from 'lucide-react';
 
 const DAYS = [
   {
-    label: 'Day 1', date: 'Sept 21',
+    label: 'Day 1', date: 'Sept 24',
     theme: 'Foundations & Clinical Paths',
     color: '#10b981',
     sessions: [
@@ -15,7 +15,7 @@ const DAYS = [
     ],
   },
   {
-    label: 'Day 2', date: 'Sept 22',
+    label: 'Day 2', date: 'Sept 25',
     theme: 'Global Opportunities',
     color: '#059669',
     sessions: [
@@ -25,7 +25,7 @@ const DAYS = [
     ],
   },
   {
-    label: 'Day 3', date: 'Sept 23',
+    label: 'Day 3', date: 'Sept 26',
     theme: 'Beyond Clinical Practice',
     color: '#34d399',
     sessions: [

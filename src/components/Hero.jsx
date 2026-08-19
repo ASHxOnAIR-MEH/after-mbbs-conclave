@@ -1,19 +1,20 @@
 import React from 'react';
 import './Hero.css';
+import './Hospex.css';
 import Countdown from './Countdown';
 import Button from './Button';
 import {
   Users, MonitorPlay, MessageCircle, Globe, TrendingUp,
-  Calendar, ArrowRight, Compass
+  Calendar, ArrowRight, Compass, MapPin, Wifi
 } from 'lucide-react';
 
 const features = [
-  { Icon: Users,        label: 'Expert Speakers' },
-  { Icon: MonitorPlay,  label: 'Interactive Sessions' },
-  { Icon: MessageCircle,label: 'Live Q&A' },
-  { Icon: Globe,        label: 'Networking' },
-  { Icon: TrendingUp,   label: 'Career Growth' },
-  { Icon: Compass,      label: 'One-to-One Guidance' },
+  { Icon: Users,         label: 'Expert Speakers' },
+  { Icon: MonitorPlay,   label: 'Interactive Sessions' },
+  { Icon: MessageCircle, label: 'Live Q&A' },
+  { Icon: Globe,         label: 'Networking' },
+  { Icon: TrendingUp,    label: 'Career Growth' },
+  { Icon: Compass,       label: 'One-to-One Guidance' },
 ];
 
 export default function Hero() {
@@ -27,8 +28,10 @@ export default function Hero() {
       <div className="hero-main container">
         {/* ─── LEFT ─── */}
         <div className="hero-left">
+
+          {/* Organiser badge */}
           <div className="hero-presents">
-            <span className="hero-presents-event">● ONLINE CONCLAVE 2026 ●</span>
+            <span className="hero-presents-event">● HYBRID NATIONAL MEDICAL CAREER CONCLAVE ●</span>
           </div>
 
           <h1 className="hero-title">
@@ -39,6 +42,30 @@ export default function Hero() {
             Build The Medical Career<br />
             <em>You Actually Want.</em>
           </h2>
+
+          {/* Event meta strip */}
+          <div className="hero-event-meta">
+            <div className="hero-meta-item">
+              <Calendar size={14} strokeWidth={2.5} />
+              <span>24–26 September 2026</span>
+            </div>
+            <div className="hero-meta-divider" />
+            <div className="hero-meta-item">
+              <MapPin size={14} strokeWidth={2.5} />
+              <span>Kochi, Kerala</span>
+            </div>
+            <div className="hero-meta-divider" />
+            <div className="hero-meta-item">
+              <Wifi size={14} strokeWidth={2.5} />
+              <span>+ Live on Zoom</span>
+            </div>
+          </div>
+
+          {/* HOSPEX association badge */}
+          <div className="hero-hospex-badge">
+            <span className="hospex-assoc-label">Associated with</span>
+            <img src="/images/hospex-logo.png" alt="HOSPEX Healthcare Expo" className="hospex-badge-logo" />
+          </div>
 
           <p className="hero-desc">
             Explore PG pathways, GCC careers, hospital administration,
@@ -79,7 +106,7 @@ export default function Hero() {
           <div className="info-card-title">Event Starts In</div>
           <Countdown />
         </div>
-        
+
         <div className="info-card highlights-card">
           <div className="hl-item">
             <div className="hl-val">11+</div>
@@ -95,7 +122,7 @@ export default function Hero() {
           </div>
           <div className="hl-item">
             <div className="hl-val">Live</div>
-            <div className="hl-label">Q&A</div>
+            <div className="hl-label">Q&amp;A</div>
           </div>
         </div>
       </div>
