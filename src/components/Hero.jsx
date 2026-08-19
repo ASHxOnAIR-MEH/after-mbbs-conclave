@@ -29,9 +29,15 @@ export default function Hero() {
         {/* ─── LEFT ─── */}
         <div className="hero-left">
 
-          {/* Organiser badge */}
+          {/* HOSPEX association badge — ABOVE title */}
+          <div className="hero-hospex-badge">
+            <span className="hospex-assoc-label">Associated with</span>
+            <img src="/images/hospex-logo.png" alt="HOSPEX Healthcare Expo" className="hospex-badge-logo" />
+          </div>
+
+          {/* Conclave badge */}
           <div className="hero-presents">
-            <span className="hero-presents-event">● HYBRID NATIONAL MEDICAL CAREER CONCLAVE ●</span>
+            <span className="hero-presents-event">● KERALA'S FIRST MEDICAL CAREER CONCLAVE ●</span>
           </div>
 
           <h1 className="hero-title">
@@ -59,12 +65,6 @@ export default function Hero() {
               <Wifi size={14} strokeWidth={2.5} />
               <span>+ Live on Zoom</span>
             </div>
-          </div>
-
-          {/* HOSPEX association badge */}
-          <div className="hero-hospex-badge">
-            <span className="hospex-assoc-label">Associated with</span>
-            <img src="/images/hospex-logo.png" alt="HOSPEX Healthcare Expo" className="hospex-badge-logo" />
           </div>
 
           <p className="hero-desc">
