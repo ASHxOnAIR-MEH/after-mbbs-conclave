@@ -12,7 +12,7 @@ const stats = [
   { value: '1-to-1',      label: 'Interactive Career Guidance' },
 ];
 
-export default function Hero() {
+export default function Hero({ setCurrentPage }) {
   const heroRef = useRef(null);
 
   /* Subtle parallax on desktop */
@@ -129,7 +129,7 @@ export default function Hero() {
 
           {/* CTAs — plain, no wrapper card */}
           <div className="hero-cta-row hero-animate-up" style={{ '--delay': '310ms' }}>
-            <Button href="#pricing" variant="primary" className="btn-lg hero-btn-primary">
+            <Button variant="primary" className="btn-lg hero-btn-primary" onClick={() => setCurrentPage('register')}>
               Register Now <ArrowRight size={16} />
             </Button>
             <Button href="#agenda" variant="secondary" className="btn-lg hero-btn-outline">

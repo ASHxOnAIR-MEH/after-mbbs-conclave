@@ -27,9 +27,7 @@ const PREMIUM_FEATS = [
   'Priority Event Updates',
 ];
 
-const REGISTER_URL = 'https://forms.gle/jpjtxNWPcVEErFBg8';
-
-export default function Pricing() {
+export default function Pricing({ setCurrentPage }) {
   return (
     <section id="pricing" className="section pricing-section">
       <div className="container">
@@ -84,9 +82,9 @@ export default function Pricing() {
 
             <div className="plan-cta">
               <Button
-                href={REGISTER_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => setCurrentPage('register')}
+                
+                
                 variant="secondary"
                 className="btn-lg"
               >
@@ -134,9 +132,9 @@ export default function Pricing() {
 
             <div className="plan-cta">
               <Button
-                href={REGISTER_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => setCurrentPage('register')}
+                
+                
                 variant="primary"
                 className="btn-lg"
               >

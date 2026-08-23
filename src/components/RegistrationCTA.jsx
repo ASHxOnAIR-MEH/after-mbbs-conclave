@@ -3,7 +3,7 @@ import './RegistrationCTA.css';
 import Button from './Button';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
 
-export default function RegistrationCTA() {
+export default function RegistrationCTA({ setCurrentPage }) {
   return (
     <section className="section reg-cta-section">
       <div className="container">
@@ -13,7 +13,7 @@ export default function RegistrationCTA() {
           <p className="reg-cta-desc">
             The right guidance today can shape your medical career tomorrow.
           </p>
-          <Button href="#pricing" variant="primary" className="btn-lg">
+          <Button variant="primary" className="btn-lg" onClick={() => setCurrentPage('register')}>
             Reserve Your Seat
             <ArrowRight size={16} strokeWidth={2.5} />
           </Button>

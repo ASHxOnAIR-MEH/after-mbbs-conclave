@@ -11,20 +11,28 @@ import Agenda from './components/Agenda';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import RegistrationCTA from './components/RegistrationCTA';
+import RegistrationPage from './components/RegistrationPage';
 import Footer from './components/Footer';
 import FloatingBackground from './components/FloatingBackground';
 import LegalPage from './components/LegalPage';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+
+  // Scroll to top whenever page changes
+  const handleSetPage = (page) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <FloatingBackground />
-      <Navbar setCurrentPage={setCurrentPage} />
+      <Navbar setCurrentPage={handleSetPage} />
 
       {currentPage === 'home' ? (
         <>
-          <Hero />
+          <Hero setCurrentPage={handleSetPage} />
           <WhyAttend />
           <Community />
           <Hospex />
@@ -32,15 +40,17 @@ function App() {
           <Pillars />
           <Speakers />
           <Agenda />
-          <Pricing />
+          <Pricing setCurrentPage={handleSetPage} />
           <FAQ />
-          <RegistrationCTA />
+          <RegistrationCTA setCurrentPage={handleSetPage} />
         </>
+      ) : currentPage === 'register' ? (
+        <RegistrationPage setCurrentPage={handleSetPage} />
       ) : (
         <LegalPage page={currentPage} />
       )}
 
-      <Footer setCurrentPage={setCurrentPage} />
+      <Footer setCurrentPage={handleSetPage} />
     </>
   );
 }

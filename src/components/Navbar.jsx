@@ -30,6 +30,11 @@ export default function Navbar({ setCurrentPage }) {
     setOpen(false);
   };
 
+  const goRegister = () => {
+    if (setCurrentPage) setCurrentPage('register');
+    setOpen(false);
+  };
+
   return (
     <>
       <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
@@ -51,7 +56,7 @@ export default function Navbar({ setCurrentPage }) {
           </ul>
 
           <div className="nav-cta">
-            <Button href="#pricing" variant="primary" onClick={close}>
+            <Button variant="primary" onClick={goRegister}>
               Register Now
             </Button>
           </div>
@@ -75,7 +80,7 @@ export default function Navbar({ setCurrentPage }) {
             {l.label}
           </a>
         ))}
-        <Button href="#pricing" variant="primary" className="btn-lg" onClick={close} style={{marginTop: '24px'}}>
+        <Button variant="primary" className="btn-lg" onClick={goRegister} style={{marginTop: '24px'}}>
           Register Now
         </Button>
       </div>
