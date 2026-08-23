@@ -1,131 +1,175 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Hero.css';
 import './Hospex.css';
 import Countdown from './Countdown';
 import Button from './Button';
-import {
-  Users, MonitorPlay, MessageCircle, Globe, TrendingUp,
-  Calendar, ArrowRight, Compass, MapPin, Wifi
-} from 'lucide-react';
+import { ArrowRight, MapPin, Wifi, Calendar } from 'lucide-react';
 
-const features = [
-  { Icon: Users,         label: 'Expert Speakers' },
-  { Icon: MonitorPlay,   label: 'Interactive Sessions' },
-  { Icon: MessageCircle, label: 'Live Q&A' },
-  { Icon: Globe,         label: 'Networking' },
-  { Icon: TrendingUp,    label: 'Career Growth' },
-  { Icon: Compass,       label: 'One-to-One Guidance' },
+const stats = [
+  { value: '40,000+', label: 'Expected Reach' },
+  { value: '1,000+',  label: 'Expected Registrations' },
+  { value: '20+',     label: 'Expert Speakers' },
+  { value: '11+',     label: 'Career Pathways' },
 ];
 
 export default function Hero() {
+  const heroRef = useRef(null);
+
+  /* Subtle parallax on desktop */
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) return;
+    const onScroll = () => {
+      const y = window.scrollY;
+      const img = hero.querySelector('.hero-img');
+      if (img && window.innerWidth > 900) {
+        img.style.transform = `translateY(${y * 0.04}px)`;
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <section id="hero" className="hero">
-      <div className="hero-bg">
-        <img src="/images/bg.png" alt="" className="hero-bg-img" />
-        <div className="hero-gradient" />
+    <section id="hero" className="hero" ref={heroRef}>
+
+      {/* ── Subtle medical SVG background art ── */}
+      <div className="hero-art" aria-hidden="true">
+        {/* ECG line */}
+        <svg className="hero-art-ecg" viewBox="0 0 800 120" fill="none">
+          <polyline
+            points="0,60 80,60 110,10 130,110 150,30 170,90 200,60 800,60"
+            stroke="currentColor" strokeWidth="2" fill="none"
+          />
+        </svg>
+        {/* DNA helix circles */}
+        <svg className="hero-art-dna" viewBox="0 0 80 300" fill="none">
+          {[0,1,2,3,4,5,6].map(i => (
+            <ellipse key={i} cx="40" cy={20 + i * 40} rx="30" ry="10"
+              stroke="currentColor" strokeWidth="1.5" fill="none"
+              opacity={0.6 - i * 0.05}
+            />
+          ))}
+          <line x1="20" y1="20" x2="20" y2="260" stroke="currentColor" strokeWidth="1.5"/>
+          <line x1="60" y1="20" x2="60" y2="260" stroke="currentColor" strokeWidth="1.5"/>
+        </svg>
+        {/* Medical cross */}
+        <svg className="hero-art-cross" viewBox="0 0 60 60" fill="none">
+          <rect x="20" y="4" width="20" height="52" rx="4" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+          <rect x="4" y="20" width="52" height="20" rx="4" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+        </svg>
+        {/* Network nodes */}
+        <svg className="hero-art-nodes" viewBox="0 0 200 200" fill="none">
+          {[[100,50],[50,130],[150,130],[30,70],[170,70]].map(([cx,cy],i) => (
+            <circle key={i} cx={cx} cy={cy} r="6" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+          ))}
+          <line x1="100" y1="50" x2="50" y2="130" stroke="currentColor" strokeWidth="1"/>
+          <line x1="100" y1="50" x2="150" y2="130" stroke="currentColor" strokeWidth="1"/>
+          <line x1="50"  y1="130" x2="150" y2="130" stroke="currentColor" strokeWidth="1"/>
+          <line x1="100" y1="50" x2="30" y2="70"  stroke="currentColor" strokeWidth="1"/>
+          <line x1="100" y1="50" x2="170" y2="70" stroke="currentColor" strokeWidth="1"/>
+        </svg>
       </div>
 
-      <div className="hero-main container">
-        {/* ─── LEFT ─── */}
+      {/* ── Emerald glow behind image ── */}
+      <div className="hero-img-glow" aria-hidden="true" />
+
+      <div className="hero-inner container">
+
+        {/* ════════ LEFT COLUMN ════════ */}
         <div className="hero-left">
 
-          {/* HOSPEX association badge — ABOVE title */}
-          <div className="hero-hospex-badge">
-            <span className="hospex-assoc-label">Associated with</span>
-            <img src="/images/hospex-logo.png" alt="HOSPEX Healthcare Expo" className="hospex-badge-logo" />
+          {/* HOSPEX eyebrow — no card */}
+          <div className="hero-eyebrow-row hero-animate-up" style={{ '--delay': '0ms' }}>
+            <img src="/images/hospex-logo.png" alt="HOSPEX Healthcare Expo" className="hero-hospex-logo-sm" />
+            <span className="hero-eyebrow-text">Associated with HOSPEX Healthcare Expo</span>
           </div>
 
-          {/* Conclave badge */}
-          <div className="hero-presents">
-            <span className="hero-presents-event">● KERALA'S FIRST MEDICAL CAREER CONCLAVE ●</span>
-          </div>
-
-          <h1 className="hero-title">
-            CAREER AFTER <span className="hero-accent">MBBS</span>
+          {/* Main title */}
+          <h1 className="hero-title hero-animate-up" style={{ '--delay': '80ms' }}>
+            CAREER AFTER<br />
+            <span className="hero-accent">MBBS</span>
           </h1>
-          <p className="hero-tagline">Exploring Hidden Treasures</p>
-          <h2 className="hero-subtitle">
-            Build The Medical Career<br />
-            <em>You Actually Want.</em>
-          </h2>
 
-          {/* Event meta strip */}
-          <div className="hero-event-meta">
-            <div className="hero-meta-item">
-              <Calendar size={14} strokeWidth={2.5} />
-              <span>24–26 September 2026</span>
-            </div>
-            <div className="hero-meta-divider" />
-            <div className="hero-meta-item">
-              <MapPin size={14} strokeWidth={2.5} />
-              <span>Kochi, Kerala</span>
-            </div>
-            <div className="hero-meta-divider" />
-            <div className="hero-meta-item">
-              <Wifi size={14} strokeWidth={2.5} />
-              <span>+ Live on Zoom</span>
-            </div>
-          </div>
-
-          <p className="hero-desc">
-            Explore PG pathways, GCC careers, hospital administration,
-            healthcare entrepreneurship, AI in medicine, research,
-            and <u>global opportunities</u>.
+          {/* Elegant italic tagline */}
+          <p className="hero-tagline hero-animate-up" style={{ '--delay': '140ms' }}>
+            Exploring Hidden Treasures
           </p>
 
-          <div className="hero-cta-row">
-            <Button href="#pricing" variant="primary" className="btn-lg">
-              <Calendar size={15} /> Register Now <ArrowRight size={15} />
+          {/* Subtitle */}
+          <h2 className="hero-subtitle hero-animate-up" style={{ '--delay': '180ms' }}>
+            Build The Medical Career <em>You Actually Want.</em>
+          </h2>
+
+          {/* Description */}
+          <p className="hero-desc hero-animate-up" style={{ '--delay': '220ms' }}>
+            Explore PG pathways, GCC careers, global opportunities, hospital administration,
+            healthcare entrepreneurship, research, innovation and diverse medical careers.
+          </p>
+
+          {/* Event info — NO card, pure typography */}
+          <div className="hero-event-strip hero-animate-up" style={{ '--delay': '260ms' }}>
+            <div className="hero-event-main-row">
+              <span className="hero-ev-item">
+                <Calendar size={13} strokeWidth={2.5} />
+                24–26 SEPTEMBER 2026
+              </span>
+              <span className="hero-ev-dot">·</span>
+              <span className="hero-ev-item">
+                <MapPin size={13} strokeWidth={2.5} />
+                KOCHI, KERALA
+              </span>
+              <span className="hero-ev-dot">·</span>
+              <span className="hero-ev-item hero-ev-hybrid">HYBRID EVENT</span>
+            </div>
+            <p className="hero-ev-sub">
+              Offline at Chakolas Pavilion Events Center&nbsp;·&nbsp;Live online via Zoom
+            </p>
+          </div>
+
+          {/* CTAs — plain, no wrapper card */}
+          <div className="hero-cta-row hero-animate-up" style={{ '--delay': '310ms' }}>
+            <Button href="#pricing" variant="primary" className="btn-lg hero-btn-primary">
+              Register Now <ArrowRight size={16} />
             </Button>
-            <Button href="#agenda" variant="secondary" className="btn-lg hero-outline-btn">
-              <Calendar size={15} /> View Agenda <ArrowRight size={15} />
+            <Button href="#agenda" variant="secondary" className="btn-lg hero-btn-outline">
+              View Agenda <ArrowRight size={16} />
             </Button>
           </div>
 
-          <div className="hero-features-card">
-            {features.map(({ Icon, label }) => (
-              <div key={label} className="hero-feat-item">
-                <Icon size={18} strokeWidth={2} className="feat-icon" />
-                <span className="feat-label">{label}</span>
-              </div>
-            ))}
-          </div>
         </div>
 
-        {/* ─── RIGHT ─── */}
-        <div className="hero-right">
+        {/* ════════ RIGHT COLUMN — IMAGE ════════ */}
+        <div className="hero-right hero-animate-img">
+          {/* Gold accent line */}
+          <div className="hero-gold-line" aria-hidden="true" />
           <div className="hero-img-wrap">
-            <img src="/images/new-hero-doctors.png" alt="Doctors" className="hero-img" />
+            <img
+              src="/images/new-hero-doctors.png"
+              alt="Medical professionals at Career After MBBS Conclave"
+              className="hero-img"
+            />
+          </div>
+          {/* Countdown floating card — only on desktop */}
+          <div className="hero-countdown-float">
+            <div className="hero-cd-label">Event Starts In</div>
+            <Countdown />
           </div>
         </div>
+
       </div>
 
-      {/* ─── PREMIUM INFO CARDS ─── */}
-      <div className="hero-bottom-cards container">
-        <div className="info-card countdown-card">
-          <div className="info-card-title">Event Starts In</div>
-          <Countdown />
-        </div>
-
-        <div className="info-card highlights-card">
-          <div className="hl-item">
-            <div className="hl-val">11+</div>
-            <div className="hl-label">Career Tracks</div>
+      {/* ════════ STATS STRIP ════════ */}
+      <div className="hero-stats-strip container">
+        {stats.map((s, i) => (
+          <div key={s.label} className="hero-stat-item">
+            <div className="hero-stat-value">{s.value}</div>
+            <div className="hero-stat-label">{s.label}</div>
+            {i < stats.length - 1 && <div className="hero-stat-divider" aria-hidden="true" />}
           </div>
-          <div className="hl-item">
-            <div className="hl-val">20+</div>
-            <div className="hl-label">Speakers</div>
-          </div>
-          <div className="hl-item">
-            <div className="hl-val">1 to 1</div>
-            <div className="hl-label">Interactive Sessions</div>
-          </div>
-          <div className="hl-item">
-            <div className="hl-val">Live</div>
-            <div className="hl-label">Q&amp;A</div>
-          </div>
-        </div>
+        ))}
       </div>
+
     </section>
   );
 }
