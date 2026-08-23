@@ -6,10 +6,10 @@ import Button from './Button';
 import { ArrowRight, MapPin, Wifi, Calendar } from 'lucide-react';
 
 const stats = [
-  { value: '40,000+', label: 'Expected Reach' },
-  { value: '1,000+',  label: 'Expected Registrations' },
-  { value: '20+',     label: 'Expert Speakers' },
-  { value: '11+',     label: 'Career Pathways' },
+  { value: '50,000+',      label: 'Expected Event Reach' },
+  { value: '3.5 Lakh+',   label: 'IMA Doctors · India' },
+  { value: '45,000–55,000', label: 'Active Doctors · Kerala' },
+  { value: '1-to-1',      label: 'Interactive Career Guidance' },
 ];
 
 export default function Hero() {
