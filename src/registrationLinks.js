@@ -5,8 +5,8 @@
    ============================================================ */
 
 export const registrationLinks = {
-  viewer:              "",   // Viewer Pass Google Form URL
-  viewerReferral:      "",   // Viewer Pass + Referral Code Google Form URL
-  interactive:         "",   // Interactive Pass Google Form URL
-  interactiveReferral: "",   // Interactive Pass + Referral Code Google Form URL
+  viewer:              "https://forms.gle/yhKnuDK5kQfHnQkE9",   // Viewer Pass Google Form URL
+  viewerReferral:      "https://forms.gle/yhKnuDK5kQfHnQkE9",   // Viewer Pass + Referral Code Google Form URL
+  interactive:         "https://forms.gle/yhKnuDK5kQfHnQkE9",   // Interactive Pass Google Form URL
+  interactiveReferral: "https://forms.gle/yhKnuDK5kQfHnQkE9",   // Interactive Pass + Referral Code Google Form URL
 };
