@@ -5,8 +5,8 @@
    ============================================================ */
 
 export const registrationLinks = {
-  viewer:              "https://forms.gle/yhKnuDK5kQfHnQkE9",   // Viewer Pass Google Form URL
-  viewerReferral:      "https://forms.gle/yhKnuDK5kQfHnQkE9",   // Viewer Pass + Referral Code Google Form URL
-  interactive:         "https://forms.gle/yhKnuDK5kQfHnQkE9",   // Interactive Pass Google Form URL
-  interactiveReferral: "https://forms.gle/yhKnuDK5kQfHnQkE9",   // Interactive Pass + Referral Code Google Form URL
+  viewer:              "https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9",
+  viewerReferral:      "https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9",
+  interactive:         "https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9",
+  interactiveReferral: "https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9",
 };

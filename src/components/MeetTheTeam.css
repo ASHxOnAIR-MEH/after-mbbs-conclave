@@ -1,0 +1,262 @@
+/* ============================================================
+   MEET THE TEAM — Mobile Carousel (overflow-safe) + Desktop Grid
+   ============================================================ */
+
+.team-section {
+  background: transparent !important;
+  /* Do NOT put overflow:hidden here — it clips the section globally */
+}
+
+/* ── Section Header ── */
+.team-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+/* ════════════════════════════════════
+   SHARED CARD STYLES
+════════════════════════════════════ */
+.team-card {
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(210,210,215,0.55);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s var(--ease-apple), box-shadow 0.35s var(--ease-apple);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+  height: 100%;
+}
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+}
+
+/* ── Photo wrap ── */
+.team-photo-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  background: #f3f4f6;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* ── Initials placeholder ── */
+.team-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+}
+.team-initials {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--emerald-dark);
+  letter-spacing: -0.02em;
+  opacity: 0.7;
+}
+
+/* ── Role pill overlay ── */
+.team-role-pill {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 980px;
+  padding: 5px 14px;
+  white-space: nowrap;
+  max-width: calc(100% - 24px);
+  text-align: center;
+}
+.team-role-emerald { background: rgba(16,185,129,0.92); color: #fff; backdrop-filter: blur(8px); }
+.team-role-gold    { background: rgba(199,154,43,0.92);  color: #fff; backdrop-filter: blur(8px); }
+.team-role-slate   { background: rgba(30,41,59,0.88);    color: #fff; backdrop-filter: blur(8px); }
+
+/* ── Card Info ── */
+.team-info {
+  padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+.team-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--black-1);
+  line-height: 1.2;
+  margin: 0;
+}
+.team-designation {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gray-dark);
+}
+.team-org {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  color: var(--gray-mid);
+  font-weight: 500;
+}
+
+/* ════════════════════════════════════
+   DESKTOP GRID (> 768px)
+════════════════════════════════════ */
+.team-grid-wrap {
+  display: block;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Carousel hidden on desktop */
+.team-carousel-outer {
+  display: none;
+}
+
+/* ════════════════════════════════════
+   RESPONSIVE — Tablet (768px–1024px)
+════════════════════════════════════ */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .team-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+}
+
+/* ════════════════════════════════════
+   MOBILE CAROUSEL (≤ 768px)
+   KEY: overflow:hidden ONLY on the outer wrapper, never on body/section
+════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Hide desktop grid */
+  .team-grid-wrap { display: none; }
+
+  /* ── Outer carousel container
+     overflow:hidden clips the track overflow WITHOUT causing page scroll.
+     width: 100% ensures it never exceeds viewport.
+     DO NOT use overflow:hidden on .team-section or body. ── */
+  .team-carousel-outer {
+    display: block;
+    position: relative;
+    width: 100%;
+    overflow: hidden;          /* ← clips track, no page overflow */
+    padding-bottom: 64px;      /* space for dots + nav buttons */
+  }
+
+  /* ── Track — flex row of slides
+     Width is auto (grows with slides). Transform is set via JS.
+     NO padding or margin that could cause overflow. ── */
+  .team-carousel-track {
+    display: flex;
+    flex-direction: row;
+    /* gap is accounted for in JS calculation: SLIDE_GAP = 16px */
+    gap: 16px;
+    padding: 8px 0 12px;
+    /* transition is smooth, will-change avoids paint reflow */
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  /* ── Each slide
+     Width is 82% of container (set by JS SLIDE_RATIO = 0.82).
+     Also set in CSS so layout paint is correct before JS kicks in. ── */
+  .team-carousel-slide {
+    /* 82% of container for one main card; 18% = peek of next card */
+    flex: 0 0 82%;
+    width: 82%;
+    min-width: 0;
+    opacity: 0.5;
+    transform: scale(0.96);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .team-carousel-slide.active-slide {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* ── Pagination dots ── */
+  .team-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    right: 0;
+  }
+  .team-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #d1d5db;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.25s, width 0.25s;
+    flex-shrink: 0;
+  }
+  .team-dot.active {
+    background: var(--emerald);
+    width: 22px;
+    border-radius: 4px;
+  }
+
+  /* ── Prev/Next nav buttons ── */
+  .team-nav-btn {
+    position: absolute;
+    bottom: 14px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--black-1);
+    transition: background 0.2s, opacity 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    flex-shrink: 0;
+  }
+  .team-prev { left: calc(50% - 54px); }
+  .team-next { right: calc(50% - 54px); }
+  .team-nav-btn:not(:disabled):hover {
+    background: var(--emerald);
+    color: #fff;
+    border-color: var(--emerald);
+  }
+
+  .team-header { margin-bottom: 32px; }
+}
+
+/* ════════════════════════════════════
+   VERY SMALL MOBILE (≤ 390px)
+════════════════════════════════════ */
+@media (max-width: 390px) {
+  .team-carousel-slide { flex: 0 0 84%; width: 84%; }
+  .team-name { font-size: 0.95rem; }
+  .team-designation { font-size: 0.72rem; }
+}

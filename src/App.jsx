@@ -10,7 +10,9 @@ import Speakers from './components/Speakers';
 import Agenda from './components/Agenda';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
+import MeetTheTeam from './components/MeetTheTeam';
 import RegistrationCTA from './components/RegistrationCTA';
+import Testimonials from './components/Testimonials';
 import RegistrationPage from './components/RegistrationPage';
 import Footer from './components/Footer';
 import FloatingBackground from './components/FloatingBackground';
@@ -32,6 +34,7 @@ function App() {
 
       {currentPage === 'home' ? (
         <>
+          {/* ── Main Page Flow ── */}
           <Hero setCurrentPage={handleSetPage} />
           <WhyAttend />
           <Community />
@@ -42,7 +45,10 @@ function App() {
           <Agenda />
           <Pricing setCurrentPage={handleSetPage} />
           <FAQ />
-          <RegistrationCTA setCurrentPage={handleSetPage} />
+          {/* ── Added sections ── */}
+          <MeetTheTeam />
+          <RegistrationCTA />
+          <Testimonials />
         </>
       ) : currentPage === 'register' ? (
         <RegistrationPage setCurrentPage={handleSetPage} />

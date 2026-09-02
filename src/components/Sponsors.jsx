@@ -1,81 +1,84 @@
 import React from 'react';
 import './Sponsors.css';
 
-/* Mock Icons for Sponsors */
-const IconMedical = () => (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+/* ── Icons for tier indicators ── */
+const IconInvite = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+    <rect x="2" y="4" width="20" height="16" rx="3"/>
+    <path d="M2 8l10 7 10-7"/>
   </svg>
 );
-const IconShield = () => (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-  </svg>
-);
-const IconBuilding = () => (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <rect x="4" y="2" width="16" height="20" rx="2" ry="2"/>
-    <path d="M9 22v-4h6v4"/>
-    <path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M16 10h.01M8 10h.01M8 14h.01M12 14h.01M16 14h.01"/>
-  </svg>
-);
-const IconGlobe = () => (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <circle cx="12" cy="12" r="10"/>
-    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-    <path d="M2 12h20"/>
-  </svg>
-);
+
 const IconStar = () => (
-  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
   </svg>
 );
 
-const sponsorList = [
-  { id: 1, name: 'MedTech Solutions', Icon: IconMedical },
-  { id: 2, name: 'Global Health Inc.', Icon: IconGlobe },
-  { id: 3, name: 'CareShield Providers', Icon: IconShield },
-  { id: 4, name: 'City Hospital Group', Icon: IconBuilding },
-  { id: 5, name: 'BioLife Research', Icon: IconMedical },
-  { id: 6, name: 'Apex Medical', Icon: IconShield },
-];
+const IconDiamond = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+    <path d="M6 3h12l4 6-10 12L2 9z"/>
+    <path d="M2 9h20"/>
+  </svg>
+);
+
+const IconMedal = () => (
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+    <circle cx="12" cy="14" r="7"/>
+    <path d="M7.5 4.27 2 8l4.09 2L12 2l5.91 8L22 8l-5.5-3.73"/>
+  </svg>
+);
 
 export default function Sponsors() {
   return (
     <section id="sponsors" className="section sponsors-section">
       <div className="sponsors-intro container">
-        <p className="eyebrow">Supported By</p>
-        <h2 className="display-xl">Our <span className="text-emerald">Partners</span></h2>
+        <p className="eyebrow">Partnership Opportunities</p>
+        <h2 className="display-xl">Our <span className="text-emerald">Sponsors</span></h2>
         <p className="sub">
-          Proudly backed by the world's leading healthcare organizations and institutions.
+          Join India's premier medical career conclave as a sponsor and connect with thousands of medical professionals.
         </p>
       </div>
 
       <div className="container sponsors-hierarchy">
-        {/* ── Static Title Sponsor ── */}
+
+        {/* ── Title Sponsor ── */}
         <div className="sponsor-tier">
           <div className="tier-pill-title">Title Sponsor</div>
-          <div className="sponsor-card title-card">
-            <div className="title-icon-wrap">
+          <div className="sponsor-invite-card title-invite-card">
+            <div className="invite-icon-wrap title-invite-icon">
               <IconStar />
             </div>
-            <h3 className="title-sponsor-name">Premier Healthcare Group</h3>
-            <p className="sponsor-caption">Leading the future of medical excellence</p>
+            <div className="invite-content">
+              <div className="invite-open-badge">Invitation Open</div>
+              <p className="invite-desc">
+                The Title Sponsorship offers premier visibility across all event touchpoints — stage, digital, and collateral.
+              </p>
+            </div>
           </div>
         </div>
-        
+
         {/* ── Platinum Sponsors ── */}
         <div className="sponsor-tier">
           <div className="tier-pill-platinum">Platinum Sponsors</div>
-          <div className="sponsor-grid platinum-grid">
-            <div className="sponsor-card platinum-card">
-              <div className="platinum-icon-wrap"><IconMedical /></div>
-              <h3 className="platinum-sponsor-name">Apollo Diagnostics</h3>
+          <div className="sponsor-invite-grid">
+            <div className="sponsor-invite-card platinum-invite-card">
+              <div className="invite-icon-wrap platinum-invite-icon">
+                <IconDiamond />
+              </div>
+              <div className="invite-content">
+                <div className="invite-open-badge platinum-badge">Invitation Open</div>
+                <p className="invite-desc-sm">Premium brand placement and speaking opportunities.</p>
+              </div>
             </div>
-            <div className="sponsor-card platinum-card">
-              <div className="platinum-icon-wrap"><IconShield /></div>
-              <h3 className="platinum-sponsor-name">Medanta Health</h3>
+            <div className="sponsor-invite-card platinum-invite-card">
+              <div className="invite-icon-wrap platinum-invite-icon">
+                <IconDiamond />
+              </div>
+              <div className="invite-content">
+                <div className="invite-open-badge platinum-badge">Invitation Open</div>
+                <p className="invite-desc-sm">Premium brand placement and speaking opportunities.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -83,40 +86,49 @@ export default function Sponsors() {
         {/* ── Gold Sponsors ── */}
         <div className="sponsor-tier">
           <div className="tier-pill-gold">Gold Sponsors</div>
-          <div className="sponsor-grid gold-grid">
-            <div className="sponsor-card gold-card">
-              <div className="gold-icon-wrap"><IconGlobe /></div>
-              <h3 className="gold-sponsor-name">Global Pharma</h3>
+          <div className="sponsor-invite-grid gold-invite-grid">
+            {[1, 2, 3].map(i => (
+              <div key={i} className="sponsor-invite-card gold-invite-card">
+                <div className="invite-icon-wrap gold-invite-icon">
+                  <IconMedal />
+                </div>
+                <div className="invite-content">
+                  <div className="invite-open-badge gold-badge">Invitation Open</div>
+                  <p className="invite-desc-sm">Targeted visibility for healthcare brands.</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Co-Powered By — DAMS ── */}
+        <div className="sponsor-tier">
+          <div className="tier-label-assoc">Co-Powered By</div>
+          <div className="dams-sponsor-card">
+            <div className="dams-logo-wrap" aria-label="DAMS logo">
+              <img src="/images/dams-logo.png" alt="DAMS" className="dams-logo-img" style={{ maxHeight: '48px', objectFit: 'contain' }} />
             </div>
-            <div className="sponsor-card gold-card">
-              <div className="gold-icon-wrap"><IconBuilding /></div>
-              <h3 className="gold-sponsor-name">City Clinics</h3>
-            </div>
-            <div className="sponsor-card gold-card">
-              <div className="gold-icon-wrap"><IconMedical /></div>
-              <h3 className="gold-sponsor-name">Care Plus</h3>
+            <div className="dams-info">
+              <div className="dams-name">DAMS</div>
+              <div className="dams-branches">TRIVANDRUM &nbsp;|&nbsp; ERNAKULAM</div>
             </div>
           </div>
         </div>
 
-        {/* ── Marquee for Associate / Co-powered Sponsors ── */}
-        <div className="sponsor-tier">
-          <div className="tier-label-assoc">Associate & Co-Powered Sponsors</div>
+        {/* ── Contact CTA ── */}
+        <div className="sponsor-contact-cta">
+          <p className="sponsor-contact-text">
+            Interested in sponsoring? Connect with our team.
+          </p>
+          <a
+            href="mailto:imaparippally@gmail.com"
+            className="sponsor-contact-link"
+            aria-label="Email IMA Parippally for sponsorship"
+          >
+            imaparippally@gmail.com
+          </a>
         </div>
-      </div>
 
-      <div className="marquee-container">
-        {/* We duplicate the list to ensure a seamless infinite scroll loop */}
-        <div className="marquee-track">
-          {[...sponsorList, ...sponsorList].map((sponsor, index) => (
-            <div key={`${sponsor.id}-${index}`} className="marquee-item">
-              <div className="sponsor-icon-wrap">
-                <sponsor.Icon />
-              </div>
-              <span className="sponsor-name">{sponsor.name}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

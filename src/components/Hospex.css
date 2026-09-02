@@ -40,8 +40,9 @@
 }
 
 .hospex-main-logo {
-  height: 56px;
+  height: 100px;
   width: auto;
+  max-width: 320px;
   object-fit: contain;
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
 }
@@ -322,7 +323,7 @@
 
 @media (max-width: 768px) {
   .hospex-header { margin-bottom: 36px; }
-  .hospex-main-logo { height: 44px; }
+  .hospex-main-logo { height: 60px; max-width: 220px; }
   .hospex-pillars { grid-template-columns: 1fr 1fr; gap: 8px; }
 
   .hero-event-meta {

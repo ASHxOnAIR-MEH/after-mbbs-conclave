@@ -15,7 +15,7 @@ const stats = [
 export default function Hero({ setCurrentPage }) {
   const heroRef = useRef(null);
 
-  /* Subtle parallax on desktop */
+  /* Subtle parallax on desktop only */
   useEffect(() => {
     const hero = heroRef.current;
     if (!hero) return;
@@ -76,14 +76,8 @@ export default function Hero({ setCurrentPage }) {
 
       <div className="hero-inner container">
 
-        {/* ════════ LEFT COLUMN ════════ */}
+        {/* ════════ LEFT COLUMN — TEXT ════════ */}
         <div className="hero-left">
-
-          {/* HOSPEX eyebrow — no card */}
-          <div className="hero-eyebrow-row hero-animate-up" style={{ '--delay': '0ms' }}>
-            <img src="/images/hospex-logo.png" alt="HOSPEX Healthcare Expo" className="hero-hospex-logo-sm" />
-            <span className="hero-eyebrow-text">Associated with HOSPEX Healthcare Expo</span>
-          </div>
 
           {/* Main title */}
           <h1 className="hero-title hero-animate-up" style={{ '--delay': '80ms' }}>
@@ -127,9 +121,9 @@ export default function Hero({ setCurrentPage }) {
             </p>
           </div>
 
-          {/* CTAs — plain, no wrapper card */}
+          {/* CTAs */}
           <div className="hero-cta-row hero-animate-up" style={{ '--delay': '310ms' }}>
-            <Button variant="primary" className="btn-lg hero-btn-primary" onClick={() => setCurrentPage('register')}>
+            <Button variant="primary" className="btn-lg hero-btn-primary" href="https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9" target="_blank" rel="noopener noreferrer">
               Register Now <ArrowRight size={16} />
             </Button>
             <Button href="#agenda" variant="secondary" className="btn-lg hero-btn-outline">
@@ -139,10 +133,12 @@ export default function Hero({ setCurrentPage }) {
 
         </div>
 
-        {/* ════════ RIGHT COLUMN — IMAGE ════════ */}
+        {/* ════════ RIGHT COLUMN — IMAGE + COUNTDOWN ════════ */}
         <div className="hero-right hero-animate-img">
-          {/* Gold accent line */}
+          {/* Gold accent line — desktop only */}
           <div className="hero-gold-line" aria-hidden="true" />
+
+          {/* Image */}
           <div className="hero-img-wrap">
             <img
               src="/images/new-hero-doctors.png"
@@ -150,8 +146,9 @@ export default function Hero({ setCurrentPage }) {
               className="hero-img"
             />
           </div>
-          {/* Countdown floating card — only on desktop */}
-          <div className="hero-countdown-float">
+
+          {/* Countdown — floating card on desktop, inline card on mobile */}
+          <div className="hero-countdown-float" aria-label="Event countdown">
             <div className="hero-cd-label">Event Starts In</div>
             <Countdown />
           </div>

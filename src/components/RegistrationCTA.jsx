@@ -1,11 +1,9 @@
 import React from 'react';
 import './RegistrationCTA.css';
-import Button from './Button';
-import { ArrowRight, ShieldCheck } from 'lucide-react';
 
-export default function RegistrationCTA({ setCurrentPage }) {
+export default function RegistrationCTA() {
   return (
-    <section className="section reg-cta-section">
+    <section className="section reg-cta-section" aria-label="Your Future. Your Choice.">
       <div className="container">
         <div className="reg-cta-card">
           <p className="reg-cta-eyebrow">Your Next Step</p>
@@ -13,13 +11,8 @@ export default function RegistrationCTA({ setCurrentPage }) {
           <p className="reg-cta-desc">
             The right guidance today can shape your medical career tomorrow.
           </p>
-          <Button variant="primary" className="btn-lg" onClick={() => setCurrentPage('register')}>
-            Reserve Your Seat
-            <ArrowRight size={16} strokeWidth={2.5} />
-          </Button>
-          <p className="reg-cta-trust">
-            <ShieldCheck size={14} strokeWidth={2} />
-            Secure Payment &middot; Instant Confirmation
+          <p className="reg-cta-closing">
+            Wishing you all the best for your medical career.
           </p>
         </div>
       </div>

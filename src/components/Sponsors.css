@@ -1,7 +1,11 @@
+/* ============================================================
+   SPONSORS — Premium Invitation Open State + DAMS
+   ============================================================ */
+
 .sponsors-section {
   background: transparent !important;
-  padding-bottom: 100px;
-  overflow: hidden;
+  padding-bottom: 80px;
+  overflow: visible;
 }
 
 .sponsors-intro {
@@ -9,12 +13,12 @@
   margin-bottom: 56px;
 }
 
-/* ── Hierarchy Layout ── */
+/* ── Hierarchy layout ── */
 .sponsors-hierarchy {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  margin-bottom: 32px;
+  gap: 44px;
+  margin-bottom: 0;
 }
 
 .sponsor-tier {
@@ -24,7 +28,7 @@
   gap: 20px;
 }
 
-/* ── Labels ── */
+/* ── Tier labels ── */
 .tier-pill-title {
   display: inline-block;
   font-size: 0.72rem;
@@ -37,14 +41,6 @@
   border: 1px solid var(--emerald-lt);
   border-radius: 980px;
 }
-.tier-label-assoc {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gray-mid);
-}
-
 .tier-pill-platinum {
   display: inline-block;
   font-size: 0.72rem;
@@ -69,202 +65,254 @@
   border: 1px solid #fde047;
   border-radius: 980px;
 }
-
-/* ── Platinum & Gold Grids ── */
-.sponsor-grid {
-  display: grid;
-  gap: 20px;
-  width: 100%;
-}
-.platinum-grid {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 720px;
-}
-.gold-grid {
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 800px;
-}
-
-.platinum-card {
-  padding: 24px;
-  border: 1px solid #cbd5e1;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
-}
-.platinum-card:hover {
-  border-color: #94a3b8;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  transform: translateY(-4px);
-}
-.gold-card {
-  padding: 20px;
-  border: 1px solid #fef08a;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
-  background: rgba(254,252,232,0.6);
-}
-.gold-card:hover {
-  border-color: #facc15;
-  box-shadow: 0 8px 24px rgba(234,179,8,0.08);
-  transform: translateY(-4px);
-}
-
-.platinum-icon-wrap {
-  color: #64748b;
-  margin-bottom: 12px;
-}
-.gold-icon-wrap {
-  color: #ca8a04;
-  margin-bottom: 12px;
-}
-.platinum-sponsor-name {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
+.tier-label-assoc {
+  font-size: 0.72rem;
   font-weight: 700;
-  color: var(--black-1);
-  text-align: center;
-}
-.gold-sponsor-name {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--black-2);
-  text-align: center;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
 }
 
-/* ── Title Card ── */
-.sponsor-card {
+/* ── INVITATION OPEN — base card ── */
+.sponsor-invite-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  gap: 20px;
+  border-radius: 18px;
   background: rgba(255,255,255,0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  padding: 24px 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.sponsor-invite-card:hover {
+  transform: translateY(-3px);
 }
 
-.title-card {
+/* ── Title tier invite card ── */
+.title-invite-card {
   width: 100%;
-  max-width: 600px;
-  padding: 40px 24px;
+  max-width: 580px;
   border: 1.5px dashed var(--emerald);
-  box-shadow: 0 8px 32px rgba(16,185,129,0.06);
-  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(16,185,129,0.06);
 }
-.title-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--emerald-dark);
-  box-shadow: 0 16px 40px rgba(16,185,129,0.12);
+.title-invite-card:hover {
+  box-shadow: 0 12px 40px rgba(16,185,129,0.1);
 }
 
-.title-icon-wrap {
+.title-invite-icon {
   color: var(--emerald);
-  margin-bottom: 20px;
-}
-.title-sponsor-name {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--black-1);
-  margin-bottom: 8px;
-  text-align: center;
-}
-.sponsor-caption {
-  font-size: 0.95rem;
-  color: var(--gray-dark);
-  text-align: center;
-  font-style: italic;
 }
 
-/* ── Marquee Container ── */
-.marquee-container {
-  width: 100vw;
-  max-width: 100%;
-  overflow: hidden;
-  position: relative;
-  /* Add subtle fade effect on edges */
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+/* ── Platinum invite cards ── */
+.sponsor-invite-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  max-width: 680px;
+  width: 100%;
 }
-
-/* ── Marquee Track ── */
-.marquee-track {
-  display: flex;
-  width: fit-content;
-  gap: 32px;
-  padding-left: 16px;
-  /* Animate from 0 to -50% because the track is exactly double the list */
-  animation: marquee-scroll 25s linear infinite;
+.gold-invite-grid {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 780px;
 }
-
-.marquee-track:hover {
-  animation-play-state: paused;
+.platinum-invite-card {
+  border: 1.5px dashed #94a3b8;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
 }
-
-/* ── Marquee Items ── */
-.marquee-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--gray-light);
-  border-radius: var(--r-xl);
-  padding: 16px 28px;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+.platinum-invite-card:hover {
+  box-shadow: 0 8px 28px rgba(71,85,105,0.08);
+  border-color: #64748b;
 }
+.platinum-invite-icon { color: #64748b; }
 
-.marquee-item:hover {
-  transform: translateY(-4px);
-  border-color: var(--emerald);
-  box-shadow: 0 8px 24px rgba(16,185,129,0.1);
+/* ── Gold invite cards ── */
+.gold-invite-card {
+  border: 1.5px dashed #ca8a04;
+  background: rgba(254,252,232,0.7);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
 }
+.gold-invite-card:hover {
+  box-shadow: 0 8px 28px rgba(202,138,4,0.08);
+  border-color: #a16207;
+}
+.gold-invite-icon { color: #ca8a04; }
 
-.sponsor-icon-wrap {
+/* ── Invite icon wrap ── */
+.invite-icon-wrap {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--emerald-dark);
+  border: 1px solid rgba(0,0,0,0.06);
 }
 
-.sponsor-name {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
+/* ── Content inside invite card ── */
+.invite-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+/* ── "Invitation Open" badge — premium opportunity indicator ── */
+.invite-open-badge {
+  display: inline-block;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
   font-weight: 700;
-  color: var(--black-2);
-  white-space: nowrap;
+  font-style: italic;
+  color: var(--emerald-dark);
+  letter-spacing: 0.01em;
+}
+.platinum-badge { color: #475569; }
+.gold-badge { color: #92400e; }
+
+.invite-desc {
+  font-size: 0.88rem;
+  color: var(--gray-dark);
+  line-height: 1.55;
+  margin: 0;
+}
+.invite-desc-sm {
+  font-size: 0.8rem;
+  color: var(--gray-mid);
+  line-height: 1.45;
+  margin: 0;
 }
 
-/* ── Keyframes ── */
-@keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* ════════════════════════════════════
+   DAMS — Co-Powered Section
+════════════════════════════════════ */
+.dams-sponsor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px 36px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(210,210,215,0.55);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  min-width: 200px;
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
 }
 
-/* ── Responsive ── */
+/* DAMS logo — when actual file is provided */
+.dams-logo-img {
+  height: 72px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+/* DAMS placeholder — replace when real logo is provided */
+.dams-logo-placeholder {
+  width: 100px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #f1f5f9;
+  border: 1.5px dashed #94a3b8;
+}
+.dams-placeholder-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.dams-placeholder-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #475569;
+  letter-spacing: 0.1em;
+}
+
+.dams-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.dams-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--black-1);
+  letter-spacing: 0.05em;
+}
+.dams-branches {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-dark);
+}
+
+/* ── Contact CTA ── */
+.sponsor-contact-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 32px;
+  border-top: 1px solid #f3f4f6;
+}
+.sponsor-contact-text {
+  font-size: 0.9rem;
+  color: var(--gray-mid);
+  text-align: center;
+}
+.sponsor-contact-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--emerald-dark);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(16,185,129,0.3);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.sponsor-contact-link:hover {
+  color: var(--emerald);
+  border-color: var(--emerald);
+}
+
+/* ════════════════════════════════════
+   RESPONSIVE — Mobile
+════════════════════════════════════ */
 @media (max-width: 768px) {
-  .platinum-grid { grid-template-columns: 1fr; max-width: 320px; }
-  .gold-grid { grid-template-columns: 1fr; max-width: 320px; }
-  .title-card {
-    padding: 32px 20px;
+  .sponsor-invite-grid { grid-template-columns: 1fr; max-width: 380px; }
+  .gold-invite-grid { grid-template-columns: 1fr; max-width: 380px; }
+  .title-invite-card { max-width: 100%; }
+  .sponsor-invite-card {
+    padding: 18px 20px;
+    gap: 14px;
   }
-  .title-sponsor-name {
-    font-size: 1.4rem;
+  .invite-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
   }
-  .sponsor-caption {
-    font-size: 0.85rem;
-  }
-  .marquee-item {
-    padding: 12px 20px;
-    gap: 12px;
-  }
-  .sponsor-name {
-    font-size: 1rem;
-  }
-  .marquee-track {
-    gap: 20px;
-  }
+  .invite-open-badge { font-size: 0.92rem; }
+  .invite-desc { font-size: 0.82rem; }
+  .dams-sponsor-card { padding: 24px 20px; }
+  .dams-name { font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+  .sponsor-invite-card { flex-direction: row; align-items: flex-start; }
+  .sponsors-hierarchy { gap: 32px; }
 }

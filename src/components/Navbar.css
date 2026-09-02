@@ -1,3 +1,8 @@
+/* ============================================================
+   NAVBAR — IMA PARIPPALLY + HOSPEX IN PARTNERSHIP
+   Mobile-first: designed at 320px, scales up elegantly
+   ============================================================ */
+
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -5,58 +10,95 @@
   height: 60px;
   display: flex;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 16px;
   transition: background 0.4s var(--ease-apple), border-color 0.4s var(--ease-apple), box-shadow 0.4s;
+  /* Always show subtle background so branding is readable */
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
 }
 .navbar-scrolled {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid var(--gray-light);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
 }
+
 .nav-inner {
   max-width: 1080px;
   margin: 0 auto;
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 0;
+  overflow: hidden; /* prevent inner content from expanding navbar wider than viewport */
 }
 
+/* ── IMA Logo + Name ── */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   text-decoration: none;
-  flex-shrink: 0;
+  flex: 1 1 0;        /* can shrink when space is tight */
+  min-width: 0;
+  overflow: hidden;
 }
 
 .nav-logo-img {
   width: auto;
-  height: 38px;
+  height: 32px;
   object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 2px;
 }
 
 .nav-logo-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .nav-logo-name {
   font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 800;
   color: var(--black-1);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
   line-height: 1.1;
-}
-.nav-logo-sub {
-  font-size: 0.7rem;
-  color: var(--gray-dark);
-  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* ── HOSPEX Partnership Block ── */
+.nav-partnership {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-left: 1px solid rgba(0,0,0,0.08);
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+.nav-partner-label {
+  font-family: var(--font-text);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #92400e;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.nav-hospex-logo {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ── Desktop nav links (center) ── */
 .nav-links {
   display: flex;
   list-style: none;
@@ -70,26 +112,36 @@
   font-weight: 500;
   color: var(--gray-dark);
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 8px 14px;
   border-radius: 980px;
   transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
 }
 .nav-link:hover {
   color: var(--black-1);
   background: var(--gray-bg);
 }
 
+/* ── Desktop CTA ── */
 .nav-cta {
   flex-shrink: 0;
+  margin-left: 12px;
 }
 
+/* ── Hamburger ── */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
   background: none; border: none;
-  cursor: pointer; padding: 6px;
-  margin-left: auto;
+  cursor: pointer;
+  padding: 10px 6px 10px 10px;
+  margin-left: 6px;
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 .hamburger span {
   display: block;
@@ -103,6 +155,7 @@
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* ── Mobile overlay menu ── */
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -113,11 +166,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding: 80px 24px 40px;
   gap: 12px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s var(--ease-apple);
+  overflow-y: auto;
 }
 .mobile-menu.open {
   opacity: 1;
@@ -125,11 +180,11 @@
 }
 .mobile-nav-link {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 8vw, 2.2rem);
+  font-size: clamp(1.4rem, 6vw, 1.8rem);
   font-weight: 600;
   color: var(--black-1);
   text-decoration: none;
-  padding: 16px 0;
+  padding: 14px 0;
   letter-spacing: -0.02em;
   transition: color 0.2s;
   width: 100%;
@@ -144,44 +199,86 @@
   font-size: 2rem;
   cursor: pointer;
   padding: 12px;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* ============================================================
+   DESKTOP (> 768px)
+   ============================================================ */
+@media (min-width: 769px) {
+  .navbar { padding: 0 24px; }
+  .nav-logo-img { height: 38px; }
+  .nav-logo-name { font-size: 1rem; }
+  .nav-hospex-logo { height: 28px; }
+  .nav-partner-label { font-size: 0.6rem; }
+  .nav-partnership { margin-left: 16px; padding: 4px 14px; gap: 8px; }
+  /* Desktop: show nav links + CTA */
+  .hamburger { display: none !important; }
+  /* Hide mobile partnership duplicate */
+  .mobile-partnership { display: none; }
+}
+
+/* ============================================================
+   MOBILE (≤ 768px) — PRIMARY TARGET
+   ============================================================ */
 @media (max-width: 768px) {
-  .navbar {
-    height: 60px;
-    padding: 0 16px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: saturate(180%) blur(16px);
-    -webkit-backdrop-filter: saturate(180%) blur(16px);
-  }
-  .nav-inner { gap: 12px; }
-  .nav-logo { min-width: 0; gap: 8px; flex: 1; }
-  .nav-logo-img { height: 32px; flex-shrink: 0; }
-  .nav-logo-text { min-width: 0; flex: 1; }
-  .nav-logo-name {
-    font-size: 0.9rem !important;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .nav-logo-sub { display: none; }
-  
+  .navbar { padding: 0 12px; height: 60px; }
+  .nav-inner { gap: 0; }
+
+  /* IMA brand — compact */
+  .nav-logo { gap: 7px; }
+  .nav-logo-img { height: 28px; }
+  .nav-logo-name { font-size: 0.75rem; letter-spacing: 0.01em; }
+
+  /* Hide desktop nav links + CTA */
   .nav-links { display: none; }
   .nav-cta { display: none; }
-  
-  .hamburger { 
-    display: flex; 
-    padding: 10px; 
-    margin-left: auto;
+  /* Hide desktop partnership */
+  .desktop-partnership { display: none; }
+
+  /* Mobile partnership — shown */
+  .mobile-partnership {
+    display: flex;
+    flex: 0 0 auto;   /* never shrink below its content */
+    margin-left: 6px;
+    border-left: 1px solid rgba(0,0,0,0.08);
+    padding: 3px 8px;
+    gap: 4px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
   }
-  
-  .mobile-menu {
-    padding: 80px 24px 40px;
-    justify-content: flex-start;
-    overflow-y: auto;
+  .mobile-partnership .nav-partner-label {
+    font-size: 0.5rem;
+    letter-spacing: 0.09em;
+    white-space: nowrap;
   }
-  .mobile-nav-link {
-    font-size: clamp(1.4rem, 6vw, 1.8rem);
-    padding: 14px 0;
+  .mobile-partnership .nav-hospex-logo { height: 28px; }
+
+  /* Hamburger — always visible on mobile, fixed size */
+  .hamburger {
+    display: flex;
+    flex: 0 0 44px;
+    margin-left: 4px;
   }
+}
+
+/* ============================================================
+   VERY SMALL MOBILE (≤ 360px) — 320px critical
+   ============================================================ */
+@media (max-width: 360px) {
+  .navbar { padding: 0 8px; }
+  .nav-logo { gap: 6px; }
+  .nav-logo-img { height: 24px; }
+  .nav-logo-name { font-size: 0.62rem; letter-spacing: 0; }
+  .mobile-partnership { padding: 3px 6px; gap: 2px; margin-left: 4px; }
+  .mobile-partnership .nav-hospex-logo { height: 23px; }
+  .mobile-partnership .nav-partner-label { font-size: 0.44rem; }
+  .hamburger { flex: 0 0 40px; margin-left: 2px; }
+  .hamburger span { width: 20px; }
 }

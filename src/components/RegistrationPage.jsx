@@ -27,7 +27,7 @@ const cards = [
     badgeGold: true,
     originalPrice: '₹399',
     earlyBirdPrice: '₹249',
-    description: 'Have an Institutional Representative referral code? Use your valid code to receive an additional 10% discount.',
+    description: 'Have an IMA Parippally Student Team referral code? Use your valid code to receive an additional 10% discount.',
     referral: true,
     ctaLabel: 'Register with Referral Code',
     urlKey: 'viewerReferral',
@@ -56,7 +56,7 @@ const cards = [
     badgeGold: true,
     originalPrice: '₹699',
     earlyBirdPrice: '₹499',
-    description: 'Have an Institutional Representative referral code? Use your valid code to receive an additional 10% discount.',
+    description: 'Have an IMA Parippally Student Team referral code? Use your valid code to receive an additional 10% discount.',
     referral: true,
     ctaLabel: 'Register with Referral Code',
     urlKey: 'interactiveReferral',
@@ -150,7 +150,7 @@ export default function RegistrationPage({ setCurrentPage }) {
           <h1 className="reg-page-title">Choose Your Registration Type</h1>
           <p className="reg-page-sub">
             Select the pass that best suits you. Participants with a valid{' '}
-            <strong>Institutional Representative referral code</strong> receive an additional 10% discount.
+            <strong>IMA Parippally Student Team referral code</strong> receive an additional 10% discount.
           </p>
         </div>
 

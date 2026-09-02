@@ -65,11 +65,12 @@
     pointer-events: none;
   }
   
-  /* Make sections transparent so the background shows through */
+  /* Make sections transparent so the background shows through.
+     overflow:hidden is NOT set globally — each section manages its own overflow
+     so carousels can clip their tracks correctly without conflicting. */
   .section {
     padding: 100px 24px;
     position: relative;
-    overflow: hidden;
     background: transparent !important;
   }
 
