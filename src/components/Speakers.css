@@ -107,6 +107,8 @@
   color: #0a0a0a;
   line-height: 1.2;
   margin-bottom: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .spk-title {
@@ -115,6 +117,8 @@
   color: #6b7280;
   line-height: 1.45;
   margin-bottom: 14px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .spk-specs {
@@ -284,6 +288,8 @@
   color: #0a0a0a;
   line-height: 1.1;
   margin-bottom: 8px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .spk-modal-title {
@@ -292,6 +298,8 @@
   color: #6b7280;
   line-height: 1.5;
   margin-bottom: 16px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .spk-modal-specs {
@@ -317,6 +325,10 @@
   font-size: 0.97rem;
   line-height: 1.75;
   color: #374151;
+  margin-bottom: 14px;
+}
+.spk-modal-bio p:last-child {
+  margin-bottom: 0;
 }
 
 /* Positions */

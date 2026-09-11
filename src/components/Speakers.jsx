@@ -5,26 +5,40 @@ import { X, ChevronRight, Award, Briefcase, Globe } from 'lucide-react';
 /* ── Speaker data ── */
 const speakers = [
   {
-    id: 'rc-sreekumar',
-    name: 'Dr. R. C. Sreekumar',
-    alt: 'Dr. R. C. Sreekumar – Vice President, IMA Kerala State',
-    title: 'Vice President, IMA Kerala State',
-    category: 'Chief Advisor',
-    photo: '/images/speaker-rc-sreekumar.jpg',
-    badge: 'IMA Kerala State',
+    id: 'e-sreekumar',
+    name: 'Dr. E. Sreekumar, MVSc., PhD',
+    alt: 'Dr. E. Sreekumar, MVSc., PhD – Director, Institute of Advanced Virology (IAV), Thonnakkal, Thiruvananthapuram',
+    title: 'Director, Institute of Advanced Virology (IAV), Thonnakkal, Thiruvananthapuram',
+    category: 'Molecular Virology',
+    photo: '/images/speaker-e-sreekumar.jpg',
+    badge: 'Director, IAV',
     specializations: [
-      'Career After MBBS',
-      'Exploring Hidden Treasures',
-      'IMA Kerala State Leadership',
-      'Medical Career Mentorship',
+      'Molecular Virology',
+      'Emerging Viral Infections',
+      'Antiviral Research',
+      'Vaccine Research',
+      'Dengue & Chikungunya',
     ],
     profile: [
-      { icon: Award,    text: 'Vice President — Indian Medical Association (IMA) Kerala State' },
-      { icon: Award,    text: 'Chief Advisor — Career After MBBS – Exploring Hidden Treasures' },
-      { icon: Briefcase,text: 'State Leadership & Medical Professional Advocacy — IMA Kerala' },
-      { icon: Globe,    text: 'Guiding Medical Graduates & Healthcare Mentorship' },
+      { icon: Award,    text: 'Director — Institute of Advanced Virology (IAV), Thonnakkal, Thiruvananthapuram' },
+      { icon: Briefcase,text: 'Former Faculty Scientist & Head of Molecular Virology Laboratory — Rajiv Gandhi Centre for Biotechnology (RGCB)' },
+      { icon: Award,    text: 'Fulbright-Nehru (FNAPE) Fellow & Visiting Faculty — Johns Hopkins Bloomberg School of Public Health, USA' },
+      { icon: Globe,    text: 'Member — State Expert Group on COVID-19, Kerala' },
+      { icon: Award,    text: 'Master’s in Immunology (IVRI Gold Medalist) & PhD in Biotechnology (RGCB)' },
     ],
-    bio: 'Dr. R. C. Sreekumar serves as the Vice President of IMA Kerala State and is the Chief Advisor for Career After MBBS – Exploring Hidden Treasures. A distinguished healthcare leader and dedicated mentor, he provides strategic direction, advocacy, and guidance to empower young doctors and MBBS graduates in discovering diverse, high-impact career pathways beyond conventional clinical practice.',
+    bio: [
+      'Dr. Sreekumar is currently the Director of the Institute of Advanced Virology, Thiruvananthapuram.',
+      'He holds a Master’s degree in Immunology from the Indian Veterinary Research Institute (IVRI) with a gold medal and a PhD in Biotechnology from Rajiv Gandhi Centre for Biotechnology (RGCB).',
+      'He started his career as a Veterinary Surgeon in the Department of Animal Husbandry, Government of Kerala. Later, he joined RGCB as a faculty scientist in 2004.',
+      'The molecular virology laboratory headed by him played a key role in initiating molecular diagnostic services in Kerala during the explosive viral epidemics in 2016.',
+      'Research conducted by his laboratory over the last 18 years identified mutant strains of dengue and chikungunya viruses, trans-ovarian transmission of chikungunya virus in mosquitoes, multiple serotype co-infections in dengue patients, and a vaccine strain for Chikungunya virus.',
+      'He established virological assays and animal models to test antiviral compounds and vaccines against chikungunya and dengue.',
+      'He received the Fulbright-Nehru Professional and Academic Excellence (FNAPE) Fellowship in 2015 and worked as a visiting faculty during 2015–2016 at the Johns Hopkins Bloomberg School of Public Health, Baltimore, USA, where he elucidated virulence-associated mutations in chikungunya virus.',
+      'He has mentored ten PhD students and more than fifty Master’s students, completed 12 externally funded projects, and authored and published more than 50 manuscripts in journals of repute.',
+      'He is a regular speaker at conferences and radio talks and appears in visual media for creating awareness about emerging viral infections.',
+      'He served on various committees, including the state expert group on COVID-19.',
+      'He currently focuses on developing the Institute of Advanced Virology into an international institute of repute and on research to identify broad-spectrum antivirals against emerging viruses using host-targeted approaches, a new paradigm in antiviral therapy.',
+    ],
   },
   {
     id: 'joseph-benaven',
@@ -109,7 +123,13 @@ function SpeakerModal({ speaker, onClose }) {
 
           {/* Bio */}
           <div className="spk-modal-bio">
-            <p>{speaker.bio}</p>
+            {Array.isArray(speaker.bio) ? (
+              speaker.bio.map((p, idx) => (
+                <p key={idx}>{p}</p>
+              ))
+            ) : (
+              <p>{speaker.bio}</p>
+            )}
           </div>
 
           {/* Key positions */}
