@@ -15,9 +15,9 @@
 ════════════════════════════ */
 .spk-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-  max-width: 900px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1080px;
   margin: 0 auto 20px;
 }
 
@@ -355,7 +355,15 @@
 /* ════════════════════════════
    RESPONSIVE
 ════════════════════════════ */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
+  .spk-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 720px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 680px) {
   .spk-grid {
     grid-template-columns: 1fr;
     max-width: 420px;

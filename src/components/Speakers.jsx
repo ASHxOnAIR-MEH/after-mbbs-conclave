@@ -5,6 +5,28 @@ import { X, ChevronRight, Award, Briefcase, Globe } from 'lucide-react';
 /* ── Speaker data ── */
 const speakers = [
   {
+    id: 'rc-sreekumar',
+    name: 'Dr. R. C. Sreekumar',
+    alt: 'Dr. R. C. Sreekumar – Vice President, IMA Kerala State',
+    title: 'Vice President, IMA Kerala State',
+    category: 'Chief Advisor',
+    photo: '/images/speaker-rc-sreekumar.jpg',
+    badge: 'IMA Kerala State',
+    specializations: [
+      'Career After MBBS',
+      'Exploring Hidden Treasures',
+      'IMA Kerala State Leadership',
+      'Medical Career Mentorship',
+    ],
+    profile: [
+      { icon: Award,    text: 'Vice President — Indian Medical Association (IMA) Kerala State' },
+      { icon: Award,    text: 'Chief Advisor — Career After MBBS – Exploring Hidden Treasures' },
+      { icon: Briefcase,text: 'State Leadership & Medical Professional Advocacy — IMA Kerala' },
+      { icon: Globe,    text: 'Guiding Medical Graduates & Healthcare Mentorship' },
+    ],
+    bio: 'Dr. R. C. Sreekumar serves as the Vice President of IMA Kerala State and is the Chief Advisor for Career After MBBS – Exploring Hidden Treasures. A distinguished healthcare leader and dedicated mentor, he provides strategic direction, advocacy, and guidance to empower young doctors and MBBS graduates in discovering diverse, high-impact career pathways beyond conventional clinical practice.',
+  },
+  {
     id: 'joseph-benaven',
     name: 'Dr. Joseph Benaven',
     title: 'Senior Physician · Healthcare Leader · Medical Innovator',
@@ -70,7 +92,7 @@ function SpeakerModal({ speaker, onClose }) {
           {/* Photo + identity */}
           <div className="spk-modal-header">
             <div className="spk-modal-photo-wrap">
-              <img src={speaker.photo} alt={speaker.name} className="spk-modal-photo" />
+              <img src={speaker.photo} alt={speaker.alt || speaker.name} className="spk-modal-photo" />
             </div>
             <div className="spk-modal-identity">
               <span className="spk-modal-category">{speaker.category}</span>
@@ -113,7 +135,7 @@ function SpeakerCard({ speaker, onView }) {
   return (
     <div className="spk-card">
       <div className="spk-photo-wrap">
-        <img src={speaker.photo} alt={speaker.name} className="spk-photo" />
+        <img src={speaker.photo} alt={speaker.alt || speaker.name} className="spk-photo" />
         <span className="spk-photo-badge">{speaker.badge}</span>
       </div>
       <div className="spk-info">
