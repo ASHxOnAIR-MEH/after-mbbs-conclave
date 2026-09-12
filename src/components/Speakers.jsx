@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Speakers.css';
-import { X, ChevronRight, Award, Briefcase, Globe } from 'lucide-react';
+import { X, ChevronRight, Award, Briefcase, Globe, GraduationCap, User } from 'lucide-react';
 
 /* ── Speaker data ── */
 const speakers = [
@@ -73,6 +73,44 @@ const speakers = [
     ],
     bio: 'Dr. Shanavas Lal (Dr. S. S. Lal) is an internationally recognised public health expert with deep expertise in Epidemiology, Tuberculosis, Communicable Diseases, Tropical Medicine, and Health Policy. His distinguished career spans senior roles at the World Health Organization (WHO), the Global Fund to Fight AIDS, Tuberculosis and Malaria, PATH, and FHI 360 — bringing global health systems experience directly to young medical professionals seeking careers beyond clinical practice.',
   },
+  {
+    id: 'binny-krishnankutty',
+    name: 'Dr. Binny Krishnankutty',
+    qualification: 'MBBS, MD Pharmacology',
+    alt: 'Dr. Binny Krishnankutty, MBBS, MD Pharmacology – Director, Aggregate Reports Team Lead, Pfizer Healthcare India Pvt Ltd',
+    title: 'Director, Aggregate Reports Team Lead · Pfizer Healthcare India Pvt Ltd',
+    category: 'Pharmacovigilance',
+    photo: null,
+    badge: 'Director, Pfizer',
+    specializations: [
+      'Pharmacovigilance',
+      'Clinical Development',
+      'Clinical Trials',
+      'Regulatory Strategy',
+    ],
+    cardSpecs: [
+      'Pharmacovigilance',
+      'Clinical Development',
+      'Clinical Trials',
+      'Regulatory Strategy',
+    ],
+    profile: [
+      { icon: Award,         text: 'Director, Aggregate Reports Team Lead — Pfizer Healthcare India Pvt Ltd' },
+      { icon: Briefcase,     text: 'Former Clinical Operations & Clinical Quality Lead (Global Medical Affairs) — Dr. Reddy’s Laboratories Ltd.' },
+      { icon: Briefcase,     text: 'Former Global Clinical Development of Biosimilars Lead — USV Ltd.' },
+      { icon: GraduationCap, text: 'MBBS & MD Pharmacology — University of Kerala' },
+      { icon: Globe,         text: '20+ Years Professional Experience in Pharmacovigilance, Clinical Trials & Regulatory Strategy' },
+      { icon: Award,         text: 'Nearly 20 Research Publications in National & International Journals' },
+    ],
+    bio: [
+      'Dr. Binny Krishnankutty is Director, Aggregate Reports Team Lead at Pfizer Healthcare India Pvt Ltd. In his current role, he provides strategic direction and oversight for processes, colleagues, and vendors responsible for preparing safety data documents supporting product development, license applications, and post-marketing maintenance.',
+      'His work includes integrated analyses of safety data supporting aggregate reports and responses to regulatory queries on safety topics.',
+      'Dr. Binny Krishnankutty is a senior pharmaceutical and clinical development professional with over two decades of experience spanning pharmacovigilance, clinical development, clinical operations, data management, biometrics, clinical trials, regulatory strategy, and medical writing.',
+      'Previously, at Dr. Reddy’s Laboratories Ltd., he managed clinical operations and clinical quality within Global Medical Affairs, led data management, biostatistics, and medical writing functions, and oversaw Phase II/III clinical trials across various therapeutic areas.',
+      'At USV Ltd., he led global clinical development of biosimilars, coordinated with global CROs for clinical trials, developed regulatory strategies, and provided technical support for bioanalytical activities.',
+      'He completed his MBBS and MD in Pharmacology from the University of Kerala, and has published nearly 20 research papers in national and international journals, including publications related to data management and clinical trials.',
+    ],
+  },
 ];
 
 /* ── Modal component ── */
@@ -106,11 +144,23 @@ function SpeakerModal({ speaker, onClose }) {
           {/* Photo + identity */}
           <div className="spk-modal-header">
             <div className="spk-modal-photo-wrap">
-              <img src={speaker.photo} alt={speaker.alt || speaker.name} className="spk-modal-photo" />
+              {speaker.photo ? (
+                <img src={speaker.photo} alt={speaker.alt || speaker.name} className="spk-modal-photo" />
+              ) : (
+                <div className="spk-photo-placeholder spk-modal-photo-placeholder" aria-label={`${speaker.name} — photo coming soon`}>
+                  <div className="spk-placeholder-avatar">
+                    <User size={52} strokeWidth={1.5} className="spk-placeholder-icon" />
+                  </div>
+                  <span className="spk-placeholder-text">PHOTO COMING SOON</span>
+                </div>
+              )}
             </div>
             <div className="spk-modal-identity">
               <span className="spk-modal-category">{speaker.category}</span>
               <h2 className="spk-modal-name">{speaker.name}</h2>
+              {speaker.qualification && (
+                <div className="spk-modal-qualification">{speaker.qualification}</div>
+              )}
               <p className="spk-modal-title">{speaker.title}</p>
               {/* Specializations */}
               <div className="spk-modal-specs">
@@ -155,15 +205,27 @@ function SpeakerCard({ speaker, onView }) {
   return (
     <div className="spk-card">
       <div className="spk-photo-wrap">
-        <img src={speaker.photo} alt={speaker.alt || speaker.name} className="spk-photo" />
-        <span className="spk-photo-badge">{speaker.badge}</span>
+        {speaker.photo ? (
+          <img src={speaker.photo} alt={speaker.alt || speaker.name} className="spk-photo" />
+        ) : (
+          <div className="spk-photo-placeholder" aria-label={`${speaker.name} — photo coming soon`}>
+            <div className="spk-placeholder-avatar">
+              <User size={44} strokeWidth={1.5} className="spk-placeholder-icon" />
+            </div>
+            <span className="spk-placeholder-text">PHOTO COMING SOON</span>
+          </div>
+        )}
+        {speaker.badge && <span className="spk-photo-badge">{speaker.badge}</span>}
       </div>
       <div className="spk-info">
         <span className="spk-category">{speaker.category}</span>
         <h3 className="spk-name">{speaker.name}</h3>
+        {speaker.qualification && (
+          <div className="spk-qualification">{speaker.qualification}</div>
+        )}
         <p className="spk-title">{speaker.title}</p>
         <div className="spk-specs">
-          {speaker.specializations.slice(0, 2).map(s => (
+          {(speaker.cardSpecs || speaker.specializations.slice(0, 2)).map(s => (
             <span key={s} className="spk-spec-tag">{s}</span>
           ))}
         </div>
