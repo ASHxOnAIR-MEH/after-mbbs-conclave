@@ -80,7 +80,7 @@ const speakers = [
     alt: 'Dr. Binny Krishnankutty, MBBS, MD Pharmacology – Director, Aggregate Reports Team Lead, Pfizer Healthcare India Pvt Ltd',
     title: 'Director, Aggregate Reports Team Lead · Pfizer Healthcare India Pvt Ltd',
     category: 'Pharmacovigilance',
-    photo: null,
+    photo: '/images/speaker-binny-krishnankutty.jpg',
     badge: 'Director, Pfizer',
     specializations: [
       'Pharmacovigilance',

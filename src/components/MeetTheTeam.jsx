@@ -30,6 +30,15 @@ const team = [
     roleColor: 'emerald',
   },
   {
+    id: 'gangaraj',
+    role: 'Event Moderator',
+    name: 'Dr. Gangaraj C S',
+    designation: 'Event Moderator',
+    org: '',
+    photo: '/images/team-gangaraj.jpg',
+    roleColor: 'emerald',
+  },
+  {
     id: 'ashik',
     role: 'Technical',
     name: 'Ashik S',

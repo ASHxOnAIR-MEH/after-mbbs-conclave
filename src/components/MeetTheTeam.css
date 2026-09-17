@@ -128,9 +128,15 @@
   display: block;
 }
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+}
+.team-grid > * {
+  flex: 0 1 calc(25% - 17px);
+  min-width: 230px;
+  max-width: 260px;
 }
 
 /* Carousel hidden on desktop */
@@ -142,7 +148,10 @@
    RESPONSIVE — Tablet (768px–1024px)
 ════════════════════════════════════ */
 @media (max-width: 1024px) and (min-width: 769px) {
-  .team-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .team-grid > * {
+    flex: 0 1 calc(33.333% - 16px);
+    max-width: 320px;
+  }
 }
 
 /* ════════════════════════════════════
