@@ -82,9 +82,7 @@ export default function Pricing({ setCurrentPage }) {
 
             <div className="plan-cta">
               <Button
-                href="https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => setCurrentPage && setCurrentPage('register')}
                 variant="secondary"
                 className="btn-lg"
               >
@@ -132,9 +130,7 @@ export default function Pricing({ setCurrentPage }) {
 
             <div className="plan-cta">
               <Button
-                href="https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9"
-                target="_blank"
-                rel="noopener noreferrer"
+                onClick={() => setCurrentPage && setCurrentPage('register')}
                 variant="primary"
                 className="btn-lg"
               >

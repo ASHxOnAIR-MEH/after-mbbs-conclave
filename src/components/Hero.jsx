@@ -123,7 +123,7 @@ export default function Hero({ setCurrentPage }) {
 
           {/* CTAs */}
           <div className="hero-cta-row hero-animate-up" style={{ '--delay': '310ms' }}>
-            <Button variant="primary" className="btn-lg hero-btn-primary" href="https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9" target="_blank" rel="noopener noreferrer">
+            <Button variant="primary" className="btn-lg hero-btn-primary" onClick={() => setCurrentPage && setCurrentPage('register')}>
               Register Now <ArrowRight size={16} />
             </Button>
             <Button href="#agenda" variant="secondary" className="btn-lg hero-btn-outline">

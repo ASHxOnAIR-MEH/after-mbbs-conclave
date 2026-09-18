@@ -1,5 +1,5 @@
 /* ============================================================
-   REGISTRATION SELECTION PAGE
+   REGISTRATION PAGE — Standard & Referral Workflow Styles
    ============================================================ */
 
 .reg-page {
@@ -18,7 +18,7 @@
   color: #10b981;
   cursor: pointer;
   padding: 0;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -29,7 +29,7 @@
 /* Page header */
 .reg-page-header {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 40px;
 }
 .reg-page-title {
   font-family: 'Playfair Display', Georgia, serif;
@@ -37,19 +37,331 @@
   font-weight: 900;
   color: #0a0a0a;
   line-height: 1.1;
-  margin: 8px 0 16px;
+  margin: 8px 0 14px;
 }
 .reg-page-sub {
   font-size: 1rem;
   color: #6b7280;
-  line-height: 1.65;
+  line-height: 1.6;
   max-width: 580px;
   margin: 0 auto;
 }
 
-/* ════════════════════════
-   2×2 GRID
-════════════════════════ */
+/* ════════════════════════════════════
+   REGISTRATION TYPE SELECTOR (TABS)
+   ════════════════════════════════════ */
+.reg-type-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  max-width: 600px;
+  margin: 0 auto 36px;
+  padding: 6px;
+  background: #f3f4f6;
+  border-radius: 980px;
+  border: 1px solid #e5e7eb;
+}
+
+.reg-type-tab {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 980px;
+  border: none;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.reg-type-tab:hover {
+  color: #111827;
+}
+
+.reg-type-tab-active {
+  background: #fff;
+  color: #065f46;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.reg-type-tab-active-gold {
+  background: #fff;
+  color: #92400e;
+  box-shadow: 0 4px 14px rgba(199,154,43,0.18);
+}
+
+.reg-tab-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #e5e7eb;
+  color: #4b5563;
+  padding: 2px 7px;
+  border-radius: 980px;
+}
+
+.reg-type-tab-active .reg-tab-badge {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.reg-tab-badge-gold {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #fef3c7;
+  color: #b45309;
+  padding: 2px 7px;
+  border-radius: 980px;
+}
+
+/* ════════════════════════════════════
+   FLOW INTRO
+   ════════════════════════════════════ */
+.reg-flow-intro {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.reg-flow-intro p {
+  color: #6b7280;
+  font-size: 0.92rem;
+  margin: 6px 0 0;
+}
+.reg-flow-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #047857;
+  background: rgba(16,185,129,0.1);
+  padding: 4px 12px;
+  border-radius: 980px;
+}
+
+/* ════════════════════════════════════
+   REFERRAL CODE VERIFIER CARD
+   ════════════════════════════════════ */
+.reg-referral-verifier-card {
+  max-width: 680px;
+  margin: 0 auto 40px;
+  background: #fff;
+  border: 1px solid rgba(199,154,43,0.3);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(199,154,43,0.08);
+}
+
+.reg-verifier-step {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #C79A2B;
+  background: rgba(199,154,43,0.12);
+  padding: 3px 10px;
+  border-radius: 980px;
+  margin-bottom: 8px;
+}
+
+.reg-verifier-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 6px;
+}
+
+.reg-verifier-desc {
+  font-size: 0.88rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.reg-verifier-form {
+  display: flex;
+  gap: 12px;
+}
+
+.reg-code-input-wrap {
+  position: relative;
+  flex: 1;
+}
+
+.reg-code-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.reg-code-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px 14px 44px;
+  font-family: 'Inter', monospace, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #111827;
+  background: #f9fafb;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reg-code-input:focus {
+  outline: none;
+  background: #fff;
+  border-color: #C79A2B;
+  box-shadow: 0 0 0 3px rgba(199,154,43,0.2);
+}
+
+.reg-verify-btn {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #C79A2B, #b48518);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.reg-verify-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(199,154,43,0.35);
+}
+
+.reg-verify-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Verifier Alert Messages */
+.reg-verifier-alert {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.reg-verifier-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.reg-error-headline {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #b91c1c;
+  margin-bottom: 2px;
+}
+
+.reg-error-msg {
+  margin: 0;
+  color: #7f1d1d;
+}
+
+.reg-verifier-success {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #14532d;
+}
+
+.reg-success-icon {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.reg-verified-details {
+  flex: 1;
+}
+
+.reg-verified-badge {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #047857;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.reg-rep-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  background: #fff;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #dcfce7;
+}
+
+.reg-meta-label {
+  display: block;
+  font-size: 0.7rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.reg-meta-value {
+  font-weight: 700;
+  color: #1f2937;
+  font-size: 0.88rem;
+}
+
+.reg-meta-code {
+  font-family: monospace;
+  font-weight: 800;
+  color: #C79A2B;
+  font-size: 0.95rem;
+}
+
+/* ════════════════════════════════════
+   UNLOCKED SECTION
+   ════════════════════════════════════ */
+.reg-unlocked-section {
+  margin-top: 36px;
+}
+
+.reg-unlocked-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 4px 0 0;
+}
+
+.reg-grid-locked {
+  opacity: 0.7;
+}
+
+/* ════════════════════════════════════
+   2-COLUMN CARDS GRID
+   ════════════════════════════════════ */
 .reg-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -59,41 +371,40 @@
   align-items: stretch;
 }
 
-/* ════════════════════════
-   CARD
-════════════════════════ */
 .reg-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(210, 210, 215, 0.5);
   border-radius: 24px;
   padding: 36px 32px 32px;
   display: flex;
   flex-direction: column;
-  gap: 0;
   transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
               box-shadow 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03), 0 6px 24px rgba(0,0,0,0.05);
-}
-.reg-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
 }
 
-/* Featured (Interactive) */
+.reg-card:not(.reg-card-disabled):hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 44px rgba(0,0,0,0.08);
+}
+
 .reg-card-featured {
   border-top: 3px solid #10b981;
 }
 
-/* Referral variant — subtle gold accent */
 .reg-card-referral {
   border-top: 3px solid #C79A2B;
-  background: rgba(255, 253, 245, 0.92);
+  background: rgba(255, 253, 245, 0.95);
 }
 
-/* ── Top badge ── */
+.reg-card-disabled {
+  opacity: 0.65;
+  filter: grayscale(0.2);
+}
+
+/* Top badge */
 .reg-badge {
   position: absolute;
   top: -1px;
@@ -108,16 +419,10 @@
   padding: 5px 12px;
   border-radius: 0 0 10px 10px;
 }
-.reg-badge-green {
-  background: #10b981;
-  color: #fff;
-}
-.reg-badge-gold {
-  background: linear-gradient(135deg, #C79A2B, #e2b842);
-  color: #fff;
-}
+.reg-badge-green { background: #10b981; color: #fff; }
+.reg-badge-gold  { background: linear-gradient(135deg, #C79A2B, #e2b842); color: #fff; }
 
-/* ── Icon ── */
+/* Icon wrap */
 .reg-icon-wrap {
   width: 52px;
   height: 52px;
@@ -131,13 +436,11 @@
 .reg-icon-green { background: rgba(16,185,129,0.1); color: #10b981; }
 .reg-icon-gold  { background: rgba(199,154,43,0.1); color: #C79A2B; }
 
-/* ── Title block ── */
-.reg-title-block {
-  margin-bottom: 18px;
-}
+/* Title block */
+.reg-title-block { margin-bottom: 18px; }
 .reg-card-title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
   font-weight: 800;
   color: #0a0a0a;
   line-height: 1.15;
@@ -148,19 +451,15 @@
   font-size: 0.8rem;
   font-weight: 600;
   color: #C79A2B;
-  letter-spacing: 0.02em;
 }
 
-/* ── Pricing ── */
-.reg-pricing {
-  margin-bottom: 18px;
-}
+/* Pricing */
+.reg-pricing { margin-bottom: 18px; }
 .reg-original {
   font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   color: #9ca3af;
   text-decoration: line-through;
-  text-decoration-color: #9ca3af;
   opacity: 0.8;
   display: block;
   margin-bottom: 4px;
@@ -189,6 +488,8 @@
   line-height: 1;
   letter-spacing: -0.02em;
 }
+.text-gold { color: #92400e; }
+
 .reg-referral-note {
   display: inline-flex;
   align-items: center;
@@ -203,17 +504,17 @@
   margin-top: 8px;
 }
 
-/* ── Description ── */
+/* Description */
 .reg-desc {
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
   color: #4b5563;
-  line-height: 1.65;
+  line-height: 1.6;
   margin: 0 0 24px 0;
   flex: 1;
 }
 
-/* ── CTA Button ── */
+/* CTA buttons */
 .reg-cta-btn {
   display: inline-flex;
   align-items: center;
@@ -228,59 +529,45 @@
   letter-spacing: 0.01em;
   border: none;
   cursor: pointer;
-  transition: transform 0.22s cubic-bezier(0.25,0.46,0.45,0.94),
-              box-shadow 0.22s cubic-bezier(0.25,0.46,0.45,0.94),
-              background 0.2s ease;
+  transition: all 0.22s ease;
 }
-.reg-cta-btn:focus-visible {
-  outline: 3px solid #10b981;
-  outline-offset: 3px;
-}
-.reg-cta-btn:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
-  transform: none !important;
-}
-.reg-cta-btn:not(:disabled):hover { transform: translateY(-2px); }
 
-/* Primary (Interactive featured) */
 .reg-cta-primary {
   background: linear-gradient(135deg, #10b981, #059669);
   color: #fff;
   box-shadow: 0 4px 16px rgba(16,185,129,0.3);
 }
-.reg-cta-primary:not(:disabled):hover {
+.reg-cta-primary:hover {
   box-shadow: 0 8px 28px rgba(16,185,129,0.4);
+  transform: translateY(-2px);
 }
 
-/* Secondary (Viewer) */
 .reg-cta-secondary {
   background: #0a0a0a;
   color: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
-.reg-cta-secondary:not(:disabled):hover {
+.reg-cta-secondary:hover {
   background: #1a1a1a;
   box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  transform: translateY(-2px);
 }
 
-/* Gold (Referral variants) */
 .reg-cta-gold {
-  background: linear-gradient(135deg, #C79A2B, #d4a832);
+  background: linear-gradient(135deg, #C79A2B, #b48518);
   color: #fff;
   box-shadow: 0 4px 16px rgba(199,154,43,0.28);
 }
 .reg-cta-gold:not(:disabled):hover {
   box-shadow: 0 8px 28px rgba(199,154,43,0.38);
+  transform: translateY(-2px);
 }
-
-/* Coming soon text */
-.reg-coming-soon {
-  text-align: center;
-  font-size: 0.75rem;
+.reg-cta-btn:disabled {
+  background: #e5e7eb;
   color: #9ca3af;
-  font-style: italic;
-  margin: 8px 0 0;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
 /* Footer note */
@@ -288,31 +575,287 @@
   text-align: center;
   font-size: 0.8rem;
   color: #9ca3af;
-  max-width: 520px;
+  max-width: 540px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-/* ════════════════════════
-   RESPONSIVE
-════════════════════════ */
+/* ════════════════════════════════════
+   PARTICIPANT INFORMATION MODAL
+   ════════════════════════════════════ */
+.reg-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.reg-modal-card {
+  position: relative;
+  background: #fff;
+  border-radius: 28px;
+  max-width: 580px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 36px 32px 32px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  animation: modalSlideUp 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes modalSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reg-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.reg-modal-close:hover {
+  background: #111827;
+  color: #fff;
+}
+
+.reg-modal-header {
+  margin-bottom: 20px;
+}
+
+.reg-modal-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  padding: 4px 12px;
+  border-radius: 980px;
+  margin-bottom: 10px;
+}
+
+.reg-modal-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 6px;
+}
+
+.reg-modal-sub {
+  font-size: 0.88rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.reg-modal-rep-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-size: 0.82rem;
+  color: #065f46;
+}
+
+.reg-rep-badge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.reg-rep-college {
+  font-size: 0.75rem;
+  color: #047857;
+}
+
+.reg-form-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.reg-form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reg-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reg-input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.reg-input-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.req {
+  color: #ef4444;
+}
+
+.reg-input-group input,
+.reg-input-group select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #111827;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.reg-input-group input:focus,
+.reg-input-group select:focus {
+  outline: none;
+  background: #fff;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16,185,129,0.18);
+}
+
+.reg-form-submit-btn {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background: linear-gradient(135deg, #10b981, #047857);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(16,185,129,0.3);
+  transition: all 0.2s ease;
+}
+
+.reg-form-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16,185,129,0.4);
+}
+
+.reg-form-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   320px, 360px, 375px, 390px, 412px, 430px, 768px, 1024px, 1440px
+   ════════════════════════════════════ */
 @media (max-width: 768px) {
-  .reg-page { padding: 88px 0 60px; }
+  .reg-page { padding: 80px 0 60px; }
+
+  .reg-type-nav {
+    flex-direction: column;
+    border-radius: 18px;
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .reg-type-tab {
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 0.84rem;
+  }
+
+  .reg-referral-verifier-card {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+
+  .reg-verifier-form {
+    flex-direction: column;
+  }
+
+  .reg-verify-btn {
+    width: 100%;
+  }
+
+  .reg-rep-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 
   .reg-grid {
     grid-template-columns: 1fr;
-    max-width: 420px;
-    gap: 18px;
+    max-width: 440px;
+    gap: 20px;
   }
 
-  .reg-card { padding: 32px 24px 28px; }
+  .reg-card { padding: 30px 22px 26px; }
 
-  .reg-page-title { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+  .reg-page-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
 
-  .reg-price { font-size: 1.9rem; }
+  .reg-input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .reg-modal-card {
+    padding: 28px 20px 24px;
+    border-radius: 22px;
+  }
 }
 
 @media (max-width: 480px) {
-  .reg-card { padding: 28px 18px 24px; }
-  .reg-page-sub { font-size: 0.92rem; }
+  .reg-card { padding: 26px 16px 22px; }
+  .reg-page-sub { font-size: 0.9rem; }
+  .reg-price { font-size: 1.85rem; }
+  .reg-modal-title { font-size: 1.35rem; }
 }

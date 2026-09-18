@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import WhyAttend from './components/WhyAttend';
@@ -21,9 +21,37 @@ import LegalPage from './components/LegalPage';
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
+  // Sync hash with current page
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash;
+      if (hash === '#register' || hash === '#/register') {
+        setCurrentPage('register');
+      } else if (hash === '#privacy-policy') {
+        setCurrentPage('privacy-policy');
+      } else if (hash === '#terms') {
+        setCurrentPage('terms');
+      } else if (hash === '#refund-policy') {
+        setCurrentPage('refund-policy');
+      } else if (hash === '#disclaimer') {
+        setCurrentPage('disclaimer');
+      }
+    };
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
   // Scroll to top whenever page changes
   const handleSetPage = (page) => {
     setCurrentPage(page);
+    if (page === 'register') {
+      window.location.hash = '#register';
+    } else if (page === 'home') {
+      if (window.location.hash === '#register' || window.location.hash === '#/register') {
+        history.pushState(null, '', window.location.pathname);
+      }
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

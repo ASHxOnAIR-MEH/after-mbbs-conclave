@@ -70,7 +70,7 @@ export default function Navbar({ setCurrentPage }) {
 
           {/* Desktop CTA */}
           <div className="nav-cta">
-            <Button variant="primary" href="https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9" target="_blank" rel="noopener noreferrer">
+            <Button variant="primary" onClick={() => setCurrentPage && setCurrentPage('register')}>
               Register Now
             </Button>
           </div>
@@ -107,7 +107,12 @@ export default function Navbar({ setCurrentPage }) {
             {l.label}
           </a>
         ))}
-        <Button variant="primary" className="btn-lg" href="https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9" target="_blank" rel="noopener noreferrer" style={{marginTop: '24px'}}>
+        <Button 
+          variant="primary" 
+          className="btn-lg" 
+          onClick={() => { close(); if (setCurrentPage) setCurrentPage('register'); }} 
+          style={{marginTop: '24px'}}
+        >
           Register Now
         </Button>
       </div>
