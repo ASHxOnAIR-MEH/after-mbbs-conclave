@@ -38,10 +38,10 @@ export const registrationForms = {
       representativeName: '',
     },
   },
-  229: {
-    passName: '₹229 REFERRAL REGISTRATION',
+  224: {
+    passName: '₹224 REFERRAL REGISTRATION',
     tier: 'referral',
-    price: 229,
+    price: 224,
     url: 'https://docs.google.com/forms/d/e/1FAIpQLSe4qwrup4sm1KAV7ZBrDvR5BkBRQrJKLYww9llIbmCEJZondA/viewform',
     fields: {
       fullName: '',
@@ -74,9 +74,12 @@ export const registrationForms = {
   },
 };
 
+// Backward-compatibility alias
+registrationForms[229] = registrationForms[224];
+
 /**
  * Builds the prefilled Google Form URL for a given pass and participant data.
- * @param {string|number} pass - '249' | '499' | '229' | '449'
+ * @param {string|number} pass - '249' | '499' | '224' | '449'
  * @param {Object} participant - { fullName, mobile, email, medicalCollege, year, district, state }
  * @param {Object|null} referral - { code, name } (optional, for referral passes)
  * @returns {string} Fully encoded prefilled Google Form URL

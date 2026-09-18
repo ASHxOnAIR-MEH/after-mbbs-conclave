@@ -41,12 +41,12 @@ const standardPasses = [
 /* ── Referral Passes Data ── */
 const referralPasses = [
   {
-    id: '229',
-    passKey: 229,
+    id: '224',
+    passKey: 224,
     icon: Tag,
     title: 'Viewer Pass',
     titleSub: 'with Referral Discount',
-    price: '₹229',
+    price: '₹224',
     originalPrice: '₹399',
     badge: 'EXCLUSIVE REFERRAL PRICE',
     badgeGold: true,
@@ -446,7 +446,7 @@ export default function RegistrationPage({ setCurrentPage }) {
                 <span className="reg-verifier-step">STEP 1</span>
                 <h3 className="reg-verifier-title">Enter Your Official Referral Code</h3>
                 <p className="reg-verifier-desc">
-                  Enter the referral code provided by your IMA Parippally Student Team representative to unlock exclusive ₹229 and ₹449 passes.
+                  Enter the referral code provided by your IMA Parippally Student Team representative to unlock exclusive ₹224 and ₹449 passes.
                 </p>
               </div>
 

@@ -111,6 +111,43 @@ const speakers = [
       'He completed his MBBS and MD in Pharmacology from the University of Kerala, and has published nearly 20 research papers in national and international journals, including publications related to data management and clinical trials.',
     ],
   },
+  {
+    id: 'jayan-k',
+    name: 'Mr. Jayan K',
+    alt: 'Mr. Jayan K – Vice Chairman and CEO, Cutis International · Founder, Optam',
+    title: 'Vice Chairman & CEO · Cutis International | Founder · Optam',
+    category: 'Healthcare Entrepreneurship',
+    photo: '/images/speaker-jayan-k.png',
+    badge: 'Vice Chairman & CEO',
+    specializations: [
+      'Healthcare Entrepreneurship',
+      'Hospital & Clinic Operations',
+      'GCC & India Healthcare Scaling',
+      'Mergers, Acquisitions & Turnarounds',
+    ],
+    cardSpecs: [
+      'Healthcare Entrepreneurship',
+      'Hospital & Clinic Operations',
+      'GCC & India Healthcare Scaling',
+      'Mergers, Acquisitions & Turnarounds',
+    ],
+    profile: [
+      { icon: Award,    text: 'Vice Chairman and CEO — Cutis International' },
+      { icon: Briefcase,text: 'Founder — Optam Diagnostic Chain (30+ Centers across South Kerala)' },
+      { icon: Globe,    text: 'Former Senior Leadership & C-Suite — Aster DM Healthcare, Starcare Group, Abeer Medical Group, Right Health & Life Pharmacy' },
+      { icon: Award,    text: 'Established Dozens of Hospitals & 150+ Clinics, Pharmacies and Diagnostic Centers across GCC & India' },
+      { icon: Briefcase,text: '20+ Years Experience in Healthcare Startups, Private Equity Ventures & Greenfield Projects' },
+    ],
+    bio: [
+      'Jayan K is a healthcare entrepreneur, operator, and growth strategist with over 20 years of experience building and scaling healthcare businesses across the GCC and India.',
+      'He has established dozens of hospitals and more than 150 clinics, pharmacies, and diagnostic centers across the UAE, Saudi Arabia, Oman, Qatar, Kuwait, Bahrain, and India. His experience spans healthcare startups, private equity backed ventures, family owned businesses, and some of the region\'s leading healthcare brands.',
+      'Most healthcare businesses do not struggle because of clinical excellence. They struggle because their operating model was never built to scale. His expertise lies in creating scalable healthcare enterprises through strong operational frameworks, governance, growth strategies, and execution excellence.',
+      'Throughout his career, he has held senior leadership and C-suite positions with organizations including Aster DM Healthcare, Starcare Group of Hospitals, Abeer Medical Group, Right Health, and Life Pharmacy Healthcare.',
+      'He has led greenfield healthcare projects, market expansion initiatives, business turnarounds, mergers and acquisitions, and large scale healthcare network development, consistently delivering growth in profitability, operational performance, brand value, and enterprise valuation.',
+      'Today, he serves as Vice Chairman and CEO of Cutis International and Founder of Optam, one of South Kerala\'s fastest-growing diagnostic chains with over 30 centers. His focus remains on building sustainable healthcare ecosystems that combine operational excellence, patient trust, and long-term value creation.',
+      'He works closely with healthcare founders, investors, CEOs, and family owned businesses on business scaling, GCC and India market entry, healthcare project development, asset turnarounds, M&A, investor readiness, corporate governance, and operational excellence.',
+    ],
+  },
 ];
 
 /* ── Modal component ── */
