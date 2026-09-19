@@ -1,7 +1,7 @@
 /* ============================================================
    OFFICIAL REFERRAL DATABASE — IMA PARIPPALLY STUDENT TEAM
    Maps normalized official referral codes to student representatives.
-   Official Roster — 33 Institutional Representatives
+   Official Roster — 34 Institutional Representatives
    ============================================================ */
 
 export const officialRepresentatives = [
@@ -235,6 +235,13 @@ export const officialRepresentatives = [
     name: 'Nidhi Raju',
     college: 'Amala Institute of Medical Sciences',
     aliases: ['NID-AMA-004', 'NIDHI-AMA-004', 'NIDAMA004', 'AMA-004', 'NID-004', 'NID-AMA-4', 'NIDHI-RAJU'],
+  },
+  {
+    id: 34,
+    code: 'MOH-MES-036',
+    name: 'Mohammed Jaseel',
+    college: 'MES Medical College, Perinthalmanna',
+    aliases: ['MOH-MES-036', 'MOHAMMED-MES-036', 'MOHMES036', 'MES-036', 'MOH-036', 'MOH-MES-36', 'MOHAMMED-JASEEL'],
   },
 ];
 
