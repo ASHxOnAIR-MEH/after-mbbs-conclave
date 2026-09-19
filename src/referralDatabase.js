@@ -1,7 +1,7 @@
 /* ============================================================
    OFFICIAL REFERRAL DATABASE — IMA PARIPPALLY STUDENT TEAM
    Maps normalized official referral codes to student representatives.
-   Official Roster — 34 Institutional Representatives
+   Official Roster — 34 Institutional Representatives (Updated: Sep 19, 2026)
    ============================================================ */
 
 export const officialRepresentatives = [
