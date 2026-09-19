@@ -95,6 +95,13 @@ export const officialRepresentatives = [
     year: '3rd Year MBBS',
     aliases: ['CHA-KTM-013', 'CHAITHANYA-KTM-013', 'CHAKTM013', 'KTM-013'],
   },
+  {
+    code: 'NAN-GOV-016',
+    name: 'Nandana',
+    college: 'Government Medical College',
+    year: 'MBBS Student',
+    aliases: ['NAN-GOV-016', 'NANDANA-GOV-016', 'NANGOV016', 'GOV-016', 'NAN-016', 'NAN-GOV-16', 'NANGOV16', 'GOV-16'],
+  },
 ];
 
 /**
@@ -102,7 +109,7 @@ export const officialRepresentatives = [
  */
 export function normalizeReferralCode(rawCode) {
   if (!rawCode || typeof rawCode !== 'string') return '';
-  return rawCode.trim().toUpperCase().replace(/\s+/g, '-');
+  return rawCode.trim().toUpperCase().replace(/[\s_]+/g, '-');
 }
 
 /**
@@ -118,10 +125,20 @@ export function validateReferralCode(rawCode) {
     };
   }
 
-  // Exact or alias match
-  const found = officialRepresentatives.find(r => 
-    r.code === normalized || (r.aliases && r.aliases.includes(normalized))
-  );
+  const cleanInput = normalized.replace(/[^A-Z0-9]/g, '');
+
+  // Exact match, alias match, or alphanumeric stripped match
+  const found = officialRepresentatives.find(r => {
+    if (r.code === normalized) return true;
+    if (r.aliases && r.aliases.includes(normalized)) return true;
+    
+    // Alphanumeric fallback match (e.g. NANGOV016 matches NAN-GOV-016)
+    const cleanCode = r.code.replace(/[^A-Z0-9]/g, '');
+    if (cleanInput === cleanCode) return true;
+    if (r.aliases && r.aliases.some(a => a.replace(/[^A-Z0-9]/g, '') === cleanInput)) return true;
+
+    return false;
+  });
 
   if (found) {
     return {
