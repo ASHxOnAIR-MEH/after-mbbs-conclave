@@ -1,7 +1,7 @@
 /* ============================================================
    OFFICIAL REFERRAL DATABASE — IMA PARIPPALLY STUDENT TEAM
    Maps normalized official referral codes to student representatives.
-   Official Roster — 29 Institutional Representatives
+   Official Roster — 33 Institutional Representatives
    ============================================================ */
 
 export const officialRepresentatives = [
@@ -207,6 +207,34 @@ export const officialRepresentatives = [
     name: 'Muhsina S H',
     college: 'Coimbatore Medical College',
     aliases: ['MUH-COI-029', 'MUHSINA-COI-029', 'MUHCOI029', 'COI-029', 'MUH-029', 'MUH-COI-29', 'MUH-CMC-029'],
+  },
+  {
+    id: 30,
+    code: 'REJ-MOO-001',
+    name: 'Rejin Giri',
+    college: "Dr. Moopen's Medical College",
+    aliases: ['REJ-MOO-001', 'REJIN-MOO-001', 'REJMOO001', 'MOO-001', 'REJ-001', 'REJ-MOO-1', 'REJIN-GIRI', 'DMM-001'],
+  },
+  {
+    id: 31,
+    code: 'NAJ-PKD-002',
+    name: 'Naja P M',
+    college: 'PK Das Institute of Medical Sciences',
+    aliases: ['NAJ-PKD-002', 'NAJA-PKD-002', 'NAJPKD002', 'PKD-002', 'NAJ-002', 'NAJ-PKD-2', 'NAJA-PM'],
+  },
+  {
+    id: 32,
+    code: 'SHR-PKD-003',
+    name: 'Shreya Ajith',
+    college: 'PK Das Institute of Medical Sciences',
+    aliases: ['SHR-PKD-003', 'SHREYA-PKD-003', 'SHRPKD003', 'PKD-003', 'SHR-003', 'SHR-PKD-3', 'SHREYA-AJITH'],
+  },
+  {
+    id: 33,
+    code: 'NID-AMA-004',
+    name: 'Nidhi Raju',
+    college: 'Amala Institute of Medical Sciences',
+    aliases: ['NID-AMA-004', 'NIDHI-AMA-004', 'NIDAMA004', 'AMA-004', 'NID-004', 'NID-AMA-4', 'NIDHI-RAJU'],
   },
 ];
 
