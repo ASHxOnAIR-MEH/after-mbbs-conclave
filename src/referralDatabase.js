@@ -1,7 +1,7 @@
 /* ============================================================
    OFFICIAL REFERRAL DATABASE — IMA PARIPPALLY STUDENT TEAM
    Maps normalized official referral codes to student representatives.
-   Official Roster — 34 Institutional Representatives (Updated: Sep 19, 2026)
+   Official Roster — 44 Institutional Representatives (Updated: Sep 21, 2026)
    ============================================================ */
 
 export const officialRepresentatives = [
@@ -242,6 +242,76 @@ export const officialRepresentatives = [
     name: 'Mohammed Jaseel',
     college: 'MES Medical College, Perinthalmanna',
     aliases: ['MOH-MES-036', 'MOHAMMED-MES-036', 'MOHMES036', 'MES-036', 'MOH-036', 'MOH-MES-36', 'MOHAMMED-JASEEL'],
+  },
+  {
+    id: 35,
+    code: 'MOH-MES-037',
+    name: 'Mohammed Jaseel',
+    college: 'MES Medical College, Perinthalmanna',
+    aliases: ['MOH-MES-037', 'MOHAMMED-MES-037', 'MOHMES037', 'MES-037', 'MOH-037', 'MOH-MES-37'],
+  },
+  {
+    id: 36,
+    code: 'AFR-GOV-002',
+    name: 'Afra Jabir',
+    college: 'Govt Medical College, Kannur',
+    aliases: ['AFR-GOV-002', 'AFRA-GOV-002', 'AFRGOV002', 'GOV-AFR-002', 'AFR-002', 'AFR-GOV-2', 'AFRA-JABIR'],
+  },
+  {
+    id: 37,
+    code: 'GEE-GMC-003',
+    name: 'Geethika Radhakrishnan',
+    college: 'GMC Thrissur',
+    aliases: ['GEE-GMC-003', 'GEETHIKA-GMC-003', 'GEEGMC003', 'GMC-003', 'GEE-003', 'GEE-GMC-3', 'GEETHIKA-RADHAKRISHNAN'],
+  },
+  {
+    id: 38,
+    code: 'BEL-GOV-004',
+    name: 'Belna P Joy',
+    college: 'Government Medical College Ernakulam',
+    aliases: ['BEL-GOV-004', 'BELNA-GOV-004', 'BELGOV004', 'GOV-BEL-004', 'BEL-004', 'BEL-GOV-4', 'BELNA-JOY', 'BEL-EKM-004'],
+  },
+  {
+    id: 39,
+    code: 'KEE-AMR-005',
+    name: 'Keerthana J',
+    college: 'Amrita Institute of Medical Sciences',
+    aliases: ['KEE-AMR-005', 'KEERTHANA-AMR-005', 'KEEAMR005', 'AMR-005', 'KEE-005', 'KEE-AMR-5', 'KEERTHANA-J'],
+  },
+  {
+    id: 40,
+    code: 'JOS-JUB-006',
+    name: 'Joseph Paul',
+    college: 'Jubilee Mission Medical College, Thrissur',
+    aliases: ['JOS-JUB-006', 'JOSEPH-JUB-006', 'JOSJUB006', 'JUB-006', 'JOS-006', 'JOS-JUB-6', 'JOSEPH-PAUL'],
+  },
+  {
+    id: 41,
+    code: 'DEV-PIM-007',
+    name: 'Devakrishnan',
+    college: 'PIMS',
+    aliases: ['DEV-PIM-007', 'DEVAKRISHNAN-PIM-007', 'DEVPIM007', 'PIM-007', 'DEV-007', 'DEV-PIM-7', 'DEVAKRISHNAN'],
+  },
+  {
+    id: 42,
+    code: 'GAU-GOV-044',
+    name: 'Gautham S Nair',
+    college: 'Govt TD Medical College, Alappuzha',
+    aliases: ['GAU-GOV-044', 'GAUTHAM-GOV-044', 'GAUGOV044', 'GOV-044', 'GAU-044', 'GAU-GOV-44', 'GAUTHAM-NAIR', 'GAU-ALP-044'],
+  },
+  {
+    id: 43,
+    code: 'ROO-MOO-045',
+    name: 'Roopa C S',
+    college: "Dr. Moopen's Medical College, Wayanad",
+    aliases: ['ROO-MOO-045', 'ROOPA-MOO-045', 'ROOMOO045', 'MOO-045', 'ROO-045', 'ROO-MOO-45', 'ROOPA-CS'],
+  },
+  {
+    id: 44,
+    code: 'MUR-HAV-046',
+    name: 'Murshid',
+    college: 'Haveri Institute of Medical Sciences',
+    aliases: ['MUR-HAV-046', 'MURSHID-HAV-046', 'MURHAV046', 'HAV-046', 'MUR-046', 'MUR-HAV-46', 'MURSHID'],
   },
 ];
 
