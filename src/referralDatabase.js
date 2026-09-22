@@ -1,7 +1,7 @@
 /* ============================================================
    OFFICIAL REFERRAL DATABASE — IMA PARIPPALLY STUDENT TEAM
    Maps normalized official referral codes to student representatives.
-   Official Roster — 44 Institutional Representatives (Updated: Sep 21, 2026)
+   Official Roster — 45 Institutional Representatives (Updated: Sep 22, 2026)
    ============================================================ */
 
 export const officialRepresentatives = [
@@ -312,6 +312,13 @@ export const officialRepresentatives = [
     name: 'Murshid',
     college: 'Haveri Institute of Medical Sciences',
     aliases: ['MUR-HAV-046', 'MURSHID-HAV-046', 'MURHAV046', 'HAV-046', 'MUR-046', 'MUR-HAV-46', 'MURSHID'],
+  },
+  {
+    id: 45,
+    code: 'LIY-GOV-038',
+    name: 'Liya Elizabeth Mathews',
+    college: 'Government Medical College, Konni',
+    aliases: ['LIY-GOV-038', 'LIYA-GOV-038', 'LIYGOV038', 'GOV-038', 'LIY-038', 'LIY-GOV-38', 'LIYA-MATHEWS', 'LIYA-ELIZABETH-MATHEWS', 'LIY-KON-038', 'LIYKON038', 'KON-038', 'GOV-LIY-038'],
   },
 ];
 

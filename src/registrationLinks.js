@@ -5,8 +5,8 @@
    ============================================================ */
 
 export const registrationLinks = {
-  viewer:              "https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9",
-  viewerReferral:      "https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9",
-  interactive:         "https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9",
-  interactiveReferral: "https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9",
+  viewer:              "https://chat.whatsapp.com/FSOtbUnkjDPJs8u3PPxHDP?s=qt&p=a&mlu=4",
+  viewerReferral:      "https://chat.whatsapp.com/FSOtbUnkjDPJs8u3PPxHDP?s=qt&p=a&mlu=4",
+  interactive:         "https://chat.whatsapp.com/FSOtbUnkjDPJs8u3PPxHDP?s=qt&p=a&mlu=4",
+  interactiveReferral: "https://chat.whatsapp.com/FSOtbUnkjDPJs8u3PPxHDP?s=qt&p=a&mlu=4",
 };

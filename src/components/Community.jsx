@@ -130,7 +130,7 @@ export default function Community() {
               </ul>
 
               <a
-                href="https://chat.whatsapp.com/He6WRwKDYvvJ118837dfH9?s=qt&p=a&ilr=0&amv=2"
+                href="https://chat.whatsapp.com/FSOtbUnkjDPJs8u3PPxHDP?s=qt&p=a&mlu=4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="comm-btn comm-btn-wa"
